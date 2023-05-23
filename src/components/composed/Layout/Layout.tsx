@@ -5,12 +5,12 @@ import {LayoutProps} from './Layout.props';
 const Layout: React.FC<LayoutProps> = ({children}) => {
 
   return (
-    <div>
+    <>
       <Header></Header>
       <Container>
         {children}
       </Container>
-    </div>
+    </>
   )
 }
 
