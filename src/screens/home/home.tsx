@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import useFetch from '../../hooks/useFetch/useFetch';
-import Formatter from '../../utils/utils';
+import Formatter from '../../utils/formatter';
 import { PURPLE } from '../../utils/colors';
 import InputField from '../../components/basics/InputField/InputField';
 import Spinner from '../../components/basics/Spinner/Spinner';
