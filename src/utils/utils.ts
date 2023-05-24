@@ -22,6 +22,11 @@ const Formatter = {
 
         return parts?.join('');
     },
+    /** 
+     * @function getUriGifs
+     * A function to create endpoint
+     * @param {string} search
+    */
     getUriGifs(search: string){
         const params = {
             key: DOTENV.API_KEY,

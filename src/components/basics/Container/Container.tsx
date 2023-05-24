@@ -5,7 +5,7 @@ const Container: React.FC<ContainerProps> = ({children}) => {
 
   return (
     <div className='container'>
-        <div className='grid-row'>
+        <div className='container-row'>
             {children}
         </div>
     </div>
