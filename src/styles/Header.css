@@ -1,6 +1,6 @@
 
 .header-container {
-    background-color: #5c217f;
+    background-color: var(--primary-color);
     height: 60px;
     width: 100%;
     display: flex;

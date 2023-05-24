@@ -4,11 +4,11 @@ import {ListProps} from './List.props';
 const List: React.FC<ListProps> = ({data}) => {
 
   return (
-    <div className='grid-row'>
-        {data?.map((gift) => (
+    <div>
+        {data?.map((gif) => (
             <Card
-              key={gift.id}
-              imgSource={gift.images.fixed_height.url}
+              key={gif.id}
+              imgSource={gif.images.fixed_height.url}
             />
         ))}
     </div>

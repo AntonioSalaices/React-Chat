@@ -1,3 +1,5 @@
-.spinner-container{
-    margin:auto;
+.spinner-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
 }
