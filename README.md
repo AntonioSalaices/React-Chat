@@ -1,6 +1,6 @@
-#Search Gifs
+# Search Gifs
 
-##Getting started
+## Getting started
 
 ### Prerequisites
 1. Install NodeJS 
@@ -11,11 +11,11 @@
 
 ### Install
 
-> Execute: npm install
+   Execute: npm install
 > This commmand is to install all the project dependencies. This may take a few minutes.
 
 ### Run
-> Execute: npm run dev
+  Execute: npm run dev
 > This command will execute the application and start a local development server
 
 
