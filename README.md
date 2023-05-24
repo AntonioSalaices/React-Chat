@@ -9,10 +9,10 @@
 
     git clone: https://github.com/AntonioSalaices/Search-gifs.git
 
-### `npm start`
+### `yarn install`
 > This commmand is to install all the project dependencies. This may take a few minutes.
 
-### `npm run dev`
+### `yarn run dev`
 > This command will execute the application and start a local development server
 
 
