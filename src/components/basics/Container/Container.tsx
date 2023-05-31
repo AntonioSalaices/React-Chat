@@ -1,5 +1,4 @@
 import {ContainerProps} from '../Container/Container.props';
-import '../../../styles/Container.css';
 
 const Container: React.FC<ContainerProps> = ({children}) => {
 

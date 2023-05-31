@@ -1,17 +1,18 @@
+import React from 'react';
 import Card from '../../basics/Card/Card';
 import {ListProps} from './List.props';
 
 const List: React.FC<ListProps> = ({data}) => {
 
   return (
-    <div>
-        {data?.map((gif) => (
+    <React.Fragment>
+        {data?.map((item) => (
             <Card
-              key={gif.id}
-              imgSource={gif.images.fixed_height.url}
+              key={item.id}
+              imgSource={item.url}
             />
         ))}
-    </div>
+    </React.Fragment>
   )
 }
 

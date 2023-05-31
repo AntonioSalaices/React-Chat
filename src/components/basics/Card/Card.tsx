@@ -1,5 +1,4 @@
 import {CardProps} from '../Card/Card.props';
-import '../../../styles/Card.css';
 
 const Card: React.FC<CardProps> = ({imgSource}) => {
 

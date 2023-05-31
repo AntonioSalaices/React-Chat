@@ -1,28 +1,37 @@
-import { useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
+
 import useFetch from '../../hooks/useFetch/useFetch';
-import Formatter from '../../utils/formatter';
-import { PURPLE } from '../../utils/colors';
-import InputField from '../../components/basics/InputField/InputField';
+
+import Message from '../../components/basics/Message/Message';
+import Container from '../../components/basics/Container/Container';
+import {MemoizedInput} from '../../components/basics/InputField/InputField';
 import Spinner from '../../components/basics/Spinner/Spinner';
 import List from '../../components/composed/List/List';
-import '../../styles/Home.css';
-import Container from '../../components/basics/Container/Container';
 
-const { getUriGifs } = Formatter;
+import { DOTENV } from '../../utils/constants';
+import { PURPLE } from '../../utils/colors';
+import Formatter from '../../utils/formatter';
+
+const { getFormatedData } = Formatter;
 
 const Home = (): React.ReactElement => {
   const [search, setSearch] = useState<string>('');
-  const { data, loading } = useFetch(getUriGifs(search));
-  const hasData: boolean = data?.length > 0;
+  const url: string = `${DOTENV.API_URL}${DOTENV.API_SEARCH}}`.replace("{key}", DOTENV.API_KEY).replace("{search}", search);
+  const { data, loading } = useFetch(url);
 
-  const handleChange = ({target: {value}} : React.ChangeEvent<HTMLInputElement>) => {
+  const latestData = useMemo(() => getFormatedData(data), [data]);
+
+  const hasData: boolean = data?.length > 0;
+  const isShownNoFoundMessage: boolean = (!hasData && Boolean(search));
+
+  const handleChange = useCallback(({target: {value}} : React.ChangeEvent<HTMLInputElement>) => {
     setSearch(value);
-  }
+  },[])
 
   return (
       <>
        <div className='search-container'>
-          <InputField
+          <MemoizedInput
               value={search}
               type='text'
               placeholder='Search...'
@@ -30,12 +39,12 @@ const Home = (): React.ReactElement => {
           />
        </div>
        <Container>
-          {loading && <Spinner singleColor={PURPLE} />}
-          {hasData && <List data={data} />}
-          {(!hasData && Boolean(search) ) && (<div> <p>No gifs found for {search}</p> </div>)}
+          {loading ? <Spinner singleColor={PURPLE} /> : <></>}
+          {hasData ? <List data={latestData} /> : <></>}
+          {isShownNoFoundMessage ? <Message message={`No gifs found for ${search}`} /> : <></>}
        </Container>
       </>
   );
 }
 
-export default Home;
+export default Home; 
