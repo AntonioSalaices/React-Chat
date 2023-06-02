@@ -1,9 +1,11 @@
+import React from "react";
 import { MessageProps } from "./Message.props";
 
 const Message: React.FC<MessageProps> = ({message = ''}) => {
+
   return (
     <div>
-        <p>{message}</p>
+        <p>{React.createElement('p', null, message)}</p>
     </div>
   );
 }
