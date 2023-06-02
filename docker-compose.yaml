@@ -10,4 +10,5 @@ services:
       - ./src:/app/src
     ports:
       - 5174:5174
+    stdin_open: true
 

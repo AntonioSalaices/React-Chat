@@ -1,4 +1,7 @@
 export interface CardProps {
     key?: number | string,
-    imgSource?: string
+    url?: string,
+    title: string,
+    rating: string,
+    date: Date
 }

@@ -1,18 +1,19 @@
 import React from 'react';
-import Card from '../../basics/Card/Card';
+import {CardMemo} from '../../basics/Card/Card';
 import {ListProps} from './List.props';
+import Container from 'components/basics/Container/Container';
 
 const List: React.FC<ListProps> = ({data}) => {
 
   return (
-    <React.Fragment>
+    <Container>
         {data?.map((item) => (
-            <Card
+            <CardMemo
               key={item.id}
-              imgSource={item.url}
+              {...item}
             />
         ))}
-    </React.Fragment>
+    </Container>
   )
 }
 
