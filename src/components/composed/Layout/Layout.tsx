@@ -1,4 +1,4 @@
-import Header from '../../basics/Header/Header';
+import Header from '@Components/basics/Header/Header';
 import {LayoutProps} from './Layout.props';
 
 const Layout: React.FC<LayoutProps> = ({children}) => {

@@ -1,4 +1,4 @@
-import { MemoizedInput } from "../../basics/InputField/InputField";
+import { MemoizedInput } from "@Components/basics/InputField/InputField";
 import { SearchProps } from "./Search.props";
 
 

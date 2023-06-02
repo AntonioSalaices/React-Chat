@@ -1,7 +1,7 @@
 import React from 'react';
-import {CardMemo} from '../../basics/Card/Card';
+import {CardMemo} from '@Components/basics/Card/Card';
+import Container from '@Components/basics/Container/Container';
 import {ListProps} from './List.props';
-import Container from 'components/basics/Container/Container';
 
 const List: React.FC<ListProps> = ({data}) => {
 

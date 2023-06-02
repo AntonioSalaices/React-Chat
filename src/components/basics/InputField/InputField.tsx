@@ -1,7 +1,7 @@
-import { isEqual } from 'lodash';
-import Home from '../../../screens/home/home';
-import {InputFieldProps} from './InputField.props';
 import { memo } from 'react';
+import { isEqual } from 'lodash';
+import {InputFieldProps} from './InputField.props';
+
 
 const InputField: React.FC<InputFieldProps> = ({value, label, name, placeholder, type, onChange, ref}) => (
   <div>
@@ -17,6 +17,5 @@ const InputField: React.FC<InputFieldProps> = ({value, label, name, placeholder,
   </div>
 )
 export const MemoizedInput = memo(InputField, (prevProps, nextProps) => {
-  console.log('prevProps', prevProps.onChange === nextProps.onChange)
   return isEqual(prevProps, nextProps);
 });

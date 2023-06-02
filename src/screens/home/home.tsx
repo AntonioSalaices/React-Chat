@@ -1,17 +1,16 @@
 import { useMemo, useState } from 'react';
 
-import useFetch from 'hooks/useFetch/useFetch';
+import useFetch from '@Hooks/useFetch/useFetch';
 
-import Message from 'components/basics/Message/Message'
-import Container from 'components/basics/Container/Container';
-import Search from 'components/composed/Search/Search';
-import Pagination from 'components/composed/Pagination/Pagination';
-import Spinner from 'components/basics/Spinner/Spinner';
-import List from 'components/composed/List/List';
+import Message from '@Components/basics/Message/Message';
+import Search from '@Components/composed/Search/Search';
+import Pagination from '@Components/composed/Pagination/Pagination';
+import Spinner from '@Components/basics/Spinner/Spinner';
+import List from '@Components/composed/List/List';
 
-import { DOTENV } from 'utils/constants';
-import { PURPLE } from 'utils/colors';
-import Formatter from 'utils/formatter';
+import { DOTENV } from '@Utils/constants';
+import { PURPLE } from '@Utils/colors';
+import Formatter from '@Utils/formatter';
 
 const { getFormatedData } = Formatter;
 

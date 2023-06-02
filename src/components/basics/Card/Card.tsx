@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import {CardProps} from '../Card/Card.props';
-import Formatter from 'utils/formatter';
+import Formatter from '@Utils/formatter';
 
 const { getRelativeTime } = Formatter;
 
