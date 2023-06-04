@@ -12,6 +12,12 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+nav {
+    background-color: var(--primary-color);
+    height: 60px;
+    display: flex;
+}
+
 nav h1 {
     margin:auto;
     font-size: var(--font-size-big);
@@ -24,10 +30,6 @@ h1, span {
 
 p {
     color:var(--primary-color)
-}
-
-input {
-    height: 30px;
 }
 
 /* CARD */
@@ -43,33 +45,15 @@ img {
 /* CONTAINER */
 
 /* HEADER */
-.header-container {
-    background-color: var(--primary-color);
-    height: 60px;
-    width: 100%;
-    display: flex;
-}
 
-/* HOME */
-.search-container {
+/* FORM */
+form {
     margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
-    justify-content: center;
 }
-
-/* INPUT FIELD */
-input[type=text] {
-    background-color: white;
-    background-image: url('./assets/search-icon.png');
-    background-position: 10px 10px;
-    background-size: 15px;
-    background-repeat: no-repeat;
-    padding-left: 40px;
-    height: 30px;
-    align-self: center;
-}
-
-
 /* SPINNER */
 .spinner-container {
     margin-top: 30px;
@@ -81,7 +65,8 @@ input[type=text] {
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
     h1 {
-        color: green
+        color: green;
+        font-size: var(--font-size-base);
     }
 }
 

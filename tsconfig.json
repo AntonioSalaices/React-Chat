@@ -4,7 +4,9 @@
     "paths": {
       "@Components/*": ["components/*"],
       "@Hooks/*": ["hooks/*"],
-      "@Utils/*": ["utils/*"]
+      "@Utils/*": ["utils/*"],
+      "@Constans/*": ["constants/*"],
+      "@Translate/*": ["i18n/*"]
     },
     "target": "es5",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],

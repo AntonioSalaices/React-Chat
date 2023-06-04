@@ -4,7 +4,7 @@
 */
 
 import { GifData } from 'ApiData';
-import { DATE_UNITS } from './constants';
+import { DATE_UNITS } from '../constants/constants';
 import { rtf } from './helper';
 
 

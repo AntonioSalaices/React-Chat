@@ -5,7 +5,7 @@ const Message: React.FC<MessageProps> = ({message = ''}) => {
 
   return (
     <div>
-        <p>{React.createElement('p', null, message)}</p>
+        {React.createElement('p', null, message)}
     </div>
   );
 }

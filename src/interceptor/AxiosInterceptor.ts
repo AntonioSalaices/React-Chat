@@ -1,8 +1,8 @@
-import axios, { AxiosError, AxiosRequestConfig } from 'axios';
+import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios';
 import { useEffect } from 'react';
 
 enum Security {
-    AUTHORIZATION = 'authorization'
+    AUTHORIZATION = 'Authorization'
 }
 
 const getHeaders = (token: string | null) => ({
@@ -20,7 +20,7 @@ const AxiosInterceptor = ({children}: AxiosInterceptorProps) => {
     useEffect(()=>{
 
         const interceptor = axios.interceptors.request.use(
-            function(config: any) {
+            function(config: InternalAxiosRequestConfig) {
                 const token: string | null = localStorage.getItem('token')
                 config.headers = {...getHeaders(token)}
 

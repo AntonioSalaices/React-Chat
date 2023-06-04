@@ -2,10 +2,10 @@ import { ChangeEvent } from 'react';
 
 export interface InputFieldProps {
     value?: string | number,
-    label?: string,
+    symbol?: string | JSX.Element,
     name?: string,
     placeholder?: string, 
     type: | 'text' | 'number' | 'date',
     ref?: React.RefObject<HTMLInputElement>, 
-    onChange?: (event: ChangeEvent<HTMLInputElement>) => void | string;
+    onChange?: void;
 }

@@ -1,4 +1,4 @@
-import { ComponentProps } from "react";
+import { ChangeEvent, ComponentProps } from "react";
 import { CardMemo } from "../components/basics/Card/Card";
 
 export type DeepPartial <Thing> = Thing extends Function 
@@ -26,3 +26,10 @@ export type InputProps = ComponentProps<HTMLElements.INPUT>;
 export type SpanProps =  ComponentProps<HTMLElements.SPAN>;
 
 export type CardProps = ComponentProps<typeof CardMemo>;
+
+export type OnChangeType = ChangeEvent<HTMLInputElement>;
+
+export interface FormState {
+  pagination: string;
+  search: string;
+}

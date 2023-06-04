@@ -1,10 +1,29 @@
-import { Profiler } from 'react';
+import { BaseSyntheticEvent, Profiler, useEffect, useState } from 'react';
 import Layout from './components/composed/Layout/Layout';
 import Home from './screens/home/home';
+import { Events } from '@Constans/InputsConstants';
+import { setTranslationsByUserPreferences } from './i18n';
+import i18n from './i18n/i18n'
+import Spinner from '@Components/basics/Spinner/Spinner';
+import { PURPLE } from '@Utils/colors';
 
 const App = (): React.ReactElement => {
+  const [isLoaded, setIsLoaded] = useState<boolean>(true);
 
+  const handleLanguageChanges = (event: Partial<BaseSyntheticEvent>) => {
+    setIsLoaded(false)
+    const locale: string = event?.currentTarget?.clientInformation?.languages[0];
+    setTranslationsByUserPreferences(i18n, locale, setIsLoaded);
+    console.log('handleLanguageChanges',i18n.translations, i18n.locale)
+  }
 
+  useEffect(()=> {
+    window.addEventListener(Events.LANGUAGE, handleLanguageChanges);
+
+    return () => {
+      window.removeEventListener(Events.LANGUAGE, handleLanguageChanges)
+    }
+  },[])
 
   function onRender(id, phase, actualDuration, baseDuration, startTime, commitTime) {
     // console.log('DATA', id, phase, actualDuration, baseDuration, startTime, commitTime)
@@ -12,9 +31,13 @@ const App = (): React.ReactElement => {
 
   return (
       <Layout>
-        <Profiler id="Navigation" onRender={onRender}>
-            <Home /> 
-        </Profiler>
+        {isLoaded 
+          ? ( <Profiler id="Navigation" onRender={onRender}>
+                <Home /> 
+              </Profiler> 
+          ) : (
+              <Spinner singleColor={PURPLE} />
+          )}
       </Layout>
   );
 }
