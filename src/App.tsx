@@ -10,11 +10,20 @@ import { PURPLE } from '@Utils/colors';
 const App = (): React.ReactElement => {
   const [isLoaded, setIsLoaded] = useState<boolean>(true);
 
+
+  useEffect(()=> {
+    const loadTranslationsInitially = () => {
+      setIsLoaded(false)
+      setTranslationsByUserPreferences(i18n, navigator.language, setIsLoaded);
+    }
+    loadTranslationsInitially();
+  },[])
+
+
   const handleLanguageChanges = (event: Partial<BaseSyntheticEvent>) => {
     setIsLoaded(false)
     const locale: string = event?.currentTarget?.clientInformation?.languages[0];
     setTranslationsByUserPreferences(i18n, locale, setIsLoaded);
-    console.log('handleLanguageChanges',i18n.translations, i18n.locale)
   }
 
   useEffect(()=> {
