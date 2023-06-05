@@ -1,0 +1,48 @@
+$white: #fff !default;
+$gray-100: #fafafa !default;
+$gray-300: #D6D6D6 !default;
+$gray-500: #7D7D7D !default;
+$gray-700: #363636 !default;
+$gray-900: #999999 !default;
+$gray-background: #d9edf7 !default;
+$gray-medium: #666666 !default;
+$gray-light: #ced4da !default;
+$primary-200: #448fd2 !default;
+$black: #000 !default;
+$blue: #007bff !default;
+$blue-medium: #008aff !default;
+$blue-medium-font: #31708f !default;
+$blue-background: #589dd5 !default;
+$dark-gray: #42526e !default;
+$indigo: #6610f2 !default;
+$purple: #5c217f !default;
+$pink: #e83e8c;
+$orange: #fd7e14;
+$green: #28a745 !default;
+$yellow: #ffc107 !default;
+$red: #dc3545 !default;
+$chrome-yellow-light: #fcf8e3 !default;
+$yellow-light: #ffffba !default;
+$yellow-medium: #e8b029 !default;
+
+
+$primary: $primary-200 !default;
+$secondary: $gray-500 !default;
+$success: $green !default;
+$info: $blue !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-700 !default;
+
+
+// FONTS
+$text-shadow: 0 1px 0 rgba(0, 0, 0, 0.05) !default;
+$font-size-small: 0.25rem;
+$font-size-base: 0.75rem;
+$font-size-big: 2.25rem;
+$font-family-sans-serif: 'Arimo', sans-serif !default;
+$font-family-sans-serif-normal: 'Arimo', sans-serif !default;
+$font-family-sans-serif-bold: 'Arimo Bold', 'Arimo Regular', 'Arimo', sans-serif !default;
+$font-family-sans-serif-italic: 'Arimo Italic', 'Arimo Regular', 'Arimo' sans-serif !default;
+$font-family-base: $font-family-sans-serif !default;

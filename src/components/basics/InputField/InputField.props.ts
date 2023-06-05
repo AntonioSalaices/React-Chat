@@ -1,5 +1,3 @@
-import { ChangeEvent } from 'react';
-
 export interface InputFieldProps {
     value?: string | number,
     symbol?: string | JSX.Element,
