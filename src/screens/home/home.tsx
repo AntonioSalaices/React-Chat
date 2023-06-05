@@ -43,7 +43,7 @@ const Home = (): React.ReactElement => {
   }
 
   return (
-      <div className="container-fluid">
+      <div className="container">
         <Form search={values.search} handleCurried={handleCurried} pagination={values.pagination}  />
         {loading ? <Spinner singleColor={PURPLE} /> : <></>}
         {hasData ? <List data={latestData} /> : <></>}

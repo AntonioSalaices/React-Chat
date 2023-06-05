@@ -1,8 +1,5 @@
 import { memo } from 'react';
 import {CardProps} from '../Card/Card.props';
-import Formatter from '@Utils/formatter';
-
-const { getRelativeTime } = Formatter;
 
 const Card: React.FC<CardProps> = ({url, title, date, rating}) => {
 
@@ -14,7 +11,7 @@ const Card: React.FC<CardProps> = ({url, title, date, rating}) => {
           <p className="card-text">Rating: {rating}</p>
       </div>
       <div className="card-footer">
-        <small className="text-muted">{getRelativeTime(date.getTime())}</small>
+        <small className="text-muted">{date.toString()}</small>
       </div>
     </div>
   );
