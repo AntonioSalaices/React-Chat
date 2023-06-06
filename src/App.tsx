@@ -8,7 +8,7 @@ import { setTranslationsByUserPreferences } from './i18n';
 import i18n from './i18n/i18n'
 
 import { PURPLE } from '@Utils/colors';
-import { Events } from '@Constans/InputsConstants';
+import { Events } from '@Constans/eventConstants';
 import { ThemeProvider } from 'context/ThemeContext.tsx';
 
 const App = (): React.ReactElement => {
