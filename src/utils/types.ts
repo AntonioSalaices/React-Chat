@@ -1,5 +1,5 @@
 import { ChangeEvent, ComponentProps } from "react";
-import { CardMemo } from "../components/basics/Card/Card";
+import Card from "../components/basics/Card/Card";
 
 export type DeepPartial <Thing> = Thing extends Function 
     ? Thing
@@ -25,7 +25,7 @@ export enum HTMLElements {
 export type InputProps = ComponentProps<HTMLElements.INPUT>;
 export type SpanProps =  ComponentProps<HTMLElements.SPAN>;
 
-export type CardProps = ComponentProps<typeof CardMemo>;
+export type CardProps = ComponentProps<typeof Card>;
 
 export type OnChangeType = ChangeEvent<HTMLInputElement>;
 

@@ -4,7 +4,7 @@ import useFetch from '@Hooks/useFetch/useFetch';
 
 import Message from '@Components/basics/Message/Message';
 import Spinner from '@Components/basics/Spinner/Spinner';
-import List from '@Components/composed/List/List';
+import {MemoizedList} from '@Components/composed/List/List';
 
 import { DOTENV } from '@Constans/constants';
 import { PURPLE } from '@Utils/colors';
@@ -46,7 +46,7 @@ const Home = (): React.ReactElement => {
       <div className="container">
         <Form search={values.search} handleCurried={handleCurried} pagination={values.pagination}  />
         {loading ? <Spinner singleColor={PURPLE} /> : <></>}
-        {hasData ? <List data={latestData} /> : <></>}
+        {hasData ? <MemoizedList data={latestData} /> : <></>}
         {isShownNoFoundMessage ? <Message message={`No gifs found for ${values.search}`} /> : <></>}
       </div>
   );

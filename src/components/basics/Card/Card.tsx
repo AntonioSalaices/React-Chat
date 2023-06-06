@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import {CardProps} from '../Card/Card.props';
 
 const Card: React.FC<CardProps> = ({url, title, date, rating}) => {
@@ -16,4 +15,4 @@ const Card: React.FC<CardProps> = ({url, title, date, rating}) => {
     </div>
   );
 }
-export const CardMemo = memo(Card);
+export default Card;

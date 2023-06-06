@@ -1,5 +1,6 @@
-import React from 'react';
-import {CardMemo} from '@Components/basics/Card/Card';
+import React, { memo } from 'react';
+import { isEqual } from 'lodash';
+import Card from '@Components/basics/Card/Card';
 import Container from '@Components/basics/Container/Container';
 import {ListProps} from './List.props';
 
@@ -8,7 +9,7 @@ const List: React.FC<ListProps> = ({data}) => {
   return (
     <Container>
         {data?.map((item) => (
-            <CardMemo
+            <Card
               key={item.id}
               {...item}
             />
@@ -17,4 +18,6 @@ const List: React.FC<ListProps> = ({data}) => {
   )
 }
 
-export default List;
+export const MemoizedList = memo(List, (prevProps, nextProps) => {
+  return isEqual(prevProps, nextProps);
+});

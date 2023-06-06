@@ -1,11 +1,15 @@
 import { BaseSyntheticEvent, Profiler, useEffect, useState } from 'react';
+
 import Layout from './components/composed/Layout/Layout';
 import Home from './screens/home/home';
-import { Events } from '@Constans/InputsConstants';
+import Spinner from '@Components/basics/Spinner/Spinner';
+
 import { setTranslationsByUserPreferences } from './i18n';
 import i18n from './i18n/i18n'
-import Spinner from '@Components/basics/Spinner/Spinner';
+
 import { PURPLE } from '@Utils/colors';
+import { Events } from '@Constans/InputsConstants';
+import { ThemeProvider } from 'context/ThemeContext.tsx';
 
 const App = (): React.ReactElement => {
   const [isLoaded, setIsLoaded] = useState<boolean>(true);
@@ -39,6 +43,7 @@ const App = (): React.ReactElement => {
   }
 
   return (
+    <ThemeProvider>
       <Layout>
         {isLoaded 
           ? ( <Profiler id="Navigation" onRender={onRender}>
@@ -48,6 +53,7 @@ const App = (): React.ReactElement => {
               <Spinner singleColor={PURPLE} />
           )}
       </Layout>
+    </ThemeProvider>
   );
 }
 

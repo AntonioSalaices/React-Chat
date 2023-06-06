@@ -1,5 +1,3 @@
-import { memo } from 'react';
-import { isEqual } from 'lodash';
 import {InputFieldProps} from './InputField.props';
 
 
@@ -21,6 +19,5 @@ const InputField: React.FC<InputFieldProps> = ({value, symbol, name, placeholder
     />
   </div>
 )
-export const MemoizedInput = memo(InputField, (prevProps, nextProps) => {
-  return isEqual(prevProps, nextProps);
-});
+
+export default InputField;
