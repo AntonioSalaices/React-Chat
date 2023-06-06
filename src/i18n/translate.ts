@@ -8,6 +8,6 @@ import { DeepPartial } from "@Utils/types";
  * @param key The i18n key.
  */
 
-export function translate(key: DeepPartial<TxKeyPath>, options?: I18n.TranslateOptions){
+export function translate(key: string | DeepPartial<TxKeyPath>, options?: I18n.TranslateOptions){
     return key ? i18n.t(key, options) : null;
 }

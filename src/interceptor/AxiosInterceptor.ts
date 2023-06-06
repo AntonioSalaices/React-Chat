@@ -1,11 +1,16 @@
 import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios';
 import { useEffect } from 'react';
 
+
+export interface Headers {
+    Authorization: string | null
+}
+
 enum Security {
     AUTHORIZATION = 'Authorization'
 }
 
-const getHeaders = (token: string | null) => ({
+const getHeaders = (token: string | null): Headers => ({
     [Security.AUTHORIZATION]: token
 });
 
