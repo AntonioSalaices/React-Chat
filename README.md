@@ -1,4 +1,4 @@
-# Search Gifs
+# React Side Project
 
 ## Getting started
 
@@ -9,7 +9,7 @@
 
 ### Quick Start
 
-    git clone: https://github.com/AntonioSalaices/Search-gifs.git
+    git clone: https://github.com/AntonioSalaices/React-Side-Project.git
 
 ### `npm install`
 > This commmand is to install all the project dependencies. This may take a few minutes.
