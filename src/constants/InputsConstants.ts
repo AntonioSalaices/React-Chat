@@ -3,6 +3,3 @@ export enum InputsConstants {
     PAGINATION = 'pagination'
 }
 
-export enum Events {
-   LANGUAGE ="languagechange"
-}
