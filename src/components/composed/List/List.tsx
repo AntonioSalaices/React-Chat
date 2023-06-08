@@ -8,10 +8,10 @@ const List: React.FC<ListProps> = ({data}) => {
 
   return (
     <Container>
-        {data?.map((item) => (
+        {data?.map(({id, ...rest}) => (
             <Card
-              key={item.id}
-              {...item}
+              key={id}
+              {...rest}
             />
         ))}
     </Container>

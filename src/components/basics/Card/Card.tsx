@@ -4,14 +4,10 @@ const Card: React.FC<CardProps> = ({url, title, date, rating}) => {
 
   return (
     <div className="card">
-      <img  className="card-img-top" src={url} />
-      <div className="card-body">
-          <h5 className="card-title">{title}</h5>
-          <p className="card-text">Rating: {rating}</p>
-      </div>
-      <div className="card-footer">
-        <small className="text-muted">{date.toString()}</small>
-      </div>
+      <img src={url} />
+      <h5>{title}</h5>
+      <p>Rating: {rating}</p>
+      <p>{date.toString()}</p>
     </div>
   );
 }

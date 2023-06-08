@@ -2,6 +2,10 @@
     "en": {
         "header": {
             "title": "Hello Antonio Salaices"
+        },
+        "error": {
+            "messageTitle": "Something went wrong...",
+            "genericMessage": "Error"
         }
     }
 }

@@ -10,6 +10,7 @@ import i18n from './i18n/i18n'
 import { PURPLE } from '@Utils/colors';
 import { Events } from '@Constans/eventConstants';
 import { ThemeProvider } from 'context/ThemeContext.tsx';
+import ErrorBoundary from '@Components/composed/ErrorBoundary/ErrorBoundary';
 
 const App = (): React.ReactElement => {
   const [isLoaded, setIsLoaded] = useState<boolean>(true);
@@ -44,15 +45,17 @@ const App = (): React.ReactElement => {
 
   return (
     <ThemeProvider>
-      <Layout>
-        {isLoaded 
-          ? ( <Profiler id="Navigation" onRender={onRender}>
-                <Home /> 
-              </Profiler> 
-          ) : (
-              <Spinner singleColor={PURPLE} />
-          )}
-      </Layout>
+      <ErrorBoundary>
+        <Layout>
+          {isLoaded 
+            ? ( <Profiler id="Navigation" onRender={onRender}>
+                  <Home /> 
+                </Profiler> 
+            ) : (
+                <Spinner singleColor={PURPLE} />
+            )}
+        </Layout>
+      </ErrorBoundary>
     </ThemeProvider>
   );
 }

@@ -1,7 +1,7 @@
 @import 'variables', 'fonts', 'responsive', 'palette', 'mixins';
 
 
-// == STYLES ==
+
 .header{
     @include header_style;
 }
@@ -11,18 +11,20 @@
 .footer{
     @include footer_style;
 }
-// == STYLES ==
+
 
 // Light Theme
 .light {
     html, body {
         background-color: $lightwhite;
     }
+
     .header {
         background-color: $gray-100;
         box-shadow: 1px 2px $medpurple;
         color: $purple;
     }
+
     .container{
         background-color: $gray-300;
         box-shadow: 1px 2px $lightorange;

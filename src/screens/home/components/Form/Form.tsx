@@ -6,7 +6,7 @@ import { InputsConstants } from "@Constans/InputsConstants";
 const Form: React.FC<FormProps> = ({search, handleCurried, pagination}) => {
 
     return (
-      <form>
+      <form className="form">
           <Search search={search} handleChange={handleCurried(InputsConstants.SEARCH)} />
           <Pagination pagination={pagination} handleChange={handleCurried(InputsConstants.PAGINATION)} />
       </form>

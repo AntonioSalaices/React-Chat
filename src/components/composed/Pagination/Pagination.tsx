@@ -6,9 +6,13 @@ import { FaPager } from "react-icons/fa";
 const Pagination: React.FC<PaginationProps> = ({pagination, handleChange}) => {
 
     return (
-        <div className="form-group col-md-6">
-             <InputField symbol={<FaPager />} value={pagination} type='number' placeholder='Pagination: ' onChange={handleChange} />
-        </div>
+        <InputField 
+            symbol={<FaPager />}
+            value={pagination}
+            type='number'
+            placeholder='Pagination: '
+            onChange={handleChange}
+         />
     );
 }
 

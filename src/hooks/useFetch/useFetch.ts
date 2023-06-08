@@ -43,7 +43,11 @@ const useFetch = (url:string): State  => {
         };
     }, [url])
 
-    return { data, loading, error };
+    return {
+        data, 
+        loading,
+        error
+    };
 }
 
 export default useFetch;
