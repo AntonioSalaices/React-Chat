@@ -10,6 +10,7 @@
     "test-show": "open ./coverage/lcov-report/index.html",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "prettier": "prettier --check .",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -55,7 +56,7 @@
       "applypatch-msg": "echo \"[Husky] applypatch-msg\"",
       "pre-applypatch": "echo \"[Husky] pre-applypatch\"",
       "post-applypatch": "echo \"[Husky] post-applypatch\"",
-      "pre-commit": "echo \"[Husky] pre-commit\"",
+      "pre-commit": "echo \"[Husky] pre-commit\""
     }
   },
   "jest": {
