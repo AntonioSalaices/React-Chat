@@ -1,4 +1,3 @@
-import { PropertyRequiredError, ReadError, ValidationError } from "./Error";
 
 type CheckForBadArgs<Arg> = Arg extends any[] 
     ? "You cannot compare two arrays using deepEqualCompare"
@@ -23,39 +22,6 @@ const Helper = {
         }
 
         return a === b;
-      },
-      validateUser(user) {
-        if (!user.age) {
-            throw new PropertyRequiredError("age");
-        }
-    
-        if (!user.name) {
-            throw new PropertyRequiredError("name");
-        }
-      },
-      readInputs(json: string) {
-        let user;
-      
-        try {
-          user = JSON.parse(json);
-        } catch (err) {
-          if (err instanceof SyntaxError) {
-            throw new ReadError("Syntax Error", err);
-          } else {
-            throw err;
-          }
-        }
-      
-        try {
-          Helper.validateUser(user);
-        } catch (err) {
-          if (err instanceof ValidationError) {
-            throw new ReadError("Validation Error", err);
-          } else {
-            throw err;
-          }
-        }
-      
       }
 }
 export default Helper;

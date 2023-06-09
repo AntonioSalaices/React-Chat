@@ -16,7 +16,6 @@ const Formatter = {
             id: item.id,
             url: item.images.fixed_height.url,
             title: item.title,
-            date: new Date(item.import_datetime),
             rating: item.rating
         }));
     }

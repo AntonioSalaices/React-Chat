@@ -7,10 +7,10 @@ const ErrorPage: React.FC<ErrorPageProps> = ({
 }) => {
 
     return (
-        <Container>
+        <div className="container">
             <h1>{translate('error.messageTitle')}</h1>
             <span>{error ? error.message : translate('error.genericMessage')}</span>
-        </Container>
+        </div>
     );
 }
 
