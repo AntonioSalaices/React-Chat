@@ -18,6 +18,7 @@
     "@babel/preset-typescript": "^7.22.5",
     "axios": "^1.4.0",
     "cross-env": "^7.0.3",
+    "husky": "^8.0.3",
     "i18n-js": "^4.2.3",
     "identity-obj-proxy": "^3.0.0",
     "lodash": "^4.17.21",
@@ -49,6 +50,11 @@
     "typescript": "^5.0.2",
     "vite": "^4.3.2"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo \"[Husky] pre-commit\""
+    }
+  },
   "jest": {
     "testEnvironment": "jsdom",
     "setupFilesAfterEnv": [
@@ -58,7 +64,10 @@
       "src/**/*.{ts,tsx, js, jsx}",
       "!src/**/*.d.ts"
     ],
-    "moduleDirectories": ["node_modules", "./src"],
+    "moduleDirectories": [
+      "node_modules",
+      "./src"
+    ],
     "transformIgnorePatterns": [
       "<rootDir>/node_modules/(?!i18n-js)"
     ],
