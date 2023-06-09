@@ -1,4 +1,3 @@
-import Container from "@Components/basics/Container/Container";
 import { ErrorPageProps } from "./ErrorPage.props";
 import { translate } from "@Translate/translate";
 

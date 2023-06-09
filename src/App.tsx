@@ -1,4 +1,4 @@
-import { BaseSyntheticEvent, Profiler, useEffect, useState } from 'react';
+import React, { BaseSyntheticEvent, Profiler, useEffect, useState } from 'react';
 
 import Layout from './components/composed/Layout/Layout';
 import Home from './screens/home/home';

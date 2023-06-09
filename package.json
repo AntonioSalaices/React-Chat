@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 5174",
     "test": "jest",
-    "test:coverage": "jest -- --coverage",
+    "test:coverage": "npx jest --coverage",
+    "test-show": "open ./coverage/lcov-report/index.html",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -57,8 +58,17 @@
       "src/**/*.{ts,tsx, js, jsx}",
       "!src/**/*.d.ts"
     ],
+    "moduleDirectories": ["node_modules", "./src"],
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/(?!i18n-js)"
+    ],
     "moduleNameMapper": {
-      "^.+\\.(css|less|styl|scss|sass|svg)$": "identity-obj-proxy"
+      "^.+\\.(css|less|styl|scss|sass|svg)$": "identity-obj-proxy",
+      "@Components/(.*)": "<rootDir>/src/components/$1",
+      "@Constans/(.*)": "<rootDir>/src/constants/$1",
+      "@Utils/(.*)": "<rootDir>/src/utils/$1",
+      "@Hooks/(.*)": "<rootDir>/src/hooks/$1",
+      "@Translate/(.*)": "<rootDir>/src/i18n/$1"
     }
   }
 }
