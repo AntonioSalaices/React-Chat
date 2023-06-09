@@ -4,10 +4,13 @@ import i18n from "./i18n";
 import { DeepPartial } from "@Utils/types";
 /**
  * Translates text
- * 
+ *
  * @param key The i18n key.
  */
 
-export function translate(key: string | DeepPartial<TxKeyPath>, options?: I18n.TranslateOptions){
-    return key ? i18n.t(key, options) : null;
+export function translate(
+  key: string | DeepPartial<TxKeyPath>,
+  options?: I18n.TranslateOptions
+) {
+  return key ? i18n.t(key, options) : null;
 }

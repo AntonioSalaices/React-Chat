@@ -1,137 +1,137 @@
 // Main elements
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
 
 // STICKY FOOTER
-.header{
-    height: 50px;
+.header {
+  height: 50px;
 }
 .container {
-    min-height: calc(80vh - 70px);
-    @include m-screen{
-        min-height: calc(40vh - 70px);
-    }
-    @include s-screen{
-        min-height: calc(40vh - 70px);
-    }
-    @include xs-screen{
-        min-height: calc(30vh - 70px);
-    }
+  min-height: calc(80vh - 70px);
+  @include m-screen {
+    min-height: calc(40vh - 70px);
   }
+  @include s-screen {
+    min-height: calc(40vh - 70px);
+  }
+  @include xs-screen {
+    min-height: calc(30vh - 70px);
+  }
+}
 .footer {
-    height: 50px;
+  height: 50px;
 }
 
 // Main mixins
-@mixin container_style{
-    width: 80%;
+@mixin container_style {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 25px;
+  border-radius: 6px;
+  flex-direction: column;
+
+  .form {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
-    margin-top: 25px;
-    border-radius: 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .card-grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+  }
+  .card {
+    align-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.03);
+    display: flex;
     flex-direction: column;
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    overflow: hidden;
+  }
+  .card p {
+    flex: 1;
+    font-size: 0.8rem;
+    padding: 5px 20px 0px 20px;
+    text-align: center;
+  }
 
-    .form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    .card-grid{
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        padding: 0;
-        margin: 0;
-    }
-    .card{
-        align-content: center;
-        align-items: center;
-        padding: 5px;
-        background-color: $white;
-        border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.03);
-        display: flex;
-        flex-direction: column;
-        width: 200px;
-        height: 200px;
-        justify-content: center;
-        margin-bottom: 20px;
-        margin-right: 20px;
-        overflow: hidden;
-    }
-    .card p {
-        flex: 1;
-        font-size: 0.8rem;
-        padding: 5px 20px 0px 20px;
-        text-align: center;
+  .card img {
+    height: 40%;
+    width: 100%;
+  }
+  h5 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: $sans-serif-Manjari;
+  }
+  p {
+    text-align: center;
+    font-family: $serif-Merriweather;
+    padding-top: 20%;
+    font-size: 26px;
+    span {
+      display: block;
+      font-size: 20px;
+      text-shadow: none;
+      font-family: $sans-serif-Manjari;
+      font-weight: bold;
+      @include s-screen {
+        font-size: 16px;
+        width: 80%;
+        margin: auto;
       }
-      
-     .card img {
-        height: 40%;
-        width: 100%;
+      @include xs-screen {
+        font-size: 12px;
+        width: 80%;
+        margin: auto;
       }
-      h5 {
-        margin-top: 5px;
-        margin-bottom: 5px;
-        font-family: $sans-serif-Manjari;
-      }
-      p{
-        text-align: center;
-        font-family: $serif-Merriweather;
-        padding-top: 20%;
-        font-size: 26px;
-        span{
-            display: block;
-            font-size: 20px;
-            text-shadow: none;
-            font-family: $sans-serif-Manjari;
-            font-weight: bold;
-            @include s-screen{
-                font-size: 16px;
-                width: 80%;
-                margin: auto;
-            }
-            @include xs-screen{
-                font-size: 12px;
-                width: 80%;
-                margin: auto;
-            }
-        }
-        //Responsive
-        @include xs-screen{
-            padding-top: 15px;
-            font-size: 14px;
-        }
-        @include m-screen{
-            padding-top: 35px;
-        }
     }
+    //Responsive
+    @include xs-screen {
+      padding-top: 15px;
+      font-size: 14px;
+    }
+    @include m-screen {
+      padding-top: 35px;
+    }
+  }
 }
 @mixin header_style {
-    font-family: $sans-serif-Manjari;
-    font-size: $font-family-base;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: $sans-serif-Manjari;
+  font-size: $font-family-base;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-@mixin footer_style{
-    font-family: $sans-serif-Manjari;
-    font-size: 20px;
-    text-align: center;
-    padding: 15px;
-    //Responsive
-    @include xs-screen{
-        p{
-            font-size: 16px;
-            text-shadow: 0px 0px transparent !important;
-        }
+@mixin footer_style {
+  font-family: $sans-serif-Manjari;
+  font-size: 20px;
+  text-align: center;
+  padding: 15px;
+  //Responsive
+  @include xs-screen {
+    p {
+      font-size: 16px;
+      text-shadow: 0px 0px transparent !important;
     }
+  }
 }

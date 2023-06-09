@@ -1,3 +1,3 @@
 export interface ThemeProviderProps {
-    children: JSX.Element | JSX.Element[]
+  children: JSX.Element | JSX.Element[];
 }

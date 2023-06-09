@@ -1,3 +1,3 @@
 export interface MessageProps {
-    message: string
+  message: string;
 }

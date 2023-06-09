@@ -1,4 +1,4 @@
 export interface PaginationProps {
-    pagination: string;
-    handleChange:  void;
+  pagination: string;
+  handleChange: void;
 }

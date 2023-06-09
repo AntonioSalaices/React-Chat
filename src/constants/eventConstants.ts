@@ -1,3 +1,3 @@
 export enum Events {
-    LANGUAGE ="languagechange"
- }
+  LANGUAGE = "languagechange",
+}

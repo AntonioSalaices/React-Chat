@@ -1,74 +1,73 @@
-@import 'variables', 'fonts', 'responsive', 'palette', 'mixins';
+@import "variables", "fonts", "responsive", "palette", "mixins";
 
-
-
-.header{
-    @include header_style;
+.header {
+  @include header_style;
 }
-.container{
-    @include container_style;
+.container {
+  @include container_style;
 }
-.footer{
-    @include footer_style;
+.footer {
+  @include footer_style;
 }
-
 
 // Light Theme
 .light {
-    html, body {
-        background-color: $lightwhite;
-    }
+  html,
+  body {
+    background-color: $lightwhite;
+  }
 
-    .header {
-        background-color: $gray-100;
-        box-shadow: 1px 2px $medpurple;
-        color: $purple;
-    }
+  .header {
+    background-color: $gray-100;
+    box-shadow: 1px 2px $medpurple;
+    color: $purple;
+  }
 
-    .container{
-        background-color: $gray-300;
-        box-shadow: 1px 2px $lightorange;
-        p{
-            text-shadow: 2px 1px $lightorange;
-            color: $lightgreen;
-            span{
-                color: $lightgreen;
-                text-shadow: 2px 1px $lightorange;
-            }
-        }
+  .container {
+    background-color: $gray-300;
+    box-shadow: 1px 2px $lightorange;
+    p {
+      text-shadow: 2px 1px $lightorange;
+      color: $lightgreen;
+      span {
+        color: $lightgreen;
+        text-shadow: 2px 1px $lightorange;
+      }
     }
-    .footer{
-        p{
-            color: $lightgreen;
-            text-shadow: 1px 1px $medorange;
-        }
+  }
+  .footer {
+    p {
+      color: $lightgreen;
+      text-shadow: 1px 1px $medorange;
     }
+  }
 }
 //Dark theme
 .dark {
-    html, body {
-        background-color: $obscurepurple;
-    }
-    .header {
-        background-color: $lightpurple;
-        box-shadow: 1px 2px $lightorange;
-        color:$darkpurple;
+  html,
+  body {
+    background-color: $obscurepurple;
+  }
+  .header {
+    background-color: $lightpurple;
+    box-shadow: 1px 2px $lightorange;
+    color: $darkpurple;
 
-        h1{
-            color:$white; 
-        }
+    h1 {
+      color: $white;
     }
-    .container{
-        background-color: $lightpurple;
-        box-shadow: 1px 2px $medpurple;
-        p{
-            color: $dark;
-        }
+  }
+  .container {
+    background-color: $lightpurple;
+    box-shadow: 1px 2px $medpurple;
+    p {
+      color: $dark;
     }
-    .footer{
-        p{
-            color: $medpurple;
-            text-shadow: 1px 1px $lightpurple;
-        }
+  }
+  .footer {
+    p {
+      color: $medpurple;
+      text-shadow: 1px 1px $lightpurple;
     }
+  }
 }

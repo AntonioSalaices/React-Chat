@@ -1,10 +1,8 @@
-
-export interface ErrorBoundaryProps { 
-    children: JSX.Element | JSX.Element[]
+export interface ErrorBoundaryProps {
+  children: JSX.Element | JSX.Element[];
 }
 
-
 export interface ErrorBoundaryState {
-    hasError: boolean,
-    error: Error | undefined
+  hasError: boolean;
+  error: Error | undefined;
 }

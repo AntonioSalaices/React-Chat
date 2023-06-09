@@ -1,47 +1,40 @@
-import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios';
-import { useEffect } from 'react';
-
+import axios, { AxiosError, InternalAxiosRequestConfig } from "axios";
+import { useEffect } from "react";
 
 export interface Headers {
-    Authorization: string | null
+  Authorization: string | null;
 }
 
 enum Security {
-    AUTHORIZATION = 'Authorization'
+  AUTHORIZATION = "Authorization",
 }
 
 const getHeaders = (token: string | null): Headers => ({
-    [Security.AUTHORIZATION]: token
+  [Security.AUTHORIZATION]: token,
 });
 
-
 interface AxiosInterceptorProps {
-    children: JSX.Element
+  children: JSX.Element;
 }
 
+const AxiosInterceptor = ({ children }: AxiosInterceptorProps) => {
+  useEffect(() => {
+    const interceptor = axios.interceptors.request.use(
+      function (config: InternalAxiosRequestConfig) {
+        const token: string | null = localStorage.getItem("token");
+        config.headers = { ...getHeaders(token) };
 
-const AxiosInterceptor = ({children}: AxiosInterceptorProps) => {
+        return config;
+      },
+      function (error: AxiosError) {
+        console.error("Axios Interceptor ERROR", error);
+        return Promise.reject(error);
+      }
+    );
+    return () => axios.interceptors.response.eject(interceptor);
+  }, []);
 
-    useEffect(()=>{
-
-        const interceptor = axios.interceptors.request.use(
-            function(config: InternalAxiosRequestConfig) {
-                const token: string | null = localStorage.getItem('token')
-                config.headers = {...getHeaders(token)}
-
-                return config;
-            },
-            function(error: AxiosError){
-                console.error(
-                    'Axios Interceptor ERROR', error
-                );
-                return Promise.reject(error);
-            }
-        )
-        return ()=> axios.interceptors.response.eject(interceptor);
-    },[]);
-
-    return children;
-}
+  return children;
+};
 
 export default AxiosInterceptor;

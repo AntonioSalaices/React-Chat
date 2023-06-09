@@ -1,11 +1,11 @@
 {
-    "es": {
-        "header": {
-            "title": "Hola Antonio Salaices"
-        },
-        "error": {
-            "messageTitle": "Algo salió mal...",
-            "genericMessage": "Error"
-        }
+  "es": {
+    "header": {
+      "title": "Hola Antonio Salaices"
+    },
+    "error": {
+      "messageTitle": "Algo salió mal...",
+      "genericMessage": "Error"
     }
+  }
 }

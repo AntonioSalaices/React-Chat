@@ -1,6 +1,6 @@
 import { Theme } from "@Constans/Theme";
 
 export interface HeaderProps {
-    theme: Theme, 
-    onChange: (args: Theme) => void;
+  theme: Theme;
+  onChange: (args: Theme) => void;
 }

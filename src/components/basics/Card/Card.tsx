@@ -1,7 +1,6 @@
-import {CardProps} from '../Card/Card.props';
+import { CardProps } from "../Card/Card.props";
 
-const Card: React.FC<CardProps> = ({url, title, rating}) => {
-
+const Card: React.FC<CardProps> = ({ url, title, rating }) => {
   return (
     <div className="card">
       <img src={url} />
@@ -9,5 +8,5 @@ const Card: React.FC<CardProps> = ({url, title, rating}) => {
       <p>Rating: {rating}</p>
     </div>
   );
-}
+};
 export default Card;

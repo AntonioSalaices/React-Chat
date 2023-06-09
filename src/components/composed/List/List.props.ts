@@ -1,3 +1,3 @@
 export interface ListProps {
-    data?: Array<any>
+  data?: Array<any>;
 }

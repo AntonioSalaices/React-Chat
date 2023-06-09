@@ -1,3 +1,3 @@
 export interface ErrorPageProps {
-    error: Error | undefined
+  error: Error | undefined;
 }
