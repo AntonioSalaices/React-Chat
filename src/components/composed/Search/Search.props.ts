@@ -1,4 +1,4 @@
 export interface SearchProps {
-  search: string;
+  search?: string;
   handleChange: void;
 }

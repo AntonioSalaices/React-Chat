@@ -14,6 +14,8 @@ const List: React.FC<ListProps> = ({ data }) => {
   );
 };
 
-export const MemoizedList = memo(List, (prevProps, nextProps) => {
+const MemoizedList = memo(List, (prevProps, nextProps) => {
   return isEqual(prevProps, nextProps);
 });
+
+export default MemoizedList;

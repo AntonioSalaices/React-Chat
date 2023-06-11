@@ -1,12 +1,10 @@
+import { Security } from "@Constans/securityConstants";
+import { DeepPartial } from "@Utils/types";
 import axios, { AxiosError, InternalAxiosRequestConfig } from "axios";
 import { useEffect } from "react";
 
 export interface Headers {
   Authorization: string | null;
-}
-
-enum Security {
-  AUTHORIZATION = "Authorization",
 }
 
 const getHeaders = (token: string | null): Headers => ({
@@ -20,8 +18,8 @@ interface AxiosInterceptorProps {
 const AxiosInterceptor = ({ children }: AxiosInterceptorProps) => {
   useEffect(() => {
     const interceptor = axios.interceptors.request.use(
-      function (config: InternalAxiosRequestConfig) {
-        const token: string | null = localStorage.getItem("token");
+      function (config: DeepPartial<InternalAxiosRequestConfig>) {
+        const token: string | null = localStorage.getItem(Security.TOKEN);
         config.headers = { ...getHeaders(token) };
 
         return config;
