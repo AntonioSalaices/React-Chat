@@ -54,7 +54,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "prettier --write . && git add -A ."
+      "pre-commit": "prettier --write . && git add -A .",
+      "pre-push": "npm run test"
     }
   },
   "jest": {
@@ -62,6 +63,7 @@
     "setupFilesAfterEnv": [
       "<rootDir>/jest-setup.ts"
     ],
+    "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx, js, jsx}",
       "!src/**/*.d.ts"
