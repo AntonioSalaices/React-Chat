@@ -5,6 +5,6 @@ describe("<App />", () => {
   test("App component should render correctly", () => {
     const AppComponent = render(<App />);
 
-    expect(AppComponent).toBeUndefined();
+    expect(AppComponent).toBeDefined();
   });
 });
