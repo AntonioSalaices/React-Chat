@@ -10,6 +10,10 @@
   @include footer_style;
 }
 
+.main {
+  @include main_style;
+}
+
 // Light Theme
 .light {
   html,
@@ -21,6 +25,10 @@
     background-color: $gray-100;
     box-shadow: 1px 2px $medpurple;
     color: $purple;
+  }
+
+  .main {
+    background-color: $gray-300;
   }
 
   .container {
@@ -57,9 +65,15 @@
       color: $white;
     }
   }
+
+  .main {
+    background-color: $lightpurple;
+  }
+
   .container {
     background-color: $lightpurple;
     box-shadow: 1px 2px $medpurple;
+
     p {
       color: $dark;
     }

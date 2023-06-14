@@ -9,12 +9,10 @@ const InputField: React.FC<InputFieldProps> = ({
   onChange,
   ref,
 }) => (
-  <div className="input-group input-group-sm mb-3">
+  <div className="input-group">
     {symbol && (
-      <div className="input-group-prepend">
-        <span className="input-group-text" id="inputGroup-sizing-sm">
-          {symbol}
-        </span>
+      <div className="input-icon">
+        <span>{symbol}</span>
       </div>
     )}
     <input

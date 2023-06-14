@@ -7,7 +7,7 @@ import { GifData } from "ApiData";
 
 const Formatter = {
   /**
-   * @function getUriGifs
+   * @function getFormatedData
    * A function to create endpoint
    * @param {string} search
    */
@@ -15,8 +15,6 @@ const Formatter = {
     return data?.map((item) => ({
       id: item.id,
       url: item.images.fixed_height.url,
-      title: item.title,
-      rating: item.rating,
     }));
   },
 };

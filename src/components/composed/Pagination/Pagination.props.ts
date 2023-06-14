@@ -1,4 +1,9 @@
+import { OnChangeType } from "@Utils/types";
+import { DebouncedFunc } from "lodash";
+
 export interface PaginationProps {
   pagination?: string;
-  handleChange: void;
+  handleChange: DebouncedFunc<
+    ({ target: { value } }: OnChangeType) => void
+  > | void;
 }

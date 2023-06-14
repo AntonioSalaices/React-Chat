@@ -30,7 +30,7 @@ const Home = (): React.ReactElement => {
   const hasData: boolean = data?.length > 0;
   const isShownNoFoundMessage: boolean = !hasData && Boolean(search);
 
-  //We can reuse this function for another inputs
+  //We can reuse this function for another inputs [CURRYING]
   // const handleCurried = (fieldName: string) => {
   //   return ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
   //     setValues((prev: FormState) => ({
@@ -39,7 +39,7 @@ const Home = (): React.ReactElement => {
   //     }));
   //   };
   // };
-
+  console.log("ENV", import.meta.env.__NAME__);
   const handleChange = ({
     target: { value },
   }: React.ChangeEvent<HTMLInputElement>) => {
@@ -68,20 +68,24 @@ const Home = (): React.ReactElement => {
   });
 
   return (
-    <div className="container">
-      <Search handleChange={debouncedSearch} />
-      <Pagination handleChange={debouncedPagination} />
-      <svg>
-        <circle cx="50" cy="50" r="40" stroke="red" fill="yellow" />
-      </svg>
-      {loading ? <Spinner singleColor={PURPLE} /> : <></>}
-      {hasData ? <MemoizedList data={latestData} /> : <></>}
-      {isShownNoFoundMessage ? (
-        <Message message={`No gifs found for ${search}`} />
-      ) : (
-        <></>
-      )}
-    </div>
+    <>
+      <div className="main">
+        <Search handleChange={debouncedSearch} />
+        <Pagination handleChange={debouncedPagination} />
+      </div>
+      <div className="container">
+        {/* <svg>
+            <circle cx="50" cy="50" r="40" stroke="red" fill="yellow" />
+          </svg> */}
+        {loading ? <Spinner singleColor={PURPLE} /> : <></>}
+        {hasData ? <MemoizedList data={latestData} /> : <></>}
+        {isShownNoFoundMessage ? (
+          <Message message={`No gifs found for ${search}`} />
+        ) : (
+          <></>
+        )}
+      </div>
+    </>
   );
 };
 
