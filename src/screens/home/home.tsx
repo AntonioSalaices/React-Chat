@@ -6,8 +6,6 @@ import Spinner from "@Components/basics/Spinner";
 import Search from "@Components/composed/Search";
 import Pagination from "@Components/composed/Pagination";
 import MemoizedList from "@Components/composed/List";
-
-import { DOTENV } from "@Constans/constants";
 import { PURPLE } from "@Utils/colors";
 import Formatter from "@Utils/formatter";
 
@@ -15,12 +13,14 @@ import useFetch from "@Hooks/useFetch/useFetch";
 
 const { getFormatedData } = Formatter;
 
+const { VITE_BASE_URL, VITE_API_SEARCH, VITE_API_KEY } = import.meta.env;
+
 const Home = (): React.ReactElement => {
   const [pagination, setPagination] = useState<string>("10");
   const [search, setSearch] = useState<string>("");
 
-  const url: string = `${DOTENV.API_URL}${DOTENV.API_SEARCH}}`
-    .replace("{key}", DOTENV.API_KEY)
+  const url: string = `${VITE_BASE_URL}${VITE_API_SEARCH}}`
+    .replace("{key}", VITE_API_KEY)
     .replace("{search}", search)
     .replace("{pagination}", pagination);
 
