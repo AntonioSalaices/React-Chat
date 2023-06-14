@@ -39,7 +39,7 @@ const Home = (): React.ReactElement => {
   //     }));
   //   };
   // };
-  console.log("ENV", import.meta.env.__NAME__);
+
   const handleChange = ({
     target: { value },
   }: React.ChangeEvent<HTMLInputElement>) => {
