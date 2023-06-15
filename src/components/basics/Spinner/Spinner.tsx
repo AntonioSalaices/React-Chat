@@ -1,11 +1,12 @@
 import MDSpinner from "react-md-spinner";
 import { SpinnerProps } from "./Spinner.props";
+import Container from "../Container";
 
 const Spinner: React.FC<SpinnerProps> = (props) => {
   return (
-    <div className="spinner-container">
+    <Container>
       <MDSpinner {...props} />
-    </div>
+    </Container>
   );
 };
 

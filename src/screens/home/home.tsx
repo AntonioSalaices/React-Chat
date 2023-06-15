@@ -1,5 +1,5 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { debounce } from "lodash";
+import React, { useDeferredValue, useEffect, useMemo, useState } from "react";
+import { debounce, throttle } from "lodash";
 
 import Message from "@Components/basics/Message";
 import Spinner from "@Components/basics/Spinner";
@@ -18,10 +18,13 @@ const { VITE_BASE_URL, VITE_API_SEARCH, VITE_API_KEY } = import.meta.env;
 const Home = (): React.ReactElement => {
   const [pagination, setPagination] = useState<string>("10");
   const [search, setSearch] = useState<string>("");
+  const deferredQuery = useDeferredValue(search);
+
+  const areDifferentValues: boolean = search !== deferredQuery;
 
   const url: string = `${VITE_BASE_URL}${VITE_API_SEARCH}}`
     .replace("{key}", VITE_API_KEY)
-    .replace("{search}", search)
+    .replace("{search}", deferredQuery)
     .replace("{pagination}", pagination);
 
   const { data, loading } = useFetch(url);
@@ -74,11 +77,12 @@ const Home = (): React.ReactElement => {
         <Pagination handleChange={debouncedPagination} />
       </div>
       <div className="container">
-        {/* <svg>
-            <circle cx="50" cy="50" r="40" stroke="red" fill="yellow" />
-          </svg> */}
-        {loading ? <Spinner singleColor={PURPLE} /> : <></>}
-        {hasData ? <MemoizedList data={latestData} /> : <></>}
+        {loading ? <Spinner singleColor={PURPLE} size={50} /> : <></>}
+        {hasData ? (
+          <MemoizedList isStale={areDifferentValues} data={latestData} />
+        ) : (
+          <></>
+        )}
         {isShownNoFoundMessage ? (
           <Message message={`No gifs found for ${search}`} />
         ) : (

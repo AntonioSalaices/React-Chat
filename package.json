@@ -1,8 +1,24 @@
 {
   "name": "side-project",
   "private": true,
-  "version": "0.0.0",
+  "description": "this is a simple project to practice",
+  "version": "1.1.0",
   "type": "module",
+  "contributors": [
+    {
+      "name": "Antonio",
+      "email": "antonio.salaicesm@gmail.com"
+    }
+  ],
+  "cpu": [
+    "x86",
+    "x64"
+  ],
+  "keywords": [
+    "practice",
+    "i18n",
+    "improvements"
+  ],
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 5174",
     "test": "jest",
@@ -53,7 +69,8 @@
     "prettier": "^2.8.8",
     "ts-jest": "^29.1.0",
     "typescript": "^5.0.2",
-    "vite": "^4.3.2"
+    "vite": "^4.3.2",
+    "web-vitals": "^3.3.2"
   },
   "husky": {
     "hooks": {
