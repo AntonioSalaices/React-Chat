@@ -5,6 +5,8 @@
 
 import { GifData } from "ApiData";
 
+type GenericFunction<T> = (arg: T) => void;
+
 const Formatter = {
   /**
    * @function getFormatedData
@@ -23,13 +25,13 @@ const Formatter = {
    * @param {Function} callback
    * @param {number} timer
    */
-  debounce(callback: Function, await: number) {
+  debounce(callback: GenericFunction<any>, time: number) {
     let timer;
     clearTimeout(timer);
     return (args) => {
       timer = setTimeout(() => {
-        callback(...args);
-      }, await);
+        callback(args);
+      }, time);
     };
   },
 };
