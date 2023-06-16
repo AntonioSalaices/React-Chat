@@ -1,5 +1,5 @@
 import React, { useDeferredValue, useEffect, useMemo, useState } from "react";
-import { debounce, throttle } from "lodash";
+import { debounce } from "lodash";
 
 import Message from "@Components/basics/Message";
 import Spinner from "@Components/basics/Spinner";
@@ -10,12 +10,15 @@ import { PURPLE } from "@Utils/colors";
 import Formatter from "@Utils/formatter";
 
 import useFetch from "@Hooks/useFetch/useFetch";
+import useThrottle from "@Hooks/useThrottle/useThrottle";
+import { Events } from "@Constans/eventConstants";
 
-const { getFormatedData } = Formatter;
+const { getFormatedData, sizeToRange } = Formatter;
 
 const { VITE_BASE_URL, VITE_API_SEARCH, VITE_API_KEY } = import.meta.env;
 
 const Home = (): React.ReactElement => {
+  const [range, setRange] = useState(sizeToRange(window.innerWidth));
   const [pagination, setPagination] = useState<string>("10");
   const [search, setSearch] = useState<string>("");
   const deferredQuery = useDeferredValue(search);
@@ -70,6 +73,22 @@ const Home = (): React.ReactElement => {
     };
   });
 
+  const handleWindowResize = useThrottle(
+    () => {
+      setRange(sizeToRange(window.innerWidth));
+    },
+    100,
+    []
+  );
+
+  useEffect(() => {
+    window.addEventListener(Events.RESIZE, handleWindowResize);
+
+    return () => {
+      window.removeEventListener(Events.RESIZE, handleWindowResize);
+    };
+  }, []);
+
   return (
     <>
       <div className="main">
@@ -77,6 +96,7 @@ const Home = (): React.ReactElement => {
         <Pagination handleChange={debouncedPagination} />
       </div>
       <div className="container">
+        <p>{range}</p>
         {loading ? <Spinner singleColor={PURPLE} size={50} /> : <></>}
         {hasData ? (
           <MemoizedList isStale={areDifferentValues} data={latestData} />

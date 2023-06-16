@@ -34,6 +34,19 @@ const Formatter = {
       }, time);
     };
   },
+  /**
+   * @function sizeToRange
+   * A function to get the size by range
+   * @param {number} size
+   */
+  sizeToRange(size: number) {
+    if (size < 600) {
+      return "small";
+    } else if (size > 1200) {
+      return "large";
+    }
+    return "medium";
+  },
 };
 
 export default Formatter;
