@@ -91,7 +91,7 @@ const Home = (): React.ReactElement => {
 
   return (
     <>
-      <div className="main">
+      <div className="container">
         <Search handleChange={debouncedSearch} />
         <Pagination handleChange={debouncedPagination} />
       </div>

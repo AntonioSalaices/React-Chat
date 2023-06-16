@@ -1,6 +1,5 @@
 import React, {
   BaseSyntheticEvent,
-  Profiler,
   useEffect,
   useState,
   lazy,
@@ -47,29 +46,12 @@ const App = (): React.ReactElement => {
     };
   }, []);
 
-  function onRender(
-    id,
-    phase,
-    actualDuration,
-    baseDuration,
-    startTime,
-    commitTime
-  ) {
-    // console.log('DATA', id, phase, actualDuration, baseDuration, startTime, commitTime)
-  }
-
   return (
     <ThemeProvider>
       <ErrorBoundary>
         <Suspense fallback={<Spinner singleColor={PURPLE} />}>
           <Layout>
-            {isLoaded ? (
-              <Profiler id="Navigation" onRender={onRender}>
-                <HomePage />
-              </Profiler>
-            ) : (
-              <Spinner singleColor={PURPLE} />
-            )}
+            {isLoaded ? <HomePage /> : <Spinner singleColor={PURPLE} />}
           </Layout>
         </Suspense>
       </ErrorBoundary>

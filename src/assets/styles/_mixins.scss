@@ -32,16 +32,6 @@
   margin-bottom: 10px;
 }
 
-@mixin main_style {
-  width: 50%;
-  display: flex;
-  margin: auto;
-  justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  display: flex;
-}
-
 // Main mixins
 @mixin container_style {
   width: 80%;
