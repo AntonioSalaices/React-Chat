@@ -1,6 +1,4 @@
 import React, { useDeferredValue, useEffect, useMemo, useState } from "react";
-import { debounce } from "lodash";
-
 import Message from "@Components/basics/Message";
 import Spinner from "@Components/basics/Spinner";
 import Search from "@Components/composed/Search";
@@ -12,6 +10,7 @@ import Formatter from "@Utils/formatter";
 import useFetch from "@Hooks/useFetch/useFetch";
 import useThrottle from "@Hooks/useThrottle/useThrottle";
 import { Events } from "@Constans/eventConstants";
+import useDebounce from "@Hooks/useDebounce/useDebounce";
 
 const { getFormatedData, sizeToRange } = Formatter;
 
@@ -58,20 +57,21 @@ const Home = (): React.ReactElement => {
     setPagination(value);
   };
 
-  const debouncedSearch = useMemo(() => {
-    return debounce(handleChange, 300);
-  }, []);
+  const debouncedSearch = useDebounce(
+    (e) => {
+      handleChange(e);
+    },
+    300,
+    []
+  );
 
-  const debouncedPagination = useMemo(() => {
-    return debounce(handlePagination, 300);
-  }, []);
-
-  useEffect(() => {
-    return () => {
-      debouncedSearch.cancel();
-      debouncedPagination.cancel();
-    };
-  });
+  const debouncedPagination = useDebounce(
+    (e) => {
+      handlePagination(e);
+    },
+    300,
+    []
+  );
 
   const handleWindowResize = useThrottle(
     () => {
@@ -80,6 +80,13 @@ const Home = (): React.ReactElement => {
     100,
     []
   );
+
+  useEffect(() => {
+    return () => {
+      debouncedSearch.cancel();
+      debouncedPagination.cancel();
+    };
+  });
 
   useEffect(() => {
     window.addEventListener(Events.RESIZE, handleWindowResize);
