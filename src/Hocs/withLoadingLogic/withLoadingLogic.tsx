@@ -5,10 +5,10 @@ import { PURPLE } from "@Utils/colors";
 import Message from "@Components/basics/Message";
 import { GenericObject } from "@Utils/types";
 
-export default function withLoadingLogic(
-  WrappedComponent: React.ComponentType<GenericObject>
+export default function withLoadingLogic<T extends CommonProps<GenericObject>>(
+  WrappedComponent: React.ComponentType<T>
 ) {
-  return (props: CommonProps<Record<string, any>>) => {
+  return (props: T) => {
     if (props.isLoading) return <Spinner singleColor={PURPLE} size={50} />;
     if (props.isShownNoFoundMessage) return <Message message="No gifs found" />;
 

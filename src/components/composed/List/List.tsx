@@ -4,6 +4,8 @@ import Card from "@Components/basics/Card/Card";
 import Container from "@Components/basics/Container/Container";
 import { ListProps } from "./List.props";
 import withLoadingLogic from "@Hocs/withLoadingLogic/withLoadingLogic";
+import { GenericObject } from "@Utils/types";
+import { CommonProps } from "@Hocs/withLoadingLogic/withLoadingLogic.props";
 
 const List: React.FC<ListProps> = ({ data }) => {
   return (
@@ -15,7 +17,7 @@ const List: React.FC<ListProps> = ({ data }) => {
   );
 };
 
-const ImprovementList = withLoadingLogic(List);
+const ImprovementList = withLoadingLogic<CommonProps<GenericObject>>(List);
 
 const MemoizedList = memo(ImprovementList, (prevProps, nextProps) => {
   return isEqual(prevProps, nextProps);
