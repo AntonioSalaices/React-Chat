@@ -4,9 +4,9 @@ import Card from "@Components/basics/Card/Card";
 import Container from "@Components/basics/Container/Container";
 import { ListProps } from "./List.props";
 
-const List: React.FC<ListProps> = ({ data, isDimmer }) => {
+const List: React.FC<ListProps> = ({ data, isStale }) => {
   return (
-    <Container isDimmer={isDimmer}>
+    <Container isStale={isStale}>
       {data?.map(({ id, ...rest }) => (
         <Card key={id} {...rest} />
       ))}
