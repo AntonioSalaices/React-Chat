@@ -44,7 +44,7 @@ const Formatter = {
     let timeout;
 
     return (...args) => {
-      if (timeout !== undefined) return;
+      if (timeout) return;
 
       timeout = setTimeout(() => {
         timeout = undefined;

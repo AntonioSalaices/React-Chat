@@ -1,5 +1,7 @@
-export interface CommonProps<T> {
+export interface CommonProps {
   isLoading: boolean;
-  data: Array<T>;
+  data: Array<any>;
   isShownNoFoundMessage?: boolean;
 }
+
+export type CommonPropsValues = string | boolean;
