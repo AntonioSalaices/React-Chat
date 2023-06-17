@@ -26,3 +26,4 @@ export type SpanProps = ComponentProps<HTMLElements.SPAN>;
 export type CardProps = ComponentProps<typeof Card>;
 
 export type OnChangeType = ChangeEvent<HTMLInputElement>;
+export type GenericObject = Record<string, any>;

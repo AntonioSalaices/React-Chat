@@ -6,7 +6,8 @@
       "@Hooks/*": ["hooks/*"],
       "@Utils/*": ["utils/*"],
       "@Constans/*": ["constants/*"],
-      "@Translate/*": ["i18n/*"]
+      "@Translate/*": ["i18n/*"],
+      "@Hocs/*": ["Hocs/*"]
     },
     "target": "es5",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],

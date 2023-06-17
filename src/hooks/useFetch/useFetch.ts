@@ -4,7 +4,7 @@ import axios from "axios";
 interface State {
   data?: any;
   error: Error | string | null;
-  loading: boolean;
+  isLoading: boolean;
 }
 
 /**
@@ -15,14 +15,14 @@ interface State {
  */
 const useFetch = (url: string): State => {
   const [data, setData] = useState<null | any>(null);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<null | string>(null);
 
   useEffect(() => {
     let isCompleted = false;
 
     const cancelToken = axios.CancelToken.source();
-    setLoading(true);
+    setIsLoading(true);
 
     const apiRequest = async () => {
       try {
@@ -31,7 +31,7 @@ const useFetch = (url: string): State => {
       } catch (error) {
         setError("An error ocurred");
       } finally {
-        setLoading(false);
+        setIsLoading(false);
       }
     };
     apiRequest();
@@ -44,7 +44,7 @@ const useFetch = (url: string): State => {
 
   return {
     data,
-    loading,
+    isLoading,
     error,
   };
 };
