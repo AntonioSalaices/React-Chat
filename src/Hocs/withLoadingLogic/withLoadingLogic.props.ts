@@ -3,5 +3,3 @@ export interface CommonProps {
   data: Array<any>;
   isShownNoFoundMessage?: boolean;
 }
-
-export type CommonPropsValues = string | boolean;

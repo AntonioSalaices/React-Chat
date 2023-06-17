@@ -6,6 +6,9 @@
     "error": {
       "messageTitle": "Algo salió mal...",
       "genericMessage": "Error"
+    },
+    "noFound": {
+      "message": "No se encontraron gifs"
     }
   }
 }
