@@ -69,3 +69,13 @@ const Formatter = {
 };
 
 export default Formatter;
+
+//We can reuse this function for another inputs [CURRYING]
+// const handleCurried = (fieldName: string) => {
+//   return ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
+//     setValues((prev: FormState) => ({
+//       ...prev,
+//       [fieldName]: value,
+//     }));
+//   };
+// };

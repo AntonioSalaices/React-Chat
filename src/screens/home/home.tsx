@@ -30,16 +30,6 @@ const Home = (): React.ReactElement => {
   const hasData: boolean = latestData?.length > 0;
   const isShownNoFoundMessage: boolean = !hasData && Boolean(search);
 
-  //We can reuse this function for another inputs [CURRYING]
-  // const handleCurried = (fieldName: string) => {
-  //   return ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
-  //     setValues((prev: FormState) => ({
-  //       ...prev,
-  //       [fieldName]: value,
-  //     }));
-  //   };
-  // };
-
   const debouncedSearch = useDebounce(
     ({ target: { value } }: OnChangeType) => {
       setSearch(value);
