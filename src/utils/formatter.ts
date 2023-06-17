@@ -35,6 +35,25 @@ const Formatter = {
     };
   },
   /**
+   * @function throttle
+   * A function to implement throttle technique
+   * @param {Function} callback
+   * @param {number} timer
+   */
+  throttle(callback: GenericFunction<any>, delay: number) {
+    let timeout;
+
+    return (...args) => {
+      if (timeout !== undefined) return;
+
+      timeout = setTimeout(() => {
+        timeout = undefined;
+      }, delay);
+
+      return callback(...args);
+    };
+  },
+  /**
    * @function sizeToRange
    * A function to get the size by range
    * @param {number} size
