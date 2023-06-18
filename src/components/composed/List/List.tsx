@@ -1,13 +1,12 @@
 import React, { memo } from "react";
 import { isEqual } from "lodash";
 import Card from "@Components/basics/Card/Card";
-import Container from "@Components/basics/Container/Container";
 import { ListProps } from "./List.props";
 import withLoadingLogic from "@Hocs/withLoadingLogic/withLoadingLogic";
 
 const List: React.FC<ListProps> = ({ data }) => {
   return (
-    <div className="row">
+    <div className="row gap-2 justify-center">
       {data?.map(({ id, ...rest }) => (
         <Card key={id} {...rest} />
       ))}
@@ -15,9 +14,9 @@ const List: React.FC<ListProps> = ({ data }) => {
   );
 };
 
-const ImprovementList = withLoadingLogic(List);
+const ListWithLoading = withLoadingLogic(List);
 
-const MemoizedList = memo(ImprovementList, (prevProps, nextProps) => {
+const MemoizedList = memo(ListWithLoading, (prevProps, nextProps) => {
   return isEqual(prevProps, nextProps);
 });
 

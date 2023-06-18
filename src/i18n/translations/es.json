@@ -9,6 +9,9 @@
     },
     "noFound": {
       "message": "No se encontraron gifs"
+    },
+    "footer": {
+      "message": "Copyright 2023 Antonio Salaices"
     }
   }
 }

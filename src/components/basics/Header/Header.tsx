@@ -6,9 +6,16 @@ const Header: React.FC<HeaderProps> = ({ onChange, theme }) => {
   const selectedTheme: Theme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
 
   return (
-    <nav className="header">
-      <h1>{translate("header.title")}</h1>
-      <button onClick={() => onChange(selectedTheme)}>{theme}</button>
+    <nav className="navbar-primary text-white mb-4">
+      <div className="container">
+        <h2 className="site-title">{translate("header.title")}</h2>
+        <button
+          className="btn-light text-dark"
+          onClick={() => onChange(selectedTheme)}
+        >
+          {theme}
+        </button>
+      </div>
     </nav>
   );
 };

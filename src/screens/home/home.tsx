@@ -72,8 +72,10 @@ const Home = (): React.ReactElement => {
 
   return (
     <Container>
-      <Search handleChange={debouncedSearch} />
-      <Pagination handleChange={debouncedPagination} />
+      <div className="row gap-2 justify-center">
+        <Search handleChange={debouncedSearch} />
+        <Pagination handleChange={debouncedPagination} />
+      </div>
       <p>{range}</p>
       <MemoizedList
         isShownNoFoundMessage={isShownNoFoundMessage}
