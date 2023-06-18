@@ -9,6 +9,7 @@ import useThrottle from "@Hooks/useThrottle/useThrottle";
 import { Events } from "@Constans/eventConstants";
 import useDebounce from "@Hooks/useDebounce/useDebounce";
 import { OnChangeType } from "@Utils/types";
+import Container from "@Components/basics/Container/Container";
 
 const { VITE_BASE_URL, VITE_API_SEARCH, VITE_API_KEY } = import.meta.env;
 
@@ -70,20 +71,16 @@ const Home = (): React.ReactElement => {
   }, []);
 
   return (
-    <>
-      <div className="container">
-        <Search handleChange={debouncedSearch} />
-        <Pagination handleChange={debouncedPagination} />
-      </div>
-      <div className="container">
-        <p>{range}</p>
-        <MemoizedList
-          isShownNoFoundMessage={isShownNoFoundMessage}
-          isLoading={isLoading}
-          data={latestData}
-        />
-      </div>
-    </>
+    <Container>
+      <Search handleChange={debouncedSearch} />
+      <Pagination handleChange={debouncedPagination} />
+      <p>{range}</p>
+      <MemoizedList
+        isShownNoFoundMessage={isShownNoFoundMessage}
+        isLoading={isLoading}
+        data={latestData}
+      />
+    </Container>
   );
 };
 

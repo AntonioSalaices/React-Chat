@@ -1,11 +1,11 @@
 // variables & functions
-@import "fonts", "responsive";
+@import "fonts", "responsive", "functions";
 
 // utilities (margin, padding opacity)
 @import "utilities";
 
 // base & layout
-@import "base", "mixins";
+@import "base", "mixins", "grid";
 
 //colors
 @import "palette";

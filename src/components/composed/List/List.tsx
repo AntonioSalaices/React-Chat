@@ -7,11 +7,11 @@ import withLoadingLogic from "@Hocs/withLoadingLogic/withLoadingLogic";
 
 const List: React.FC<ListProps> = ({ data }) => {
   return (
-    <Container>
+    <div className="row">
       {data?.map(({ id, ...rest }) => (
         <Card key={id} {...rest} />
       ))}
-    </Container>
+    </div>
   );
 };
 

@@ -8,18 +8,7 @@
 .header {
   height: 50px;
 }
-.container {
-  min-height: calc(80vh - 70px);
-  @include m-screen {
-    min-height: calc(40vh - 70px);
-  }
-  @include s-screen {
-    min-height: calc(40vh - 70px);
-  }
-  @include xs-screen {
-    min-height: calc(30vh - 70px);
-  }
-}
+
 .footer {
   height: 50px;
 }
