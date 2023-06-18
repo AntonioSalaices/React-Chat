@@ -27,3 +27,11 @@ export type CardProps = ComponentProps<typeof Card>;
 
 export type OnChangeType = ChangeEvent<HTMLInputElement>;
 export type GenericObject = Record<string, any>;
+
+// interface Person {
+//   name: string;
+//   age: number;
+// }
+
+// //This is going to extract every key in person
+// type PersonKeys = keyof Person;
