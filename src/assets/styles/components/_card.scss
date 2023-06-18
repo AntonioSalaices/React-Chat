@@ -1,0 +1,16 @@
+@use "sass:math";
+
+.card {
+  display: block;
+  padding: $base-padding;
+  border: $base-border-thickness solid #ddd;
+  box-shadow: $base-box-shadow;
+  border-radius: math.div($base-border-radius, 4);
+  background-color: map-get($colors, "light");
+  img {
+    width: 100%;
+  }
+}
+
+// @debug "Im just creating my firt sass component";
+// @debug math.div(2,2)
