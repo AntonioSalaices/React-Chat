@@ -1,4 +1,15 @@
-@import "variables", "fonts", "responsive", "palette", "mixins";
+// variables & functions
+@import "fonts", "responsive";
+
+// base & layout
+@import "mixins";
+
+//colors
+@import "variables", "palette";
+
+// components (button, card, navbar)
+
+// utilities (margin, padding opacity)
 
 .header {
   @include header_style;
