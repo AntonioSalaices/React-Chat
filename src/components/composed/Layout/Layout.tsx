@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { ThemeContext } from "context/ThemeContext";
 import { Theme } from "@Constans/Theme";
 import Footer from "@Components/basics/Footer";
+import Section from "../Section";
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -17,6 +18,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className={theme}>
       <Header theme={theme} onChange={handleOnChange} />
       {children}
+      <Section />
       <Footer />
     </div>
   );
