@@ -1,9 +1,9 @@
 import pkg from "gulp";
-const { src, dest, watch, series } = pkg;
 import dartSass from "sass";
 import gulpSass from "gulp-sass";
 import gulpPurgeCSS from "gulp-purgecss";
 
+const { src, dest, watch, series } = pkg;
 const sass = gulpSass(dartSass);
 
 function buildStyles() {
@@ -14,7 +14,7 @@ function buildStyles() {
 }
 
 function watchTask() {
-  watch(["./src/assets/styles/style.scss"], buildStyles);
+  watch(["./src/assets/styles/style.scss", "./src/**/*.tsx"], buildStyles);
 }
 
 export default series(buildStyles, watchTask);
