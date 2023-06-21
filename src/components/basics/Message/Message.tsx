@@ -6,6 +6,10 @@ const Message: React.FC<MessageProps> = ({ tx, txOptions, text = "" }) => {
   const i18Text = tx && translate(tx, txOptions);
   const content = i18Text || text;
 
-  return <div>{React.createElement("p", null, content)}</div>;
+  return (
+    <div>
+      <h1 className="text-primary font-bold font-size-lg">{content}</h1>
+    </div>
+  );
 };
 export default Message;

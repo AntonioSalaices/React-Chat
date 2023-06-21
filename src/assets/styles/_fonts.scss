@@ -15,3 +15,25 @@ $font-size-xxl: $font-size-base * 3;
 // BOX SHADOW
 $text-shadow: 0 1px 0 rgba(0, 0, 0, 0.05) !default;
 $base-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+
+//FONT LIST WEIGHT
+$fonts-weight: normal, bold, italic;
+
+@each $val in $fonts-weight {
+  .font-#{$val} {
+    font-weight: $val;
+  }
+}
+
+$font-sizes: (
+  "sm": $font-size-sm,
+  "lg": $font-size-lg,
+  "xl": $font-size-xl,
+  "xxl": $font-size-xxl,
+);
+
+@each $key, $val in $font-sizes {
+  .font-size-#{$key} {
+    font-size: $val;
+  }
+}
