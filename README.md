@@ -1,4 +1,4 @@
-# React Side Project
+# React Chat
 
 ## Getting started
 
@@ -10,7 +10,7 @@
 
 ### Quick Start
 
-    git clone: https://github.com/AntonioSalaices/React-Side-Project.git
+    git clone: https://github.com/AntonioSalaices/React-Chat.git
 
 ### `npm install`
 
