@@ -7,4 +7,8 @@ export interface CardProps {
    *  URL to display image
    */
   url?: string;
+  /**
+   *  Description to use it in alt attribute
+   */
+  description?: string;
 }

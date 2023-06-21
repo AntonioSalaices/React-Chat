@@ -17,7 +17,8 @@ const Formatter = {
   getFormatedData(data: GifData[] = []): Partial<GifData>[] {
     return data?.map((item) => ({
       id: item.id,
-      url: item.images.fixed_height.url,
+      url: item?.images?.fixed_height?.url,
+      description: item?.user?.description,
     }));
   },
   /**

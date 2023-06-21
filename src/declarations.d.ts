@@ -18,33 +18,49 @@ declare module 'ApiData' {
     is_sticker: number;
     import_datetime: string;
     trending_datetime: string;
-    images: {
-      original: GifImage;
-      downsized: GifImage;
-      downsized_large: GifImage;
-      downsized_medium: GifImage;
-      downsized_small: {
-        height: string;
-        width: string;
-        mp4_size: string;
-        mp4: string;
-      };
-      downsized_still: GifImage;
-      fixed_height: GifImage;
-      fixed_height_downsampled: GifImage;
-      fixed_height_small: GifImage;
-      fixed_height_small_still: GifImage;
-      fixed_height_still: GifImage;
-      fixed_width: GifImage;
-      fixed_width_downsampled: GifImage;
-      fixed_width_small: GifImage;
-      fixed_width_small_still: GifImage;
-      fixed_width_still: GifImage;
-      looping: {
-        mp4_size: string;
-        mp4: string;
-      };
+    images: Images;
+    user: User;
+  }
+
+  interface Images {
+    original: GifImage;
+    downsized: GifImage;
+    downsized_large: GifImage;
+    downsized_medium: GifImage;
+    downsized_small: {
+      height: string;
+      width: string;
+      mp4_size: string;
+      mp4: string;
     };
+    downsized_still: GifImage;
+    fixed_height: GifImage;
+    fixed_height_downsampled: GifImage;
+    fixed_height_small: GifImage;
+    fixed_height_small_still: GifImage;
+    fixed_height_still: GifImage;
+    fixed_width: GifImage;
+    fixed_width_downsampled: GifImage;
+    fixed_width_small: GifImage;
+    fixed_width_small_still: GifImage;
+    fixed_width_still: GifImage;
+    looping: {
+      mp4_size: string;
+      mp4: string;
+    };
+  }
+
+  interface User {
+    avatar_url: string;
+    banner_image: string;
+    banner_url: string;
+    profile_url: string;
+    username: string;
+    display_name: string;
+    description: string;
+    instagram_url: string;
+    website_url: string;
+    is_verified: boolean;
   }
 
   interface GifImage {

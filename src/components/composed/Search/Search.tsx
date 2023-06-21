@@ -10,7 +10,7 @@ const Search: React.FC<SearchProps> = ({ search, handleChange, txOptions, text, 
   const subContent = i18SubText || subText;
 
   return (
-    <div className="col-12-xs col-12-sm col-3-md col-3-xl">
+    <div className="col-11-xs col-11-sm col-5-md col-5-xl">
       <Input
         icon={<FaSearch />}
         value={search}

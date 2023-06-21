@@ -14,11 +14,9 @@
       "message": "Copyright 2023 Antonio Salaices"
     },
     "inputs": {
-      "search": "Search",
-      "pagination": "Pagination"
+      "search": "Search"
     },
     "subPlaceholder": {
-      "pagination": "eg: 1,2,3...",
       "search": "eg: google"
     }
   }

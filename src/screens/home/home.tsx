@@ -15,14 +15,12 @@ const { VITE_BASE_URL, VITE_API_SEARCH, VITE_API_KEY } = import.meta.env;
 const { getFormatedData } = Formatter;
 
 const Home = (): React.ReactElement => {
-  const [pagination, setPagination] = useState<string>('10');
   const [search, setSearch] = useState<string>('');
   const deferredQuery = useDeferredValue(search);
 
   const url: string = `${VITE_BASE_URL}${VITE_API_SEARCH}}`
     .replace('{key}', VITE_API_KEY)
-    .replace('{search}', deferredQuery)
-    .replace('{pagination}', pagination);
+    .replace('{search}', deferredQuery);
 
   const { data, isLoading } = useFetch(url);
   const latestData = useMemo(() => getFormatedData(data), [data]);
@@ -37,24 +35,15 @@ const Home = (): React.ReactElement => {
     []
   );
 
-  const debouncedPagination = useDebounce(
-    ({ target: { value } }: OnChangeType) => {
-      setPagination(value);
-    },
-    300,
-    []
-  );
-
   useEffect(() => {
     return () => {
       debouncedSearch.cancel();
-      debouncedPagination.cancel();
     };
   });
 
   return (
     <Container>
-      <Form handleSearch={debouncedSearch} handlePagination={debouncedPagination} />
+      <Form handleSearch={debouncedSearch} />
       <MemoizedList isShownNoFoundMessage={isShownNoFoundMessage} isLoading={isLoading} data={latestData} />
     </Container>
   );
