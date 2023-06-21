@@ -9,14 +9,14 @@ const InputField: React.FC<InputFieldProps> = ({
   onChange,
   ref,
 }) => (
-  <div className="input-group">
+  <>
     {symbol && (
       <div className="input-icon">
         <span>{symbol}</span>
       </div>
     )}
     <input
-      className="form-control"
+      className="input-primary"
       ref={ref}
       type={type}
       value={value}
@@ -24,7 +24,7 @@ const InputField: React.FC<InputFieldProps> = ({
       placeholder={placeholder}
       onChange={onChange}
     />
-  </div>
+  </>
 );
 
 export default InputField;

@@ -59,12 +59,16 @@ const Formatter = {
    * @param {number} size
    */
   sizeToRange(size: number) {
-    if (size < 600) {
+    if (size < 480) {
+      return "xs";
+    } else if (size > 480 && size < 720) {
       return "small";
-    } else if (size > 1200) {
+    } else if (size > 720 && size < 960) {
+      return "medium";
+    } else if (size > 960 && size < 1200) {
       return "large";
     }
-    return "medium";
+    return "Extra large";
   },
 };
 

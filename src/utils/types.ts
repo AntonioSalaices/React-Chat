@@ -28,6 +28,8 @@ export type CardProps = ComponentProps<typeof Card>;
 export type OnChangeType = ChangeEvent<HTMLInputElement>;
 export type GenericObject = Record<string, any>;
 
+export type Func = (...args: any[]) => any;
+
 // interface Person {
 //   name: string;
 //   age: number;

@@ -1,0 +1,25 @@
+@use "sass:math";
+
+@each $key, $var in $colors {
+  .input-#{$key} {
+    text-align: center;
+    display: block;
+    padding: $base-padding;
+    border-radius: $base-border-radius * 4;
+    border: $base-border-thickness solid $dark;
+    box-shadow: $base-box-shadow;
+    width: 90%;
+    &:hover {
+      border: $base-border-thickness * 2 solid $var;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+}
+
+.input-icon {
+  position: absolute;
+  padding: $base-padding;
+}

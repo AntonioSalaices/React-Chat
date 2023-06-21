@@ -1,3 +1,6 @@
+import { OnChangeType } from "@Utils/types";
+import { DebouncedFunc } from "lodash";
+
 export interface InputFieldProps {
   value?: string | number;
   symbol?: string | JSX.Element;
@@ -5,5 +8,7 @@ export interface InputFieldProps {
   placeholder?: string;
   type: "text" | "number" | "date";
   ref?: React.RefObject<HTMLInputElement>;
-  onChange?: void;
+  onChange?: (
+    aux: string
+  ) => void | DebouncedFunc<({ target: { value } }: OnChangeType) => void>;
 }

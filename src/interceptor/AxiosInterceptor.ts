@@ -1,6 +1,9 @@
 import { Security } from "@Constans/securityConstants";
-import { DeepPartial } from "@Utils/types";
-import axios, { AxiosError, InternalAxiosRequestConfig } from "axios";
+import axios, {
+  AxiosError,
+  AxiosRequestHeaders,
+  InternalAxiosRequestConfig,
+} from "axios";
 import { useEffect } from "react";
 
 export interface Headers {
@@ -18,9 +21,9 @@ interface AxiosInterceptorProps {
 const AxiosInterceptor = ({ children }: AxiosInterceptorProps) => {
   useEffect(() => {
     const interceptor = axios.interceptors.request.use(
-      function (config: DeepPartial<InternalAxiosRequestConfig>) {
+      function (config: InternalAxiosRequestConfig) {
         const token: string | null = localStorage.getItem(Security.TOKEN);
-        config.headers = { ...getHeaders(token) };
+        config.headers = { ...getHeaders(token) } as AxiosRequestHeaders;
 
         return config;
       },

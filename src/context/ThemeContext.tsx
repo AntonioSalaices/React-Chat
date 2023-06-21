@@ -9,11 +9,11 @@ export const ThemeContext = createContext<any>({
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   // We can use local storage to save theme choice
-  const [theme, setTheme] = useState<Theme | string | undefined>(Theme.LIGHT);
+  const [theme, setTheme] = useState<string>(Theme.LIGHT);
 
   useEffect(() => {
     const getThemeUserPreferences = () => {
-      const theme: string | null = localStorage.getItem(Theme.THEME);
+      const theme = localStorage.getItem(Theme.THEME);
       theme && setTheme(theme);
     };
     getThemeUserPreferences();

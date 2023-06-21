@@ -1,15 +1,16 @@
 import React, { useDeferredValue, useEffect, useMemo, useState } from "react";
-import Search from "@Components/composed/Search";
-import Pagination from "@Components/composed/Pagination";
+
 import MemoizedList from "@Components/composed/List";
-import Formatter from "@Utils/formatter";
+import Container from "@Components/basics/Container/Container";
+import Form from "./components/Form/Form";
 
 import useFetch from "@Hooks/useFetch/useFetch";
 import useThrottle from "@Hooks/useThrottle/useThrottle";
-import { Events } from "@Constans/eventConstants";
 import useDebounce from "@Hooks/useDebounce/useDebounce";
+
+import { Events } from "@Constans/eventConstants";
 import { OnChangeType } from "@Utils/types";
-import Container from "@Components/basics/Container/Container";
+import Formatter from "@Utils/formatter";
 
 const { VITE_BASE_URL, VITE_API_SEARCH, VITE_API_KEY } = import.meta.env;
 
@@ -72,10 +73,10 @@ const Home = (): React.ReactElement => {
 
   return (
     <Container>
-      <div className="row gap-2 justify-center">
-        <Search handleChange={debouncedSearch} />
-        <Pagination handleChange={debouncedPagination} />
-      </div>
+      <Form
+        handleSearch={debouncedSearch}
+        handlePagination={debouncedPagination}
+      />
       <p>{range}</p>
       <MemoizedList
         isShownNoFoundMessage={isShownNoFoundMessage}
