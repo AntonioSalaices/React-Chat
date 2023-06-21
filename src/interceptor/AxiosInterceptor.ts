@@ -11,6 +11,9 @@ const getHeaders = (token: string | null): Headers => ({
 });
 
 interface AxiosInterceptorProps {
+  /**
+   * Children node
+   */
   children: JSX.Element;
 }
 
