@@ -12,6 +12,9 @@
     &:hover {
       border: $base-border-thickness * 2 solid $var;
     }
+    &:focus {
+      border: $base-border-thickness * 2 solid $var;
+    }
 
     input {
       width: 100%;

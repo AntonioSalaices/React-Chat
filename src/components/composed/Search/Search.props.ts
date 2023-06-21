@@ -24,4 +24,12 @@ export interface SearchProps {
    * Text which is looked up via i18n
    */
   tx?: TxKeyPath;
+  /**
+   * sub text which is looked up via i18n
+   */
+  subTx?: TxKeyPath;
+  /**
+   * The sub text to display if not using `tx` or nested components
+   */
+  subText?: string;
 }

@@ -9,17 +9,22 @@ const Pagination: React.FC<PaginationProps> = ({
   txOptions,
   text,
   tx,
+  subTx,
+  subText,
 }) => {
   const i18Text = tx && translate(tx, txOptions);
   const content = i18Text || text;
+  const i18SubText = subTx && translate(subTx, txOptions);
+  const subContent = i18SubText || subText;
 
   return (
-    <div className="col-12-xs col-12-sm col-6-md col-3-xl">
+    <div className="col-12-xs col-12-sm col-3-md col-3-xl">
       <Input
         icon={<FaPager />}
         value={pagination}
         type="number"
         placeholder={content}
+        subText={subContent}
         onChange={handleChange}
       />
     </div>

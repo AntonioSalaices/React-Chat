@@ -8,4 +8,5 @@ export interface InputProps {
   type: "text" | "number" | "date";
   ref?: React.RefObject<HTMLInputElement>;
   onChange?: (aux: OnChangeType) => void;
+  subText?: string;
 }

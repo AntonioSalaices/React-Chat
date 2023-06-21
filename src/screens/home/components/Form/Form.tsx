@@ -4,9 +4,17 @@ import { FormProps } from "./Form.props";
 
 const Form: React.FC<FormProps> = ({ handleSearch, handlePagination }) => {
   return (
-    <div className="row gap-2 justify-center">
-      <Search tx="inputs.search" handleChange={handleSearch} />
-      <Pagination tx="inputs.pagination" handleChange={handlePagination} />
+    <div className="row gap-3 justify-center">
+      <Search
+        subTx="subPlaceholder.search"
+        tx="inputs.search"
+        handleChange={handleSearch}
+      />
+      <Pagination
+        subTx="subPlaceholder.pagination"
+        tx="inputs.pagination"
+        handleChange={handlePagination}
+      />
     </div>
   );
 };

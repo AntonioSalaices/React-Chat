@@ -30,7 +30,11 @@ export default class ErrorBoundary extends Component<
 
   render(): ReactNode {
     return this.state.hasError ? (
-      <ErrorPage error={this.state.error} />
+      <ErrorPage
+        tx="error.messageTitle"
+        subTx="error.genericMessage"
+        error={this.state.error}
+      />
     ) : (
       this.props.children
     );

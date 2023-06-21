@@ -1,11 +1,23 @@
 import { ErrorPageProps } from "./ErrorPage.props";
 import { translate } from "@Translate/translate";
 
-const ErrorPage: React.FC<ErrorPageProps> = ({ error }) => {
+const ErrorPage: React.FC<ErrorPageProps> = ({
+  error,
+  tx,
+  txOptions,
+  text,
+  subTx,
+  subText,
+}) => {
+  const i18Text = tx && translate(tx, txOptions);
+  const content = i18Text || text;
+  const i18SubText = subTx && translate(subTx, txOptions);
+  const subContent = i18SubText || subText;
+
   return (
     <div className="container">
-      <h1>{translate("error.messageTitle")}</h1>
-      <span>{error ? error.message : translate("error.genericMessage")}</span>
+      <h1>{content}</h1>
+      <span>{error ? error.message : subContent}</span>
     </div>
   );
 };

@@ -2,7 +2,7 @@ const Section: React.FC = () => {
   return (
     <section id="about" className="bg-primary-light-6 mt-5 pt-4 pb-4">
       <div className="container">
-        <h2 className="mb-2">About React </h2>
+        <h2 className="mb-2">About React</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ipsam
           animi aliquid sequi fuga, nam nesciunt dolore libero dolorem

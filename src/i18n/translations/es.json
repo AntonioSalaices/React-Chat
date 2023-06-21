@@ -16,6 +16,10 @@
     "inputs": {
       "search": "Búsqueda",
       "pagination": "Paginación"
+    },
+    "subPlaceholder": {
+      "pagination": "eg: 1,2,3...",
+      "search": "eg: google"
     }
   }
 }
