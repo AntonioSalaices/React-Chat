@@ -3,6 +3,7 @@
  * @author Antonio Salaices M
  */
 
+import { ScreenSize } from "@Constans/screenConstants";
 import { GifData } from "ApiData";
 
 type GenericFunction<T> = (arg: T) => void;
@@ -58,17 +59,17 @@ const Formatter = {
    * A function to get the size by range
    * @param {number} size
    */
-  sizeToRange(size: number) {
+  sizeToRange(size: number): string {
     if (size < 480) {
-      return "xs";
+      return ScreenSize.XS;
     } else if (size > 480 && size < 720) {
-      return "small";
+      return ScreenSize.SM;
     } else if (size > 720 && size < 960) {
-      return "medium";
+      return ScreenSize.MD;
     } else if (size > 960 && size < 1200) {
-      return "large";
+      return ScreenSize.LG;
     }
-    return "Extra large";
+    return ScreenSize.XL;
   },
 };
 

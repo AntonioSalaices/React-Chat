@@ -9,6 +9,7 @@ $grid-gaps: (
 );
 
 $layout-values: flex-start, flex-end, center, space-between, space-around;
+$align-items-values: stretch, center, start, end;
 
 //base layout classes
 
@@ -40,6 +41,13 @@ $layout-values: flex-start, flex-end, center, space-between, space-around;
 @each $val in $layout-values {
   .justify-#{$val} {
     justify-content: $val;
+  }
+}
+
+//align items classes
+@each $val in $align-items-values {
+  .align-#{$val} {
+    align-items: $val;
   }
 }
 

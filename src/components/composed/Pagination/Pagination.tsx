@@ -16,7 +16,7 @@ const Pagination: React.FC<PaginationProps> = ({
   return (
     <div className="col-12-xs col-12-sm col-6-md col-3-xl">
       <Input
-        symbol={<FaPager />}
+        icon={<FaPager />}
         value={pagination}
         type="number"
         placeholder={content}
