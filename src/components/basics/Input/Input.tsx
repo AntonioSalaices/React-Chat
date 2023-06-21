@@ -1,8 +1,8 @@
-import { InputFieldProps } from "./InputField.props";
+import { InputProps } from "./Input.props";
 
-const InputField: React.FC<InputFieldProps> = ({
+const Input: React.FC<InputProps> = ({
   value,
-  symbol,
+  icon,
   name,
   placeholder,
   type,
@@ -10,9 +10,9 @@ const InputField: React.FC<InputFieldProps> = ({
   ref,
 }) => (
   <>
-    {symbol && (
+    {icon && (
       <div className="input-icon">
-        <span>{symbol}</span>
+        <span>{icon}</span>
       </div>
     )}
     <input
@@ -27,4 +27,4 @@ const InputField: React.FC<InputFieldProps> = ({
   </>
 );
 
-export default InputField;
+export default Input;

@@ -11,9 +11,7 @@ export interface PaginationProps {
   /**
    * Handle fuction to listen every input change with delay
    */
-  handleChange: DebouncedFunc<
-    ({ target: { value } }: OnChangeType) => void
-  > | void;
+  handleChange: DebouncedFunc<({ target: { value } }: OnChangeType) => void>;
   /**
    * Optional options to pass to i18n, Useful for interpolation
    * as well as explicitly setting locale or translation

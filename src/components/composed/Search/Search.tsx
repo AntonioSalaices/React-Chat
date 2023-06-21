@@ -1,4 +1,4 @@
-import InputField from "@Components/basics/InputField/InputField";
+import Input from "@Components/basics/Input";
 import { SearchProps } from "./Search.props";
 import { FaSearch } from "react-icons/fa";
 import { translate } from "@Translate/translate";
@@ -15,7 +15,7 @@ const Search: React.FC<SearchProps> = ({
 
   return (
     <div className="col-12-xs col-12-sm col-6-md col-3-xl">
-      <InputField
+      <Input
         symbol={<FaSearch />}
         value={search}
         type="text"

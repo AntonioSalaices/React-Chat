@@ -1,4 +1,4 @@
-import InputField from "@Components/basics/InputField/InputField";
+import Input from "@Components/basics/Input";
 import { PaginationProps } from "./Pagination.props";
 import { FaPager } from "react-icons/fa";
 import { translate } from "@Translate/translate";
@@ -15,7 +15,7 @@ const Pagination: React.FC<PaginationProps> = ({
 
   return (
     <div className="col-12-xs col-12-sm col-6-md col-3-xl">
-      <InputField
+      <Input
         symbol={<FaPager />}
         value={pagination}
         type="number"
