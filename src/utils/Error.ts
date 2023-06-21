@@ -8,7 +8,7 @@ export class ReadError extends MyError {
   constructor(message: any, cause: any) {
     super(message);
     this.cause = cause;
-    this.name = "ReadError";
+    this.name = 'ReadError';
   }
 }
 
@@ -17,7 +17,7 @@ export class PropertyRequiredError extends ValidationError {
   property: string;
   constructor(property: string) {
     super(`No property: ${property}`);
-    this.name = "PropertyRequiredError";
+    this.name = 'PropertyRequiredError';
     this.property = property;
   }
 }

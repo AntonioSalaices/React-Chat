@@ -1,7 +1,7 @@
-import { DebouncedFunc } from "lodash";
-import I18n from "i18n-js";
-import { TxKeyPath } from "@Translate/i18n";
-import { OnChangeType } from "@Utils/types";
+import { DebouncedFunc } from 'lodash';
+import I18n from 'i18n-js';
+import { TxKeyPath } from '@Translate/i18n';
+import { OnChangeType } from '@Utils/types';
 
 export interface PaginationProps {
   /**

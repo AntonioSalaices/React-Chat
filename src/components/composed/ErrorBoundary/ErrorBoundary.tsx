@@ -1,11 +1,8 @@
-import { Component, ErrorInfo, ReactNode } from "react";
-import { ErrorBoundaryProps, ErrorBoundaryState } from "./ErrorBoundary.props";
-import ErrorPage from "../ErrorPage/ErrorPage";
+import { Component, ErrorInfo, ReactNode } from 'react';
+import { ErrorBoundaryProps, ErrorBoundaryState } from './ErrorBoundary.props';
+import ErrorPage from '../ErrorPage/ErrorPage';
 
-export default class ErrorBoundary extends Component<
-  ErrorBoundaryProps,
-  ErrorBoundaryState
-> {
+export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
 
@@ -23,18 +20,14 @@ export default class ErrorBoundary extends Component<
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
-    console.error("Error");
+    console.error('Error');
     console.error(error);
     console.error(errorInfo);
   }
 
   render(): ReactNode {
     return this.state.hasError ? (
-      <ErrorPage
-        tx="error.messageTitle"
-        subTx="error.genericMessage"
-        error={this.state.error}
-      />
+      <ErrorPage tx="error.messageTitle" subTx="error.genericMessage" error={this.state.error} />
     ) : (
       this.props.children
     );

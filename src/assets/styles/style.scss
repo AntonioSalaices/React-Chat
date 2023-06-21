@@ -1,18 +1,18 @@
 // variables & functions
-@import "fonts", "responsive", "functions";
+@import 'fonts', 'responsive', 'functions';
 
 // utilities (margin, padding opacity)
-@import "utilities";
+@import 'utilities';
 
 // base & layout
-@import "base", "mixins", "grid";
+@import 'base', 'mixins', 'grid';
 
 //colors
-@import "palette";
+@import 'palette';
 
 // components (button, card, navbar)
-@import "components/card";
-@import "components/button";
-@import "components/navbar";
-@import "components/badge";
-@import "components/input";
+@import 'components/card';
+@import 'components/button';
+@import 'components/navbar';
+@import 'components/badge';
+@import 'components/input';

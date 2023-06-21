@@ -1,5 +1,5 @@
-import { ChangeEvent, ComponentProps } from "react";
-import Card from "../components/basics/Card/Card";
+import { ChangeEvent, ComponentProps } from 'react';
+import Card from '../components/basics/Card/Card';
 
 export type DeepPartial<Thing> = Thing extends Function
   ? Thing
@@ -16,8 +16,8 @@ type DeepPartialObject<Thing> = {
 };
 
 export enum HTMLElements {
-  INPUT = "input",
-  SPAN = "span",
+  INPUT = 'input',
+  SPAN = 'span',
 }
 
 export type InputProps = ComponentProps<HTMLElements.INPUT>;

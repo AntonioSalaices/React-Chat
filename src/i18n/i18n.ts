@@ -1,8 +1,8 @@
-import { I18n } from "i18n-js";
-import en from "./translations/en.json";
+import { I18n } from 'i18n-js';
+import en from './translations/en.json';
 
 const i18n = new I18n();
-const localLanguage = navigator.language || "en";
+const localLanguage = navigator.language || 'en';
 i18n.locale = localLanguage;
 i18n.enableFallback = true;
 
@@ -35,8 +35,6 @@ type DefaultLocale = typeof en;
 export type TxKeyPath = RecursiveKeyOf<DefaultLocale>;
 
 type RecursiveKeyOf<TObj extends Record<string, any>> = {
-  [TKey in keyof TObj & string]: TObj[TKey] extends Record<string, any>
-    ? `${TKey}` | `${TObj[TKey]}`
-    : `${TKey}`;
+  [TKey in keyof TObj & string]: TObj[TKey] extends Record<string, any> ? `${TKey}` | `${TObj[TKey]}` : `${TKey}`;
 }[keyof TObj & string];
 // ? `${TKey}` | `${TKey}.${RecursiveKeyOf<TObj[TKey]>}`

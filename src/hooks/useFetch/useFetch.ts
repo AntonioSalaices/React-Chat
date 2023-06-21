@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 interface State {
   data?: any;
@@ -29,7 +29,7 @@ const useFetch = (url: string): State => {
         const res = await axios.get(url, { cancelToken: cancelToken.token });
         !isCompleted && setData(res.data.data);
       } catch (error) {
-        setError("An error ocurred");
+        setError('An error ocurred');
       } finally {
         setIsLoading(false);
       }

@@ -1,15 +1,6 @@
-import { InputProps } from "./Input.props";
+import { InputProps } from './Input.props';
 
-const Input: React.FC<InputProps> = ({
-  value,
-  icon,
-  name,
-  placeholder,
-  type,
-  onChange,
-  ref,
-  subText,
-}) => {
+const Input: React.FC<InputProps> = ({ value, icon, name, placeholder, type, onChange, ref, subText }) => {
   return (
     <div className="gap-2">
       {icon && (

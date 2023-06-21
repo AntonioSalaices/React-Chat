@@ -1,5 +1,5 @@
-import I18n from "i18n-js";
-import { TxKeyPath } from "@Translate/i18n";
+import I18n from 'i18n-js';
+import { TxKeyPath } from '@Translate/i18n';
 export interface ErrorPageProps {
   /**
    * Error related to the UI

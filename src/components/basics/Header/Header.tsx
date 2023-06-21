@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
-import { Theme } from "@Constans/Theme";
-import { translate } from "../../../i18n";
+import { useEffect, useState } from 'react';
+import { Theme } from '@Constans/Theme';
+import { translate } from '../../../i18n';
 
-import useThrottle from "@Hooks/useThrottle/useThrottle";
+import useThrottle from '@Hooks/useThrottle/useThrottle';
 
-import { Events } from "@Constans/eventConstants";
-import { ScreenSize } from "@Constans/screenConstants";
-import { HeaderProps } from "./Header.props";
+import { Events } from '@Constans/eventConstants';
+import { ScreenSize } from '@Constans/screenConstants';
+import { HeaderProps } from './Header.props';
 
-import Formatter from "@Utils/formatter";
-import { FaLaptop, FaMobileAlt } from "react-icons/fa";
+import Formatter from '@Utils/formatter';
+import { FaLaptop, FaMobileAlt } from 'react-icons/fa';
 
 const { sizeToRange } = Formatter;
 
@@ -44,14 +44,11 @@ const Header: React.FC<HeaderProps> = ({ onChange, theme }) => {
   return (
     <nav className="navbar-primary text-white mb-4 justify-between">
       <div className="container">
-        <h2 className="site-title">{translate("header.title")}</h2>
+        <h2 className="site-title">{translate('header.title')}</h2>
         <ul className="display-f justify-center align-center gap-2">
           <li>{iconsScreen[range]}</li>
           <li>
-            <button
-              className="btn-light text-dark font-md"
-              onClick={() => onChange(selectedTheme)}
-            >
+            <button className="btn-light text-dark font-md" onClick={() => onChange(selectedTheme)}>
               {theme}
             </button>
           </li>

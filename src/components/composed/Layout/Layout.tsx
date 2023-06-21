@@ -1,12 +1,12 @@
-import { useContext } from "react";
+import { useContext } from 'react';
 
-import Header from "@Components/basics/Header/Header";
-import Footer from "@Components/basics/Footer";
-import Section from "../Section";
+import Header from '@Components/basics/Header/Header';
+import Footer from '@Components/basics/Footer';
+import Section from '../Section';
 
-import { ThemeContext } from "context/ThemeContext";
-import { Theme } from "@Constans/Theme";
-import { LayoutProps } from "./Layout.props";
+import { ThemeContext } from 'context/ThemeContext';
+import { Theme } from '@Constans/Theme';
+import { LayoutProps } from './Layout.props';
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const { theme, setTheme } = useContext(ThemeContext);

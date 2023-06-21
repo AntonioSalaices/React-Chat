@@ -1,4 +1,4 @@
 export enum Security {
-  AUTHORIZATION = "Authorization",
-  TOKEN = "token",
+  AUTHORIZATION = 'Authorization',
+  TOKEN = 'token',
 }

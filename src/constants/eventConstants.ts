@@ -1,4 +1,4 @@
 export enum Events {
-  LANGUAGE = "languagechange",
-  RESIZE = "resize",
+  LANGUAGE = 'languagechange',
+  RESIZE = 'resize',
 }

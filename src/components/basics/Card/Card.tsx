@@ -1,4 +1,4 @@
-import { CardProps } from "../Card/Card.props";
+import { CardProps } from '../Card/Card.props';
 
 const Card: React.FC<CardProps> = ({ url }) => {
   return (

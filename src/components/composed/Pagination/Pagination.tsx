@@ -1,17 +1,9 @@
-import Input from "@Components/basics/Input";
-import { PaginationProps } from "./Pagination.props";
-import { FaPager } from "react-icons/fa";
-import { translate } from "@Translate/translate";
+import Input from '@Components/basics/Input';
+import { PaginationProps } from './Pagination.props';
+import { FaPager } from 'react-icons/fa';
+import { translate } from '@Translate/translate';
 
-const Pagination: React.FC<PaginationProps> = ({
-  pagination,
-  handleChange,
-  txOptions,
-  text,
-  tx,
-  subTx,
-  subText,
-}) => {
+const Pagination: React.FC<PaginationProps> = ({ pagination, handleChange, txOptions, text, tx, subTx, subText }) => {
   const i18Text = tx && translate(tx, txOptions);
   const content = i18Text || text;
   const i18SubText = subTx && translate(subTx, txOptions);

@@ -1,9 +1,9 @@
 // == FONTS ==
-@import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Manjari&display=swap');
 // Font variables
-$sans-serif-Manjari: "Manjari", sans-serif;
-$serif-Merriweather: "Merriweather", serif;
+$sans-serif-Manjari: 'Manjari', sans-serif;
+$serif-Merriweather: 'Merriweather', serif;
 
 // FONT SIZE
 $font-size-base: 1rem;
@@ -26,10 +26,10 @@ $fonts-weight: normal, bold, italic;
 }
 
 $font-sizes: (
-  "sm": $font-size-sm,
-  "lg": $font-size-lg,
-  "xl": $font-size-xl,
-  "xxl": $font-size-xxl,
+  'sm': $font-size-sm,
+  'lg': $font-size-lg,
+  'xl': $font-size-xl,
+  'xxl': $font-size-xxl,
 );
 
 @each $key, $val in $font-sizes {

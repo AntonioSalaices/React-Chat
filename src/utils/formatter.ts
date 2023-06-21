@@ -3,8 +3,8 @@
  * @author Antonio Salaices M
  */
 
-import { ScreenSize } from "@Constans/screenConstants";
-import { GifData } from "ApiData";
+import { ScreenSize } from '@Constans/screenConstants';
+import { GifData } from 'ApiData';
 
 type GenericFunction<T> = (arg: T) => void;
 

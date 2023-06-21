@@ -1,4 +1,4 @@
-import { Theme } from "@Constans/Theme";
+import { Theme } from '@Constans/Theme';
 
 export interface HeaderProps {
   theme: Theme;

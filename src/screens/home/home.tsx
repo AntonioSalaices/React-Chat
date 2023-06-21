@@ -1,28 +1,28 @@
-import React, { useDeferredValue, useEffect, useMemo, useState } from "react";
+import React, { useDeferredValue, useEffect, useMemo, useState } from 'react';
 
-import MemoizedList from "@Components/composed/List";
-import Container from "@Components/basics/Container/Container";
-import Form from "./components/Form/Form";
+import MemoizedList from '@Components/composed/List';
+import Container from '@Components/basics/Container/Container';
+import Form from './components/Form/Form';
 
-import useFetch from "@Hooks/useFetch/useFetch";
-import useDebounce from "@Hooks/useDebounce/useDebounce";
+import useFetch from '@Hooks/useFetch/useFetch';
+import useDebounce from '@Hooks/useDebounce/useDebounce';
 
-import { OnChangeType } from "@Utils/types";
-import Formatter from "@Utils/formatter";
+import { OnChangeType } from '@Utils/types';
+import Formatter from '@Utils/formatter';
 
 const { VITE_BASE_URL, VITE_API_SEARCH, VITE_API_KEY } = import.meta.env;
 
 const { getFormatedData } = Formatter;
 
 const Home = (): React.ReactElement => {
-  const [pagination, setPagination] = useState<string>("10");
-  const [search, setSearch] = useState<string>("");
+  const [pagination, setPagination] = useState<string>('10');
+  const [search, setSearch] = useState<string>('');
   const deferredQuery = useDeferredValue(search);
 
   const url: string = `${VITE_BASE_URL}${VITE_API_SEARCH}}`
-    .replace("{key}", VITE_API_KEY)
-    .replace("{search}", deferredQuery)
-    .replace("{pagination}", pagination);
+    .replace('{key}', VITE_API_KEY)
+    .replace('{search}', deferredQuery)
+    .replace('{pagination}', pagination);
 
   const { data, isLoading } = useFetch(url);
   const latestData = useMemo(() => getFormatedData(data), [data]);
@@ -54,15 +54,8 @@ const Home = (): React.ReactElement => {
 
   return (
     <Container>
-      <Form
-        handleSearch={debouncedSearch}
-        handlePagination={debouncedPagination}
-      />
-      <MemoizedList
-        isShownNoFoundMessage={isShownNoFoundMessage}
-        isLoading={isLoading}
-        data={latestData}
-      />
+      <Form handleSearch={debouncedSearch} handlePagination={debouncedPagination} />
+      <MemoizedList isShownNoFoundMessage={isShownNoFoundMessage} isLoading={isLoading} data={latestData} />
     </Container>
   );
 };

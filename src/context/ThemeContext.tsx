@@ -1,6 +1,6 @@
-import { Theme } from "@Constans/Theme";
-import React, { createContext, useEffect, useState } from "react";
-import { ThemeProviderProps } from "./ThemeProvider.props";
+import { Theme } from '@Constans/Theme';
+import React, { createContext, useEffect, useState } from 'react';
+import { ThemeProviderProps } from './ThemeProvider.props';
 
 export const ThemeContext = createContext<any>({
   theme: Theme.LIGHT,
@@ -19,9 +19,5 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     getThemeUserPreferences();
   }, []);
 
-  return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;
 };

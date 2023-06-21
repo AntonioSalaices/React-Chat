@@ -1,5 +1,5 @@
-import { translate } from "../../../i18n";
-import { FooterProps } from "./Footer.props";
+import { translate } from '../../../i18n';
+import { FooterProps } from './Footer.props';
 
 const Footer: React.FC<FooterProps> = ({ tx, txOptions, text }) => {
   const i18Text = tx && translate(tx, txOptions);

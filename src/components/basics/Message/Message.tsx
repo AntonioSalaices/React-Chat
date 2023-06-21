@@ -1,8 +1,8 @@
-import React from "react";
-import { MessageProps } from "./Message.props";
-import { translate } from "@Translate/translate";
+import React from 'react';
+import { MessageProps } from './Message.props';
+import { translate } from '@Translate/translate';
 
-const Message: React.FC<MessageProps> = ({ tx, txOptions, text = "" }) => {
+const Message: React.FC<MessageProps> = ({ tx, txOptions, text = '' }) => {
   const i18Text = tx && translate(tx, txOptions);
   const content = i18Text || text;
 

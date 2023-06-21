@@ -1,10 +1,6 @@
-import { Security } from "@Constans/securityConstants";
-import axios, {
-  AxiosError,
-  AxiosRequestHeaders,
-  InternalAxiosRequestConfig,
-} from "axios";
-import { useEffect } from "react";
+import { Security } from '@Constans/securityConstants';
+import axios, { AxiosError, AxiosRequestHeaders, InternalAxiosRequestConfig } from 'axios';
+import { useEffect } from 'react';
 
 export interface Headers {
   Authorization: string | null;
@@ -28,7 +24,7 @@ const AxiosInterceptor = ({ children }: AxiosInterceptorProps) => {
         return config;
       },
       function (error: AxiosError) {
-        console.error("Axios Interceptor ERROR", error);
+        console.error('Axios Interceptor ERROR', error);
         return Promise.reject(error);
       }
     );

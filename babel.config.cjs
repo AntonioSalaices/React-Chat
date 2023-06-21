@@ -1,15 +1,15 @@
 module.exports = {
   presets: [
     [
-      "@babel/preset-env",
+      '@babel/preset-env',
       {
         targets: {
-          node: "current",
+          node: 'current',
         },
       },
     ],
-    "@babel/preset-react",
-    "@babel/preset-typescript",
+    '@babel/preset-react',
+    '@babel/preset-typescript',
   ],
-  plugins: ["babel-plugin-transform-vite-meta-env"],
+  plugins: ['babel-plugin-transform-vite-meta-env'],
 };

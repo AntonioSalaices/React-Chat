@@ -11,8 +11,8 @@ function LoggerUtils(logLevel: string) {
    * LoggerUtils.debug('text', a)
    */
   function debug(message: string, args: any) {
-    if (logLevel === "debug") {
-      log("log", "DEBUG::" + message, args);
+    if (logLevel === 'debug') {
+      log('log', 'DEBUG::' + message, args);
     }
   }
   /**
@@ -23,8 +23,8 @@ function LoggerUtils(logLevel: string) {
    * LoggerUtils.info('text', a)
    */
   function info(message: string, args: any) {
-    if (logLevel === "debug" || logLevel === "info") {
-      log("info", "INFO::" + message, args);
+    if (logLevel === 'debug' || logLevel === 'info') {
+      log('info', 'INFO::' + message, args);
     }
   }
   /**
@@ -35,8 +35,8 @@ function LoggerUtils(logLevel: string) {
    * LoggerUtils.warn('text', a)
    */
   function warn(message: string, args: any) {
-    if (logLevel === "debug" || logLevel === "warn" || logLevel === "info") {
-      log("warn", "WARNING::" + message, args);
+    if (logLevel === 'debug' || logLevel === 'warn' || logLevel === 'info') {
+      log('warn', 'WARNING::' + message, args);
     }
   }
   /**
@@ -47,7 +47,7 @@ function LoggerUtils(logLevel: string) {
    * LoggerUtils.error('text', a)
    */
   function error(message: string, args: any) {
-    log("warn", "WARNING::" + message, args);
+    log('warn', 'WARNING::' + message, args);
   }
 
   return {
@@ -58,7 +58,7 @@ function LoggerUtils(logLevel: string) {
   };
 }
 
-const LOG_LEVEL = "debug";
+const LOG_LEVEL = 'debug';
 
 const logger = LoggerUtils(process.env.LOG_LEVEL || LOG_LEVEL);
 

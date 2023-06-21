@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/prefer-namespace-keyword
-declare module "ApiData" {
+declare module 'ApiData' {
   export interface GifData {
     type: string;
     id: string;

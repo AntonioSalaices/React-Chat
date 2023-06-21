@@ -1,5 +1,5 @@
-import { debounce } from "lodash";
-import { useMemo, DependencyList } from "react";
+import { debounce } from 'lodash';
+import { useMemo, DependencyList } from 'react';
 
 /**
  * A react hook to easily handle debounce technique
@@ -10,11 +10,7 @@ import { useMemo, DependencyList } from "react";
  * const handleFunction = useDebounce(cb, delay, deps);
  */
 
-function useDebounce<Args extends unknown[]>(
-  cb: (...args: Args) => void,
-  delay: number,
-  deps: DependencyList
-) {
+function useDebounce<Args extends unknown[]>(cb: (...args: Args) => void, delay: number, deps: DependencyList) {
   return useMemo(() => debounce(cb, delay), deps);
 }
 
