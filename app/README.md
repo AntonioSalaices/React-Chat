@@ -18,7 +18,7 @@
 
 ### `npm run dev`
 
-> This command will execute the application and start a local development server
+> This command will execute the application and start a local development server.
 
 ### `or`
 
