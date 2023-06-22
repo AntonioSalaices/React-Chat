@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ErrorPage /> :: Spec should render correctly 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <h1 />
+    <span
+      data-testid="error-message"
+    >
+      Test
+    </span>
+  </div>
+</div>
+`;

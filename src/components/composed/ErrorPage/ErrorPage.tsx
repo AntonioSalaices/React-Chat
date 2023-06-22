@@ -10,7 +10,7 @@ const ErrorPage: React.FC<ErrorPageProps> = ({ error, tx, txOptions, text, subTx
   return (
     <div className="container">
       <h1>{content}</h1>
-      <span>{error ? error.message : subContent}</span>
+      <span data-testid="error-message">{error ? error.message : subContent}</span>
     </div>
   );
 };

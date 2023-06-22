@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { isEqual } from 'lodash';
 import Card from '@Components/basics/Card/Card';
 import { ListProps } from './List.props';
-import withLoadingLogic from '@Hocs/withLoadingLogic/withLoadingLogic';
+import withLoadingLogic from '../../../Hocs/withLoadingLogic/withLoadingLogic';
 
 const List: React.FC<ListProps> = ({ data }) => {
   return (

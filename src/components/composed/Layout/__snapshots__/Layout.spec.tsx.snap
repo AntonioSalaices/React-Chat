@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Layout> should render correctly 1`] = `
+<div>
+  <div
+    class="light"
+  >
+    <nav
+      class="navbar-primary text-white mb-4 justify-between"
+    >
+      <div
+        class="container"
+      >
+        <h2
+          class="site-title"
+        >
+          [missing "en-US.header.title" translation]
+        </h2>
+        <ul
+          class="display-f justify-center align-center gap-2"
+        >
+          <li>
+            <svg
+              data-testid="desktop"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 640 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"
+              />
+            </svg>
+          </li>
+          <li>
+            <button
+              class="btn-light text-dark font-md"
+              data-testid="btn-change-theme"
+            >
+              light
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <span>
+      Children
+    </span>
+    <section
+      class="bg-primary-light-6 mt-5 pt-4 pb-4"
+      id="about"
+    >
+      <div
+        class="container"
+      >
+        <h2
+          class="mb-2"
+        >
+          About React
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ipsam animi aliquid sequi fuga, nam nesciunt dolore libero dolorem exercitationem aliquam cupiditate atque illo, quae dicta doloribus et? Ab ipsam inventore quam asperiores, sequi unde tenetur accusamus, distinctio magni necessitatibus quis deserunt id alias. Iste eum ea labore rerum voluptatibus.
+        </p>
+        <p
+          class="mt-1"
+        >
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta nam, corrupti dolorum inventore perspiciatis id illum repellat iste amet sapiente ducimus nihil molestias quasi, totam, ratione minima molestiae blanditiis iure consequatur praesentium debitis. Nulla maiores doloremque tempore nobis dolorum amet!
+        </p>
+      </div>
+    </section>
+    <footer
+      class="bg-secondary-light-7 pt-3 pb-3 mt-5"
+    >
+      <div
+        class="container"
+      >
+        [missing "en-US.footer.message" translation]
+      </div>
+    </footer>
+  </div>
+</div>
+`;

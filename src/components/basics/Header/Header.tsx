@@ -14,11 +14,11 @@ import { FaLaptop, FaMobileAlt } from 'react-icons/fa';
 const { sizeToRange } = Formatter;
 
 const iconsScreen: Record<string, JSX.Element> = {
-  [ScreenSize.XS]: <FaMobileAlt />,
-  [ScreenSize.SM]: <FaMobileAlt />,
-  [ScreenSize.MD]: <FaLaptop />,
-  [ScreenSize.LG]: <FaLaptop />,
-  [ScreenSize.XL]: <FaLaptop />,
+  [ScreenSize.XS]: <FaMobileAlt data-testid="mobile" />,
+  [ScreenSize.SM]: <FaMobileAlt data-testid="mobile" />,
+  [ScreenSize.MD]: <FaLaptop data-testid="desktop" />,
+  [ScreenSize.LG]: <FaLaptop data-testid="desktop" />,
+  [ScreenSize.XL]: <FaLaptop data-testid="desktop" />,
 };
 
 const Header: React.FC<HeaderProps> = ({ onChange, theme }) => {
@@ -48,7 +48,11 @@ const Header: React.FC<HeaderProps> = ({ onChange, theme }) => {
         <ul className="display-f justify-center align-center gap-2">
           <li>{iconsScreen[range]}</li>
           <li>
-            <button className="btn-light text-dark font-md" onClick={() => onChange(selectedTheme)}>
+            <button
+              data-testid="btn-change-theme"
+              className="btn-light text-dark font-md"
+              onClick={() => onChange(selectedTheme)}
+            >
               {theme}
             </button>
           </li>
