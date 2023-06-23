@@ -1,13 +1,13 @@
 import React, { useDeferredValue, useEffect, useMemo, useState } from 'react';
 
 import MemoizedList from '@Components/composed/List';
-import Container from '@Components/basics/Container/Container';
+import Container from '@Components/composed/Container';
 import Form from './components/Form/Form';
 
 import useFetch from '@Hooks/useFetch/useFetch';
 import useDebounce from '@Hooks/useDebounce/useDebounce';
 
-import { OnChangeType } from '@Utils/types';
+import { OnChangeType } from '@Constans/htmlConstants';
 import Formatter from '@Utils/formatter';
 
 const { VITE_BASE_URL, VITE_API_SEARCH, VITE_API_KEY } = import.meta.env;

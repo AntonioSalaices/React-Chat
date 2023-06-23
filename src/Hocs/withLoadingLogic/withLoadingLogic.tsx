@@ -3,7 +3,7 @@ import Spinner from '@Components/basics/Spinner';
 import { CommonProps } from './withLoadingLogic.props';
 import { PURPLE } from '@Utils/colors';
 import Message from '@Components/basics/Message';
-import Container from '@Components/basics/Container';
+import Container from '@Components/composed/Container';
 
 const renderContent = (children: React.ReactElement) => {
   return (
