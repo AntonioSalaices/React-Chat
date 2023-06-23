@@ -29,6 +29,7 @@ exports[`<Search /> should render correctly 1`] = `
       </div>
       <input
         class="input-primary"
+        data-testid="searchInput"
         placeholder="test"
         type="text"
         value=""

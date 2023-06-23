@@ -13,6 +13,7 @@ const Search: React.FC<SearchProps> = ({ search, handleChange, txOptions, text, 
     <div className="col-11-xs col-11-sm col-5-md col-5-xl">
       <Input
         icon={<FaSearch />}
+        testID="searchInput"
         value={search}
         type="text"
         placeholder={content}

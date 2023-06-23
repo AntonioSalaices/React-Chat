@@ -8,7 +8,9 @@ const Message: React.FC<MessageProps> = ({ tx, txOptions, text = '' }) => {
 
   return (
     <div>
-      <h1 className="text-primary font-bold font-size-lg">{content}</h1>
+      <h1 data-testid="messageTestId" className="text-primary font-bold font-size-lg">
+        {content}
+      </h1>
     </div>
   );
 };

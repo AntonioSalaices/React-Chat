@@ -7,7 +7,8 @@
       "@Utils/*": ["utils/*"],
       "@Constans/*": ["constants/*"],
       "@Translate/*": ["i18n/*"],
-      "@Hocs/*": ["Hocs/*"]
+      "@Hocs/*": ["Hocs/*"],
+      "@Mocks/*": ["mocks/*"]
     },
     "target": "es5",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],

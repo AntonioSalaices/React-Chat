@@ -21,7 +21,7 @@ const useFetch = (url: string): State => {
   useEffect(() => {
     let isCompleted = false;
 
-    const cancelToken = axios.CancelToken.source();
+    const cancelToken = axios?.CancelToken?.source();
     setIsLoading(true);
 
     const apiRequest = async () => {
@@ -37,7 +37,7 @@ const useFetch = (url: string): State => {
     apiRequest();
 
     return () => {
-      cancelToken.cancel();
+      cancelToken?.cancel();
       isCompleted = true;
     };
   }, [url]);

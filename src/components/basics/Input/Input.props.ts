@@ -33,4 +33,8 @@ export interface InputProps {
    * subText to display for eg.
    */
   subText?: string;
+  /**
+   * ID used for testing
+   */
+  testID?: string;
 }
