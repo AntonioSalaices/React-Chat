@@ -1,21 +1,11 @@
 import { Security } from '@Constans/securityConstants';
 import axios, { AxiosError, AxiosRequestHeaders, InternalAxiosRequestConfig } from 'axios';
 import { useEffect } from 'react';
-
-export interface Headers {
-  Authorization: string | null;
-}
+import { AxiosInterceptorProps, Headers } from './AxiosInterceptor.props';
 
 const getHeaders = (token: string | null): Headers => ({
   [Security.AUTHORIZATION]: token,
 });
-
-interface AxiosInterceptorProps {
-  /**
-   * Children node
-   */
-  children: JSX.Element;
-}
 
 const AxiosInterceptor = ({ children }: AxiosInterceptorProps) => {
   useEffect(() => {

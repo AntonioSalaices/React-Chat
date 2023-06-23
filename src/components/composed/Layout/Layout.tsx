@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 
-import Header from '@Components/basics/Header/Header';
-import Footer from '@Components/basics/Footer';
+import Header from '@Components/composed/Header/Header';
+import Footer from '@Components/composed/Footer';
 import Section from '../Section';
 
 import { ThemeContext } from 'context/ThemeContext';
