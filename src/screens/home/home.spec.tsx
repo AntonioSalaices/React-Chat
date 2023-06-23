@@ -6,7 +6,14 @@ describe('<Home />:: Spec', () => {
 
   beforeEach(() => {
     component = render(<Home />);
+    jest.useFakeTimers();
   });
+
+  afterEach(() => {
+    jest.clearAllMocks();
+    jest.useRealTimers();
+  });
+
   test('should render correctly', () => {
     const { container } = component;
 
@@ -15,7 +22,6 @@ describe('<Home />:: Spec', () => {
 
   test('should search something and execute debounce function', async () => {
     const { getByTestId } = component;
-    jest.useFakeTimers();
     await act(async () => {
       fireEvent.change(getByTestId('searchInput'), { target: { value: 'testing' } });
       jest.advanceTimersByTime(300);
