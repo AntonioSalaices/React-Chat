@@ -18,6 +18,9 @@
     },
     "subPlaceholder": {
       "search": "eg: google"
+    },
+    "notFound404": {
+      "message": "404 Not Found"
     }
   }
 }
