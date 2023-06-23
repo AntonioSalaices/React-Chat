@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotFound /> should render correctly 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="row justify-center align-center"
+    >
+      <h4
+        class="text-primary font-bold font-xxl"
+      />
+    </div>
+  </div>
+</div>
+`;
