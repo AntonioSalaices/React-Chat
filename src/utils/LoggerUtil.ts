@@ -10,7 +10,7 @@ function LoggerUtils(logLevel: string) {
    * usage
    * LoggerUtils.debug('text', a)
    */
-  function debug(message: string, args: any) {
+  function debug(message: string, args?: any) {
     if (logLevel === 'debug') {
       log('log', 'DEBUG::' + message, args);
     }
@@ -22,7 +22,7 @@ function LoggerUtils(logLevel: string) {
    * usage
    * LoggerUtils.info('text', a)
    */
-  function info(message: string, args: any) {
+  function info(message: string, args?: any) {
     if (logLevel === 'debug' || logLevel === 'info') {
       log('info', 'INFO::' + message, args);
     }
@@ -34,7 +34,7 @@ function LoggerUtils(logLevel: string) {
    * usage
    * LoggerUtils.warn('text', a)
    */
-  function warn(message: string, args: any) {
+  function warn(message: string, args?: any) {
     if (logLevel === 'debug' || logLevel === 'warn' || logLevel === 'info') {
       log('warn', 'WARNING::' + message, args);
     }
@@ -46,7 +46,7 @@ function LoggerUtils(logLevel: string) {
    * usage
    * LoggerUtils.error('text', a)
    */
-  function error(message: string, args: any) {
+  function error(message: string, args?: any) {
     log('warn', 'WARNING::' + message, args);
   }
 

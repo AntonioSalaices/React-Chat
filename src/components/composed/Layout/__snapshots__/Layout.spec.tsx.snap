@@ -46,9 +46,6 @@ exports[`<Layout> should render correctly 1`] = `
         </ul>
       </div>
     </nav>
-    <span>
-      Children
-    </span>
     <section
       class="bg-primary-light-6 mt-5 pt-4 pb-4"
       id="about"

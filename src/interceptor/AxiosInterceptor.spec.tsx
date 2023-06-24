@@ -22,12 +22,6 @@ describe('<AxiosInterceptor>:: Spec', () => {
       </AxiosInterceptor>
     );
 
-    const { getByTestId } = component;
-    await act(async () => {
-      fireEvent.change(getByTestId('searchInput'), { target: { value: 'testing' } });
-      jest.advanceTimersByTime(300);
-    });
-
     const { unmount } = component;
 
     expect(axios.interceptors.request.use).toHaveBeenCalled();

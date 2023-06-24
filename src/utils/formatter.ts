@@ -5,8 +5,7 @@
 
 import { ScreenSize } from '@Constans/screenConstants';
 import { GifData } from 'ApiData';
-
-type GenericFunction<T> = (arg: T) => void;
+import { GenericFunction } from './types';
 
 const Formatter = {
   /**
@@ -29,8 +28,9 @@ const Formatter = {
    */
   debounce(callback: GenericFunction<any>, time: number) {
     let timer;
-    clearTimeout(timer);
+
     return (args) => {
+      clearTimeout(timer);
       timer = setTimeout(() => {
         callback(args);
       }, time);

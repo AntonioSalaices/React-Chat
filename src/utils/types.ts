@@ -16,6 +16,10 @@ export type GenericObject = Record<string, any>;
 
 export type Func = (...args: any[]) => any;
 
+export type GenericFunction<T> = (arg: T) => void;
+
+export type CheckForBadArgs<Arg> = Arg extends any[] ? 'You cannot compare two arrays using deepEqualCompare' : Arg;
+
 // interface Person {
 //   name: string;
 //   age: number;

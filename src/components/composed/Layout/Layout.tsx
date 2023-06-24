@@ -6,9 +6,9 @@ import Section from '../Section';
 
 import { ThemeContext } from 'context/ThemeContext';
 import { Theme } from '@Constans/Theme';
-import { LayoutProps } from './Layout.props';
+import { Outlet } from 'react-router-dom';
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC = () => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const handleOnChange = (selectedTheme: Theme) => {
@@ -19,7 +19,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className={theme}>
       <Header theme={theme} onChange={handleOnChange} />
-      {children}
+      <Outlet />
       <Section />
       <Footer tx="footer.message" />
     </div>
