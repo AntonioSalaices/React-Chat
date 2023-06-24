@@ -10,6 +10,7 @@ import { HeaderProps } from './Header.props';
 
 import Formatter from '@Utils/formatter';
 import { FaLaptop, FaMobileAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const { sizeToRange } = Formatter;
 
@@ -47,6 +48,15 @@ const Header: React.FC<HeaderProps> = ({ onChange, theme }) => {
         <h2 className="site-title">{translate('header.title')}</h2>
         <ul className="display-f justify-center align-center gap-2">
           <li>{iconsScreen[range]}</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/library">Library</Link>
+          </li>
+          <li>
+            <Link to="/chat">Chat</Link>
+          </li>
           <li>
             <button
               data-testid="btn-change-theme"
