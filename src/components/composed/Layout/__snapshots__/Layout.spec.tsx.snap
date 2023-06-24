@@ -36,6 +36,27 @@ exports[`<Layout> should render correctly 1`] = `
             </svg>
           </li>
           <li>
+            <a
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="/library"
+            >
+              Library
+            </a>
+          </li>
+          <li>
+            <a
+              href="/chat"
+            >
+              Chat
+            </a>
+          </li>
+          <li>
             <button
               class="btn-light text-dark font-md"
               data-testid="btn-change-theme"

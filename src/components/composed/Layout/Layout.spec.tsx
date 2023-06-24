@@ -1,6 +1,7 @@
 import { RenderResult, act, fireEvent, render } from '@testing-library/react';
 import Layout from './Layout';
 import { ThemeProvider } from 'context/ThemeContext';
+import { BrowserRouter } from 'react-router-dom';
 
 const ThemeProviderMock = ThemeProvider as jest.MockedFunction<typeof ThemeProvider>;
 
@@ -12,9 +13,9 @@ describe('<Layout>', () => {
   beforeEach(() => {
     component = render(
       <ThemeProviderMock>
-        <Layout>
-          <span>Children</span>
-        </Layout>
+        <BrowserRouter>
+          <Layout />
+        </BrowserRouter>
       </ThemeProviderMock>
     );
   });

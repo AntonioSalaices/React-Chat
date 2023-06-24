@@ -1,8 +1,8 @@
 import { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+import Layout from '@Components/composed/Layout/Layout';
 
 const HomePage = lazy(() => import('./screens/home/home'));
-const Layout = lazy(() => import('./components/composed/Layout/Layout'));
 const NotFound = lazy(() => import('./components/composed/NotFound/NotFound'));
 const Library = lazy(() => import('./screens/library/library'));
 const Chat = lazy(() => import('./screens/chat/chat'));

@@ -2,6 +2,7 @@ import { RenderResult, fireEvent, render } from '@testing-library/react';
 import Header from './Header';
 import { Theme } from '@Constans/Theme';
 import { Events } from '@Constans/eventConstants';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('<Header />', () => {
   let component: RenderResult;
@@ -12,7 +13,11 @@ describe('<Header />', () => {
   };
 
   beforeEach(() => {
-    component = render(<Header {...props} />);
+    component = render(
+      <BrowserRouter>
+        <Header {...props} />
+      </BrowserRouter>
+    );
   });
   test('should render correctly', () => {
     const { container } = component;
@@ -25,7 +30,11 @@ describe('<Header />', () => {
       ...props,
       theme: Theme.DARK,
     };
-    const HeaderComponent = render(<Header {...newProps} />);
+    const HeaderComponent = render(
+      <BrowserRouter>
+        <Header {...newProps} />
+      </BrowserRouter>
+    );
 
     const { container } = HeaderComponent;
 
@@ -51,7 +60,11 @@ describe('<Header />', () => {
       ...props,
       theme: Theme.DARK,
     };
-    const HeaderComponent = render(<Header {...newProps} />);
+    const HeaderComponent = render(
+      <BrowserRouter>
+        <Header {...newProps} />
+      </BrowserRouter>
+    );
 
     const { getByTestId } = HeaderComponent;
 
