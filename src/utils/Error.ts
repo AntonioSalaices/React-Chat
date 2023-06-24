@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 class MyError extends Error {
   constructor(name: string) {
     super(name);

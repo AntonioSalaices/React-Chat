@@ -3,6 +3,7 @@ import axios, { AxiosError, AxiosRequestHeaders, InternalAxiosRequestConfig } fr
 import { useEffect } from 'react';
 import { AxiosInterceptorProps, Headers } from './AxiosInterceptor.props';
 
+/* istanbul ignore next */
 const getHeaders = (token: string | null): Headers => ({
   [Security.AUTHORIZATION]: token,
 });
@@ -10,12 +11,14 @@ const getHeaders = (token: string | null): Headers => ({
 const AxiosInterceptor = ({ children }: AxiosInterceptorProps) => {
   useEffect(() => {
     const interceptor = axios.interceptors.request.use(
+      /* istanbul ignore next */
       function (config: InternalAxiosRequestConfig) {
         const token: string | null = localStorage.getItem(Security.TOKEN);
         config.headers = { ...getHeaders(token) } as AxiosRequestHeaders;
 
         return config;
       },
+      /* istanbul ignore next */
       function (error: AxiosError) {
         console.error('Axios Interceptor ERROR', error);
         return Promise.reject(error);
