@@ -1,9 +1,18 @@
 import Input from '@Components/basics/Input';
-import { SearchProps } from './Search.props';
-import { FaSearch } from 'react-icons/fa';
+import { FormFieldProps } from './FormField.props';
 import { translate } from '@Translate/translate';
 
-const Search: React.FC<SearchProps> = ({ search, handleChange, txOptions, text, tx, subTx, subText }) => {
+const FormField: React.FC<FormFieldProps> = ({
+  type,
+  icon,
+  search,
+  handleChange,
+  txOptions,
+  text,
+  tx,
+  subTx,
+  subText,
+}) => {
   const i18Text = tx && translate(tx, txOptions);
   const content = i18Text || text;
   const i18SubText = subTx && translate(subTx, txOptions);
@@ -12,10 +21,10 @@ const Search: React.FC<SearchProps> = ({ search, handleChange, txOptions, text, 
   return (
     <div className="col-11-xs col-11-sm col-5-md col-5-xl">
       <Input
-        icon={<FaSearch />}
+        icon={icon}
         testID="searchInput"
         value={search}
-        type="text"
+        type={type}
         placeholder={content}
         subText={subContent}
         onChange={handleChange}
@@ -24,4 +33,4 @@ const Search: React.FC<SearchProps> = ({ search, handleChange, txOptions, text, 
   );
 };
 
-export default Search;
+export default FormField;

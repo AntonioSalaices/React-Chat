@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormField /> should render correctly 1`] = `
+<div>
+  <div
+    class="col-11-xs col-11-sm col-5-md col-5-xl"
+  >
+    <div
+      class="gap-2"
+    >
+      <div
+        class="input-icon"
+      >
+        <span>
+          <i />
+        </span>
+      </div>
+      <input
+        class="input-primary"
+        data-testid="searchInput"
+        placeholder="test"
+        type="text"
+        value=""
+      />
+      <p
+        class="text-primary-light-7"
+      />
+    </div>
+  </div>
+</div>
+`;

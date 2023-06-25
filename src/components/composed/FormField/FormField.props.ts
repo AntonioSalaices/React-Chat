@@ -1,8 +1,9 @@
 import { DebouncedFunc } from 'lodash';
 import I18n from 'i18n-js';
 import { TxKeyPath } from '@Translate/i18n';
-import { OnChangeType } from '@Constans/htmlConstants';
-export interface SearchProps {
+import { OnChangeType, SingleInputType } from '@Constans/htmlConstants';
+
+export interface FormFieldProps {
   /**
    * Current selected value depicted by pagination attribute
    */
@@ -32,4 +33,12 @@ export interface SearchProps {
    * The sub text to display if not using `tx` or nested components
    */
   subText?: string;
+  /**
+   * Icon to display inside of the input
+   */
+  icon?: JSX.Element;
+  /**
+   * Type of the input
+   */
+  type: SingleInputType;
 }

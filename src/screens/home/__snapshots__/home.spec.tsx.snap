@@ -36,7 +36,7 @@ exports[`<Home />:: Spec should render correctly 1`] = `
           <input
             class="input-primary"
             data-testid="searchInput"
-            placeholder="[missing "en-US.inputs.search" translation]"
+            placeholder="[missing "en-US.form.inputs.search" translation]"
             type="text"
             value=""
           />

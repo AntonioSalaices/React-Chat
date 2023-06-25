@@ -20,7 +20,8 @@
     },
     "form": {
       "inputs": {
-        "search": "Search"
+        "search": "Search",
+        "fontSize": "Font size"
       }
     },
     "subPlaceholder": {
