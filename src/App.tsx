@@ -7,6 +7,7 @@ import i18n from './i18n/i18n';
 import AppRoutes from 'AppRoutes';
 import Spinner from '@Components/basics/Spinner';
 import { PURPLE } from '@Utils/colors';
+import { renderContent } from '@Hocs/withLoadingLogic/withLoadingLogic';
 
 const ErrorBoundary = lazy(() => import('@Components/composed/ErrorBoundary/ErrorBoundary'));
 
@@ -37,7 +38,7 @@ const App = (): React.ReactElement => {
 
   return (
     <ThemeProvider>
-      <ErrorBoundary>{isLoaded ? <AppRoutes /> : <Spinner singleColor={PURPLE} />}</ErrorBoundary>
+      <ErrorBoundary>{isLoaded ? <AppRoutes /> : renderContent(<Spinner singleColor={PURPLE} />)}</ErrorBoundary>
     </ThemeProvider>
   );
 };

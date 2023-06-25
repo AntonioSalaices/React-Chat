@@ -1,7 +1,12 @@
 {
   "es": {
     "header": {
-      "title": "Hola Antonio Salaices"
+      "title": "Hola Antonio Salaices",
+      "links": {
+        "home": "Home",
+        "chat": "Chat",
+        "library": "Librería"
+      }
     },
     "error": {
       "messageTitle": "Algo salió mal...",

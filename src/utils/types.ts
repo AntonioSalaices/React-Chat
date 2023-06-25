@@ -20,6 +20,11 @@ export type GenericFunction<T> = (arg: T) => void;
 
 export type CheckForBadArgs<Arg> = Arg extends any[] ? 'You cannot compare two arrays using deepEqualCompare' : Arg;
 
+export type LinkType = {
+  path: string;
+  name: string | null;
+};
+
 // interface Person {
 //   name: string;
 //   age: number;

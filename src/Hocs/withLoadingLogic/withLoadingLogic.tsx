@@ -5,7 +5,7 @@ import { PURPLE } from '@Utils/colors';
 import Message from '@Components/basics/Message';
 import Container from '@Components/composed/Container';
 
-const renderContent = (children: React.ReactElement) => {
+export const renderContent = (children: React.ReactElement) => {
   return (
     <Container>
       <div className="row justify-center">{children}</div>

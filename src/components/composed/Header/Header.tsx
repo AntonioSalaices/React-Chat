@@ -11,6 +11,7 @@ import { HeaderProps } from './Header.props';
 import Formatter from '@Utils/formatter';
 import { FaLaptop, FaMobileAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { LinkType } from '@Utils/types';
 
 const { sizeToRange } = Formatter;
 
@@ -20,6 +21,14 @@ const iconsScreen: Record<string, JSX.Element> = {
   [ScreenSize.MD]: <FaLaptop data-testid="desktop" />,
   [ScreenSize.LG]: <FaLaptop data-testid="desktop" />,
   [ScreenSize.XL]: <FaLaptop data-testid="desktop" />,
+};
+
+const getLinks = (): LinkType[] => {
+  return [
+    { path: '/', name: translate('header.links.home') },
+    { path: 'library', name: translate('header.links.library') },
+    { path: 'chat', name: translate('header.links.chat') },
+  ];
 };
 
 const Header: React.FC<HeaderProps> = ({ onChange, theme }) => {
@@ -48,15 +57,11 @@ const Header: React.FC<HeaderProps> = ({ onChange, theme }) => {
         <h2 className="site-title">{translate('header.title')}</h2>
         <ul className="display-f justify-center align-center gap-2">
           <li>{iconsScreen[range]}</li>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/library">Library</Link>
-          </li>
-          <li>
-            <Link to="/chat">Chat</Link>
-          </li>
+          {...getLinks().map(({ path, name }, index) => (
+            <li key={index.toString()}>
+              <Link to={path}>{name}</Link>
+            </li>
+          ))}
           <li>
             <button
               data-testid="btn-change-theme"

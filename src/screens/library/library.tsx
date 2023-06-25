@@ -1,4 +1,4 @@
-const Library: React.FC = () => {
+export const Library: React.FC = () => {
   return (
     <div className="container">
       <h2 className="mb-2">Colors</h2>
@@ -126,4 +126,4 @@ const Library: React.FC = () => {
   );
 };
 
-export default Library;
+Library.displayName = 'LibraryPage';
