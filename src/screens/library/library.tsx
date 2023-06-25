@@ -126,4 +126,4 @@ export const Library: React.FC = () => {
   );
 };
 
-Library.displayName = 'LibraryPage';
+Library.displayName = 'Library';

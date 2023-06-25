@@ -19,6 +19,9 @@
     "i18n",
     "improvements"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 5174",
     "test": "jest",

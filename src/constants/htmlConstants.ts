@@ -6,6 +6,15 @@ export enum HTMLElements {
   SPAN = 'span',
 }
 
+export enum HTMLType {
+  text = 'text',
+  number = 'number',
+  date = 'date',
+  color = 'color',
+}
+
+export type InputType = typeof HTMLType;
+
 export type InputProps = ComponentProps<HTMLElements.INPUT>;
 export type SpanProps = ComponentProps<HTMLElements.SPAN>;
 

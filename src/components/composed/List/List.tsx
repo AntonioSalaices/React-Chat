@@ -1,10 +1,12 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import { isEqual } from 'lodash';
 import Card from '@Components/basics/Card/Card';
 import { ListProps } from './List.props';
 import withLoadingLogic from '../../../Hocs/withLoadingLogic/withLoadingLogic';
 
-const List: React.FC<ListProps> = ({ data }) => {
+export function List<TItem>(props: ListProps<TItem>) {
+  const { data } = props;
+
   return (
     <div className="row gap-2 justify-center">
       {data?.map(({ id, ...rest }) => (
@@ -12,7 +14,7 @@ const List: React.FC<ListProps> = ({ data }) => {
       ))}
     </div>
   );
-};
+}
 
 const ListWithLoading = withLoadingLogic(List);
 

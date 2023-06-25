@@ -1,4 +1,5 @@
-import { OnChangeType } from '@Utils/types';
+import { InputType } from '@Constans/htmlConstants';
+import { OnChangeType, RemoveProperty } from '@Utils/types';
 
 export interface InputProps {
   /**
@@ -20,7 +21,7 @@ export interface InputProps {
   /**
    * Type of the input
    */
-  type: 'text' | 'number' | 'date';
+  type: RemoveProperty<InputType>;
   /**
    * Ref of the input
    */
