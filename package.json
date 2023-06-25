@@ -105,7 +105,8 @@
       "@Constans/(.*)": "<rootDir>/src/constants/$1",
       "@Utils/(.*)": "<rootDir>/src/utils/$1",
       "@Hooks/(.*)": "<rootDir>/src/hooks/$1",
-      "@Translate/(.*)": "<rootDir>/src/i18n/$1"
+      "@Translate/(.*)": "<rootDir>/src/i18n/$1",
+      "@Hocs/(.*)": "<rootDir>/src/Hocs/$1"
     }
   }
 }

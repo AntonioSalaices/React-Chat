@@ -57,7 +57,7 @@ const Header: React.FC<HeaderProps> = ({ onChange, theme }) => {
         <h2 className="site-title">{translate('header.title')}</h2>
         <ul className="display-f justify-center align-center gap-2">
           <li>{iconsScreen[range]}</li>
-          {...getLinks().map(({ path, name }, index) => (
+          {getLinks().map(({ path, name }, index) => (
             <li key={index.toString()}>
               <Link to={path}>{name}</Link>
             </li>

@@ -36,21 +36,21 @@ exports[`<Header /> should render correctly 1`] = `
           <a
             href="/"
           >
-            Home
+            [missing "en-US.header.links.home" translation]
           </a>
         </li>
         <li>
           <a
             href="/library"
           >
-            Library
+            [missing "en-US.header.links.library" translation]
           </a>
         </li>
         <li>
           <a
             href="/chat"
           >
-            Chat
+            [missing "en-US.header.links.chat" translation]
           </a>
         </li>
         <li>
@@ -103,21 +103,21 @@ exports[`<Header /> should render dark theme 1`] = `
           <a
             href="/"
           >
-            Home
+            [missing "en-US.header.links.home" translation]
           </a>
         </li>
         <li>
           <a
             href="/library"
           >
-            Library
+            [missing "en-US.header.links.library" translation]
           </a>
         </li>
         <li>
           <a
             href="/chat"
           >
-            Chat
+            [missing "en-US.header.links.chat" translation]
           </a>
         </li>
         <li>
