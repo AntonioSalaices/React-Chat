@@ -1,6 +1,5 @@
-import { InputType } from '@Constans/htmlConstants';
-import { OnChangeType, RemoveProperty } from '@Utils/types';
-
+import { SingleInputType } from '@Constans/htmlConstants';
+import { OnChangeType } from '@Constans/htmlConstants';
 export interface InputProps {
   /**
    * Value of the text input
@@ -21,7 +20,7 @@ export interface InputProps {
   /**
    * Type of the input
    */
-  type: RemoveProperty<InputType>;
+  type: SingleInputType;
   /**
    * Ref of the input
    */

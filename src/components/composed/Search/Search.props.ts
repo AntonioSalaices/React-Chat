@@ -1,7 +1,7 @@
 import { DebouncedFunc } from 'lodash';
 import I18n from 'i18n-js';
 import { TxKeyPath } from '@Translate/i18n';
-import { OnChangeType } from '@Utils/types';
+import { OnChangeType } from '@Constans/htmlConstants';
 export interface SearchProps {
   /**
    * Current selected value depicted by pagination attribute

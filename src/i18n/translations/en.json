@@ -18,8 +18,10 @@
     "footer": {
       "message": "Copyright 2023 Antonio Salaices"
     },
-    "inputs": {
-      "search": "Search"
+    "form": {
+      "inputs": {
+        "search": "Search"
+      }
     },
     "subPlaceholder": {
       "search": "eg: google"

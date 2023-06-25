@@ -11,9 +11,14 @@ export enum HTMLType {
   number = 'number',
   date = 'date',
   color = 'color',
+  range = 'range',
 }
 
 export type InputType = typeof HTMLType;
+
+export type SingleInputType = {
+  [K in keyof InputType]: {};
+}[keyof InputType];
 
 export type InputProps = ComponentProps<HTMLElements.INPUT>;
 export type SpanProps = ComponentProps<HTMLElements.SPAN>;
