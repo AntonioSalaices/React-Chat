@@ -4,6 +4,7 @@ exports[`<NotFound /> should render correctly 1`] = `
 <div>
   <div
     class="container"
+    id="main-container"
   >
     <div
       class="row justify-center align-center"

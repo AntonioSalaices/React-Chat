@@ -4,9 +4,10 @@ exports[`<Home />:: Spec should render correctly 1`] = `
 <div>
   <div
     class="container"
+    id="main-container"
   >
     <div
-      class="row gap-2 justify-center"
+      class="col justify-center align-center"
     >
       <div
         class="col-11-xs col-11-sm col-5-md col-5-xl"
@@ -47,9 +48,29 @@ exports[`<Home />:: Spec should render correctly 1`] = `
           </p>
         </div>
       </div>
+      <div
+        class="col-11-xs col-11-sm col-5-md col-5-xl"
+      >
+        <div
+          class="gap-2"
+        >
+          <input
+            class="input-primary"
+            data-testid="searchInput"
+            type="range"
+            value=""
+          />
+          <p
+            class="text-primary-light-7"
+          >
+            [missing "en-US.form.inputs.fontSize" translation]
+          </p>
+        </div>
+      </div>
     </div>
     <div
       class="container"
+      id="main-container"
     >
       <div
         class="row justify-center"

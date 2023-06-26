@@ -12,6 +12,7 @@ const Form: React.FC<FormProps> = ({ handleSearch, handleFontResize }) => {
         subTx="subPlaceholder.search"
         tx="form.inputs.search"
         handleChange={handleSearch}
+        testID="searchInput"
       />
       <FormField
         type={HTMLType.range}
@@ -19,6 +20,7 @@ const Form: React.FC<FormProps> = ({ handleSearch, handleFontResize }) => {
         handleChange={handleFontResize}
         max="100"
         min="10"
+        testID="resizeInput"
       />
     </div>
   );

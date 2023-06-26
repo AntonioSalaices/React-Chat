@@ -12,6 +12,7 @@ const FormField: React.FC<FormFieldProps> = ({
   tx,
   subTx,
   subText,
+  testID,
 }) => {
   const i18Text = tx && translate(tx, txOptions);
   const content = i18Text || text;
@@ -22,7 +23,7 @@ const FormField: React.FC<FormFieldProps> = ({
     <div className="col-11-xs col-11-sm col-5-md col-5-xl">
       <Input
         icon={icon}
-        testID="searchInput"
+        testID={testID}
         value={search}
         type={type}
         placeholder={content}

@@ -50,4 +50,8 @@ export interface FormFieldProps {
    * Minimum value for the input
    */
   max?: string;
+  /**
+   * ID used for testing
+   */
+  testID: string;
 }

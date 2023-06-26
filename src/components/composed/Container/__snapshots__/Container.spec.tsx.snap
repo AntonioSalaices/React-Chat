@@ -4,6 +4,7 @@ exports[`<Container /> should render correctly 1`] = `
 <div>
   <div
     class="container"
+    id="main-container"
   >
     <span>
       Children
