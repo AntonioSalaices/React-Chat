@@ -4,14 +4,15 @@ import { translate } from '../../../i18n';
 
 import useThrottle from '@Hooks/useThrottle/useThrottle';
 
-import { Events } from '@Constans/eventConstants';
+import { Events, MenuStatus } from '@Constans/eventConstants';
 import { ScreenSize } from '@Constans/screenConstants';
 import { HeaderProps } from './Header.props';
 
 import Formatter from '@Utils/formatter';
-import { FaLaptop, FaMobileAlt } from 'react-icons/fa';
+import { FaLaptop, FaMobileAlt, FaAlignJustify } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { LinkType } from '@Utils/types';
+import classNames from 'classnames';
 
 const { sizeToRange } = Formatter;
 
@@ -34,6 +35,11 @@ const getLinks = (): LinkType[] => {
 const Header: React.FC<HeaderProps> = ({ onChange, theme }) => {
   const selectedTheme: Theme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
   const [range, setRange] = useState<string>(sizeToRange(window.innerWidth));
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const handleOpenMenu = () => {
+    setIsOpen((prev) => !prev);
+  };
 
   useEffect(() => {
     window.addEventListener(Events.RESIZE, handleWindowResize);
@@ -51,11 +57,21 @@ const Header: React.FC<HeaderProps> = ({ onChange, theme }) => {
     []
   );
 
+  const containerClasses = classNames('display-f justify-center align-center gap-2 items-list', {
+    [MenuStatus.Open]: isOpen,
+    [MenuStatus.Closed]: !isOpen,
+  });
+
   return (
     <nav className="navbar-primary text-white mb-4 justify-between">
       <div className="container">
-        <h2 className="site-title">{translate('header.title')}</h2>
-        <ul className="display-f justify-center align-center gap-2">
+        <h2 className="site-title">
+          {translate('header.title')}
+          <li onClick={handleOpenMenu} className="nav-icon">
+            <FaAlignJustify />
+          </li>
+        </h2>
+        <ul className={containerClasses}>
           <li>{iconsScreen[range]}</li>
           {getLinks().map(({ path, name }, index) => (
             <li key={index.toString()}>
