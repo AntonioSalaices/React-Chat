@@ -12,6 +12,7 @@ exports[`<List />:: Spec should render correctly 1`] = `
         class="card"
       >
         <img
+          loading="lazy"
           src="https://giphy.com/gifs/uefa-europa-league-final-2022-23-RRkpCa1JGN89cuT0PX"
         />
       </div>

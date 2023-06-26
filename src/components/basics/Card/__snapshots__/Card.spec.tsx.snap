@@ -10,6 +10,7 @@ exports[`<Card /> should render correctly Snapshot 1`] = `
     >
       <img
         alt="just a test description"
+        loading="lazy"
         src="https://www.test.com"
       />
     </div>
