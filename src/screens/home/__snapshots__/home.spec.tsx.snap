@@ -56,7 +56,7 @@ exports[`<Home />:: Spec should render correctly 1`] = `
         >
           <input
             class="input-primary"
-            data-testid="searchInput"
+            data-testid="resizeInput"
             type="range"
             value=""
           />
