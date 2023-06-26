@@ -2,6 +2,7 @@ import { DebouncedFunc } from 'lodash';
 import I18n from 'i18n-js';
 import { TxKeyPath } from '@Translate/i18n';
 import { OnChangeType, SingleInputType } from '@Constans/htmlConstants';
+import { Func } from '@Utils/types';
 
 export interface FormFieldProps {
   /**
@@ -11,7 +12,7 @@ export interface FormFieldProps {
   /**
    * Handle fuction to listen every input change with delay
    */
-  handleChange: DebouncedFunc<({ target: { value } }: OnChangeType) => void>;
+  handleChange: DebouncedFunc<({ target: { value } }: OnChangeType) => void> | Func;
   /**
    * Optional options to pass to i18n, Useful for interpolation
    * as well as explicitly setting locale or translation
@@ -41,4 +42,12 @@ export interface FormFieldProps {
    * Type of the input
    */
   type: SingleInputType;
+  /**
+   * Maximum value for the input
+   */
+  min?: string;
+  /**
+   * Minimum value for the input
+   */
+  max?: string;
 }

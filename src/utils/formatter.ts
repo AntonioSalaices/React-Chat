@@ -72,6 +72,9 @@ const Formatter = {
     }
     return ScreenSize.XL;
   },
+  getFontSize(value: string): string {
+    return `${Number(value) / 50}em`;
+  },
 };
 
 export default Formatter;

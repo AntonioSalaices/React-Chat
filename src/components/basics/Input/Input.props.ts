@@ -37,4 +37,12 @@ export interface InputProps {
    * ID used for testing
    */
   testID?: string;
+  /**
+   * Maximum value for the input
+   */
+  min?: string;
+  /**
+   * Minimum value for the input
+   */
+  max?: string;
 }

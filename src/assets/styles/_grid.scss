@@ -26,6 +26,11 @@ $align-items-values: stretch, center, start, end;
   flex-flow: row wrap;
 }
 
+.col {
+  display: flex;
+  flex-flow: column;
+}
+
 //grid gaps
 @each $key, $val in $grid-gaps {
   .gap-#{$key} > * {

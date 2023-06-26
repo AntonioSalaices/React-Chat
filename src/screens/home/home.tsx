@@ -12,7 +12,7 @@ import Formatter from '@Utils/formatter';
 
 const { VITE_BASE_URL, VITE_API_SEARCH, VITE_API_KEY } = import.meta.env;
 
-const { getFormatedData } = Formatter;
+const { getFormatedData, getFontSize } = Formatter;
 
 const Home = (): React.ReactElement => {
   const [search, setSearch] = useState<string>('');
@@ -35,6 +35,11 @@ const Home = (): React.ReactElement => {
     []
   );
 
+  const handleResize = ({ target: { value } }: OnChangeType) => {
+    const container = document.getElementById('main-container') as HTMLElement;
+    container.style.fontSize = getFontSize(value);
+  };
+
   useEffect(() => {
     return () => {
       debouncedSearch.cancel();
@@ -43,7 +48,7 @@ const Home = (): React.ReactElement => {
 
   return (
     <Container>
-      <Form handleSearch={debouncedSearch} />
+      <Form handleSearch={debouncedSearch} handleFontResize={handleResize} />
       <MemoizedList isShownNoFoundMessage={isShownNoFoundMessage} isLoading={isLoading} data={latestData} />
     </Container>
   );
