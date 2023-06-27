@@ -1,7 +1,6 @@
 import React, { useDeferredValue, useEffect, useMemo, useState } from 'react';
 
-import MemoizedList from '@Components/composed/List';
-import Container from '@Components/composed/Container';
+import { MemoizedList, Container } from '@Components/Core';
 import Form from './components/Form/Form';
 
 import useFetch from '@Hooks/useFetch/useFetch';

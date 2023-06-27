@@ -1,4 +1,4 @@
-import FormField from '@Components/composed/FormField';
+import { FormField } from '@Components/Core';
 import { FormProps } from './Form.props';
 import { HTMLType } from '@Constans/htmlConstants';
 

@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { isEqual } from 'lodash';
-import Card from '@Components/basics/Card/Card';
+import { Card } from '@Components/Core';
 import { ListProps } from './List.props';
 import withLoadingLogic from '../../../Hocs/withLoadingLogic/withLoadingLogic';
 
@@ -22,4 +22,4 @@ const MemoizedList = memo(ListWithLoading, (prevProps, nextProps) => {
   return isEqual(prevProps, nextProps);
 });
 
-export default MemoizedList;
+export { MemoizedList };
