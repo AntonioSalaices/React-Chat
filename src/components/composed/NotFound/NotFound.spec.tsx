@@ -1,5 +1,5 @@
 import { render, RenderResult } from '@testing-library/react';
-import NotFound from './NotFound';
+import { NotFound } from '@Components/Core';
 
 describe('<NotFound />', () => {
   let component: RenderResult;

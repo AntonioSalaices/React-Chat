@@ -1,5 +1,5 @@
 import { RenderResult, render } from '@testing-library/react';
-import Card from './Card';
+import { Card } from '@Components/Core';
 
 describe('<Card />', () => {
   let component: RenderResult;

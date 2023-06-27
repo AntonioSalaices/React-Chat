@@ -1,5 +1,5 @@
 import { RenderResult, render } from '@testing-library/react';
-import Input from './Input';
+import { Input } from '@Components/Core';
 
 describe('<Input />', () => {
   let component: RenderResult;

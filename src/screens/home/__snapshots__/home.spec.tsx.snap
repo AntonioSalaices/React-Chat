@@ -25,11 +25,11 @@ exports[`<Home />:: Spec should render correctly 1`] = `
               value=""
             />
           </label>
-          <p
-            class="text-primary-light-7"
+          <h5
+            class="text-primary-light-7 mb-2"
           >
             [missing "en-US.subPlaceholder.search" translation]
-          </p>
+          </h5>
         </div>
       </div>
       <div
@@ -39,20 +39,20 @@ exports[`<Home />:: Spec should render correctly 1`] = `
           class="gap-2"
         >
           <label>
+            [missing "en-US.form.inputs.fontSize" translation]
             <input
               class="input-primary"
               data-testid="resizeInput"
               max="100"
               min="50"
+              placeholder="[missing "en-US.form.inputs.fontSize" translation]"
               type="range"
               value=""
             />
           </label>
-          <p
-            class="text-primary-light-7"
-          >
-            [missing "en-US.form.inputs.fontSize" translation]
-          </p>
+          <h5
+            class="text-primary-light-7 mb-2"
+          />
         </div>
       </div>
     </div>

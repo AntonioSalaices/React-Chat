@@ -1,5 +1,5 @@
 import { RenderResult, render } from '@testing-library/react';
-import Footer from './Footer';
+import { Footer } from '@Components/Core';
 
 describe('<Footer />', () => {
   let component: RenderResult;

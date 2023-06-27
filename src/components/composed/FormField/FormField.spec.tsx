@@ -1,5 +1,5 @@
 import { render, RenderResult } from '@testing-library/react';
-import FormField from './FormField';
+import { FormField } from '@Components/Core';
 import { debounce } from 'lodash';
 import { HTMLType } from '@Constans/htmlConstants';
 

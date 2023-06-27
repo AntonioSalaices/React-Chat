@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import ErrorPage from './ErrorPage';
+import { ErrorPage } from '@Components/Core';
 
 describe('<ErrorPage /> :: Spec', () => {
   const error = new Error('Test');

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import ErrorBoundary from './ErrorBoundary';
+import { ErrorBoundary } from '@Components/Core';
 
 describe('<ErrorBoundary::Spec />', () => {
   test('should render error page', () => {

@@ -1,5 +1,5 @@
 import { RenderResult, fireEvent, render } from '@testing-library/react';
-import Header from './Header';
+import { Header } from '@Components/Core';
 import { Theme } from '@Constans/Theme';
 import { Events } from '@Constans/eventConstants';
 import { BrowserRouter } from 'react-router-dom';

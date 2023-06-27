@@ -1,5 +1,5 @@
 import { RenderResult, render } from '@testing-library/react';
-import Message from './Message';
+import { Message } from '@Components/Core';
 
 describe('<Message />', () => {
   let component: RenderResult;

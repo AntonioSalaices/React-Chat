@@ -1,14 +1,14 @@
 import React, { BaseSyntheticEvent, useEffect, useState } from 'react';
-import { Events } from '@Constans/eventConstants';
-import { ThemeProvider } from 'context/ThemeContext.tsx';
 
+import { renderContent } from '@Hocs/withLoadingLogic/withLoadingLogic';
+import { ErrorBoundary, Spinner } from '@Components/Core';
+import AppRoutes from 'AppRoutes';
+
+import { ThemeProvider } from 'context/ThemeContext.tsx';
+import { Events } from '@Constans/eventConstants';
+import { PURPLE } from '@Utils/colors';
 import { setTranslationsByUserPreferences } from './i18n';
 import i18n from './i18n/i18n';
-import AppRoutes from 'AppRoutes';
-import { Spinner } from '@Components/Core';
-import { PURPLE } from '@Utils/colors';
-import { renderContent } from '@Hocs/withLoadingLogic/withLoadingLogic';
-import ErrorBoundary from '@Components/composed/ErrorBoundary';
 
 const App = (): React.ReactElement => {
   const [isLoaded, setIsLoaded] = useState<boolean>(true);

@@ -24,8 +24,8 @@ exports[`<FormField /> should render correctly 1`] = `
           value=""
         />
       </label>
-      <p
-        class="text-primary-light-7"
+      <h5
+        class="text-primary-light-7 mb-2"
       />
     </div>
   </div>

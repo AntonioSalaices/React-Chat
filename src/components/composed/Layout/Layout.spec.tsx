@@ -1,5 +1,5 @@
 import { RenderResult, act, fireEvent, render } from '@testing-library/react';
-import Layout from './Layout';
+import { Layout } from '@Components/Core';
 import { ThemeProvider } from 'context/ThemeContext';
 import { BrowserRouter } from 'react-router-dom';
 

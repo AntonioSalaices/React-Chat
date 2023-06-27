@@ -1,5 +1,5 @@
 import { gifsResponse } from 'mocks/gifs';
-import MemoizedList from './List';
+import { MemoizedList } from '@Components/Core';
 import { render } from '@testing-library/react';
 
 describe('<List />:: Spec', () => {

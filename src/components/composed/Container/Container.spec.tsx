@@ -1,5 +1,5 @@
 import { RenderResult, render } from '@testing-library/react';
-import Container from './Container';
+import { Container } from '@Components/Core';
 
 describe('<Container />', () => {
   let component: RenderResult;

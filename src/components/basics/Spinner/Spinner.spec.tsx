@@ -1,5 +1,5 @@
 import { RenderResult, render } from '@testing-library/react';
-import Spinner from './Spinner';
+import { Spinner } from '@Components/Core';
 import { PURPLE } from '@Utils/colors';
 
 describe('<Spinner />', () => {

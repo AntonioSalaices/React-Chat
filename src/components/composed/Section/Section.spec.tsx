@@ -1,5 +1,5 @@
 import { render, RenderResult } from '@testing-library/react';
-import Section from './Section';
+import { Section } from '@Components/Core';
 
 describe('<Section />', () => {
   let component: RenderResult;
