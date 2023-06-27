@@ -1,8 +1,6 @@
 import { useContext } from 'react';
 
-import Header from '@Components/composed/Header/Header';
-import Footer from '@Components/composed/Footer';
-import Section from '../Section';
+import { Section, Header, Footer } from '@Components/Core';
 
 import { ThemeContext } from 'context/ThemeContext';
 import { Theme } from '@Constans/Theme';
@@ -26,4 +24,4 @@ const Layout: React.FC = () => {
   );
 };
 
-export default Layout;
+export { Layout };

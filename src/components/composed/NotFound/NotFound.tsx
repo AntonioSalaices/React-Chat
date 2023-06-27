@@ -1,5 +1,5 @@
 import { translate } from '@Translate/translate';
-import Container from '../Container';
+import { Container } from '@Components/Core';
 import { NotFoundProps } from './NotFound.props';
 
 const NotFound: React.FC<NotFoundProps> = ({ tx, txOptions, text }) => {
@@ -15,4 +15,4 @@ const NotFound: React.FC<NotFoundProps> = ({ tx, txOptions, text }) => {
   );
 };
 
-export default NotFound;
+export { NotFound };

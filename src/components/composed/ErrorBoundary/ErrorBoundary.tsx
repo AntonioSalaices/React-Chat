@@ -1,8 +1,8 @@
 import { Component, ErrorInfo, ReactNode } from 'react';
 import { ErrorBoundaryProps, ErrorBoundaryState } from './ErrorBoundary.props';
-import ErrorPage from '../ErrorPage/ErrorPage';
+import { ErrorPage } from '@Components/Core';
 
-export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
 
@@ -33,3 +33,5 @@ export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBo
     );
   }
 }
+
+export { ErrorBoundary };

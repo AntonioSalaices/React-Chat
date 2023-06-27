@@ -1,4 +1,4 @@
-import Input from '@Components/basics/Input';
+import { Input } from '@Components/Core';
 import { FormFieldProps } from './FormField.props';
 import { translate } from '@Translate/translate';
 
@@ -38,4 +38,4 @@ const FormField: React.FC<FormFieldProps> = ({
   );
 };
 
-export default FormField;
+export { FormField };

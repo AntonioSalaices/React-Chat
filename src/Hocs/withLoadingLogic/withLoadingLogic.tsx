@@ -1,10 +1,8 @@
 import React from 'react';
-import Spinner from '@Components/basics/Spinner';
-import { PURPLE } from '@Utils/colors';
-import Message from '@Components/basics/Message';
-import Container from '@Components/composed/Container';
-import { List } from '@Components/composed/List/List';
+import { Spinner, Message, Container, List } from '@Components/Core';
+
 import { PropsFrom } from '@Utils/types';
+import { PURPLE } from '@Utils/colors';
 
 export const renderContent = (children: React.ReactElement) => {
   return (

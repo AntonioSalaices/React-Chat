@@ -84,4 +84,4 @@ const Header: React.FC<HeaderProps> = ({ onChange, theme }) => {
     </nav>
   );
 };
-export default Header;
+export { Header };

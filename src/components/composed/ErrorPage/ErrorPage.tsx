@@ -15,4 +15,4 @@ const ErrorPage: React.FC<ErrorPageProps> = ({ error, tx, txOptions, text, subTx
   );
 };
 
-export default ErrorPage;
+export { ErrorPage };

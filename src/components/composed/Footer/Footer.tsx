@@ -11,4 +11,4 @@ const Footer: React.FC<FooterProps> = ({ tx, txOptions, text }) => {
     </footer>
   );
 };
-export default Footer;
+export { Footer };

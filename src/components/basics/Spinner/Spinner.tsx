@@ -5,4 +5,4 @@ const Spinner: React.FC<SpinnerProps> = (props) => {
   return <MDSpinner {...(props as SpinnerProps)} />;
 };
 
-export default Spinner;
+export { Spinner };

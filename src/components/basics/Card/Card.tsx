@@ -9,4 +9,4 @@ const Card: React.FC<CardProps> = ({ url, description }) => {
     </div>
   );
 };
-export default Card;
+export { Card };
