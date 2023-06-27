@@ -56,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({ onChange, theme }) => {
     100,
     []
   );
-
+  console.log('isOpen', isOpen);
   const containerClasses = classNames('display-f justify-center align-center gap-2 items-list', {
     [MenuStatus.Open]: isOpen,
     [MenuStatus.Closed]: !isOpen,

@@ -8,16 +8,19 @@ const Input: React.FC<InputProps> = ({ value, icon, testID, name, placeholder, t
           <span>{icon}</span>
         </div>
       )}
-      <input
-        className="input-primary"
-        data-testid={testID}
-        ref={ref}
-        type={type}
-        value={value}
-        name={name}
-        placeholder={placeholder}
-        onChange={onChange}
-      />
+      <label>
+        {placeholder}
+        <input
+          className="input-primary"
+          data-testid={testID}
+          ref={ref}
+          type={type}
+          value={value}
+          name={name}
+          placeholder={placeholder}
+          onChange={onChange}
+        />
+      </label>
       <p className="text-primary-light-7">{subText}</p>
     </div>
   );
