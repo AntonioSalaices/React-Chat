@@ -35,7 +35,7 @@ const Input: React.FC<InputProps> = ({
           min={min}
         />
       </label>
-      <p className="text-primary-light-7">{subText}</p>
+      <h5 className="text-primary-light-7 mb-2">{subText}</h5>
     </div>
   );
 };

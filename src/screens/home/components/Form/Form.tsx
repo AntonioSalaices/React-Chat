@@ -14,7 +14,7 @@ const Form: React.FC<FormProps> = ({ handleSearch, handleFontResize }) => {
       />
       <FormField
         type={HTMLType.range}
-        subTx="form.inputs.fontSize"
+        tx="form.inputs.fontSize"
         handleChange={handleFontResize}
         max="100"
         min="50"
