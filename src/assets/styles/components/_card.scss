@@ -7,6 +7,17 @@
   box-shadow: $base-box-shadow;
   border-radius: math.div($base-border-radius, 4);
   background-color: map-get($colors, 'light');
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+    box-shadow: $base-box-shadow;
+    z-index: 10;
+  }
+
+  &:not(:hover) {
+    opacity: 0.9;
+  }
   img {
     width: 100%;
   }

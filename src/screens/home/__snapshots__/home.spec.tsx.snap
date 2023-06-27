@@ -34,13 +34,16 @@ exports[`<Home />:: Spec should render correctly 1`] = `
               </svg>
             </span>
           </div>
-          <input
-            class="input-primary"
-            data-testid="searchInput"
-            placeholder="[missing "en-US.form.inputs.search" translation]"
-            type="text"
-            value=""
-          />
+          <label>
+            [missing "en-US.form.inputs.search" translation]
+            <input
+              class="input-primary"
+              data-testid="searchInput"
+              placeholder="[missing "en-US.form.inputs.search" translation]"
+              type="text"
+              value=""
+            />
+          </label>
           <p
             class="text-primary-light-7"
           >
@@ -54,12 +57,14 @@ exports[`<Home />:: Spec should render correctly 1`] = `
         <div
           class="gap-2"
         >
-          <input
-            class="input-primary"
-            data-testid="resizeInput"
-            type="range"
-            value=""
-          />
+          <label>
+            <input
+              class="input-primary"
+              data-testid="resizeInput"
+              type="range"
+              value=""
+            />
+          </label>
           <p
             class="text-primary-light-7"
           >

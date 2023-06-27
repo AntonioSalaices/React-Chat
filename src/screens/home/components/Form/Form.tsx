@@ -1,6 +1,5 @@
 import FormField from '@Components/composed/FormField';
 import { FormProps } from './Form.props';
-import { FaSearch } from 'react-icons/fa';
 import { HTMLType } from '@Constans/htmlConstants';
 
 const Form: React.FC<FormProps> = ({ handleSearch, handleFontResize }) => {
@@ -8,7 +7,6 @@ const Form: React.FC<FormProps> = ({ handleSearch, handleFontResize }) => {
     <div className="col justify-center align-center">
       <FormField
         type={HTMLType.text}
-        icon={<FaSearch />}
         subTx="subPlaceholder.search"
         tx="form.inputs.search"
         handleChange={handleSearch}
@@ -19,7 +17,7 @@ const Form: React.FC<FormProps> = ({ handleSearch, handleFontResize }) => {
         subTx="form.inputs.fontSize"
         handleChange={handleFontResize}
         max="100"
-        min="10"
+        min="50"
         testID="resizeInput"
       />
     </div>

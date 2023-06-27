@@ -1,6 +1,18 @@
 import { InputProps } from './Input.props';
 
-const Input: React.FC<InputProps> = ({ value, icon, testID, name, placeholder, type, onChange, ref, subText }) => {
+const Input: React.FC<InputProps> = ({
+  value,
+  icon,
+  max,
+  min,
+  testID,
+  name,
+  placeholder,
+  type,
+  onChange,
+  ref,
+  subText,
+}) => {
   return (
     <div className="gap-2">
       {icon && (
@@ -19,6 +31,8 @@ const Input: React.FC<InputProps> = ({ value, icon, testID, name, placeholder, t
           name={name}
           placeholder={placeholder}
           onChange={onChange}
+          max={max}
+          min={min}
         />
       </label>
       <p className="text-primary-light-7">{subText}</p>

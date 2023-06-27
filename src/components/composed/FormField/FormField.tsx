@@ -13,6 +13,8 @@ const FormField: React.FC<FormFieldProps> = ({
   subTx,
   subText,
   testID,
+  max,
+  min,
 }) => {
   const i18Text = tx && translate(tx, txOptions);
   const content = i18Text || text;
@@ -29,6 +31,8 @@ const FormField: React.FC<FormFieldProps> = ({
         placeholder={content}
         subText={subContent}
         onChange={handleChange}
+        max={max}
+        min={min}
       />
     </div>
   );

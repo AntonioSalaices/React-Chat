@@ -15,12 +15,15 @@ exports[`<FormField /> should render correctly 1`] = `
           <i />
         </span>
       </div>
-      <input
-        class="input-primary"
-        placeholder="test"
-        type="text"
-        value=""
-      />
+      <label>
+        test
+        <input
+          class="input-primary"
+          placeholder="test"
+          type="text"
+          value=""
+        />
+      </label>
       <p
         class="text-primary-light-7"
       />

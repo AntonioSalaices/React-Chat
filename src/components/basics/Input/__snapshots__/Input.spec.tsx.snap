@@ -5,11 +5,13 @@ exports[`<Input /> should render correctly 1`] = `
   <div
     class="gap-2"
   >
-    <input
-      class="input-primary"
-      type="text"
-      value=""
-    />
+    <label>
+      <input
+        class="input-primary"
+        type="text"
+        value=""
+      />
+    </label>
     <p
       class="text-primary-light-7"
     />
