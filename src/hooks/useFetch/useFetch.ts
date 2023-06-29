@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { AxiosConstants } from '@Constans/securityConstants';
 
 interface State {
   data?: any;
@@ -26,8 +27,13 @@ const useFetch = (url: string): State => {
 
     const apiRequest = async () => {
       try {
-        const res = await axios.get(url, { cancelToken: cancelToken.token });
-        !isCompleted && setData(res.data.data);
+        const response = await axios.get(url, { cancelToken: cancelToken.token });
+
+        if (response.statusText !== AxiosConstants.Ok) {
+          throw new Error('Error HTTP: ', response.status as ErrorOptions);
+        }
+
+        !isCompleted && setData(response.data.data);
       } catch (error) {
         setError('An error ocurred');
       } finally {
