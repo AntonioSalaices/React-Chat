@@ -10,6 +10,7 @@ describe('<Header />', () => {
   const props = {
     onChange: jest.fn(),
     theme: Theme.LIGHT,
+    onClickLoginNavigation: jest.fn(),
   };
 
   beforeEach(() => {

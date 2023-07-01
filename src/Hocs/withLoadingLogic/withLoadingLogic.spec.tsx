@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import MemoizedList from '@Components/composed/List/List';
+import { MemoizedList } from '@Components/Core';
 import withLoadingLogic from './withLoadingLogic';
 
 describe('withLoadingLogic:: Spec', () => {

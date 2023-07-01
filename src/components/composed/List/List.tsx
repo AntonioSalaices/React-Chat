@@ -8,11 +8,13 @@ export function List<TItem>(props: ListProps<TItem>) {
   const { data } = props;
 
   return (
-    <div className="row gap-2 justify-center">
+    <ul className="row gap-2 justify-center">
       {data?.map(({ id, ...rest }) => (
-        <Card key={id} {...rest} />
+        <li key={id}>
+          <Card {...rest} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 

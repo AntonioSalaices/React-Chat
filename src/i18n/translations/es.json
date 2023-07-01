@@ -5,7 +5,8 @@
       "links": {
         "home": "Home",
         "chat": "Chat",
-        "library": "Librería"
+        "library": "Librería",
+        "signIn": "Ingresar"
       }
     },
     "error": {

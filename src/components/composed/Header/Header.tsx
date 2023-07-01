@@ -24,7 +24,7 @@ const getLinks = (): LinkType[] => {
   ];
 };
 
-const Header: React.FC<HeaderProps> = ({ onChange, theme }) => {
+const Header: React.FC<HeaderProps> = ({ onChange, theme, onClickLoginNavigation }) => {
   const selectedTheme: Theme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
   const [range, setRange] = useState<string>(sizeToRange(window.innerWidth));
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -74,9 +74,9 @@ const Header: React.FC<HeaderProps> = ({ onChange, theme }) => {
             <button
               data-testid="btn-change-theme"
               className="btn-light text-dark font-md"
-              onClick={() => onChange(selectedTheme)}
+              onClick={onClickLoginNavigation}
             >
-              {theme}
+              {translate('header.links.signIn')}
             </button>
           </li>
         </ul>
