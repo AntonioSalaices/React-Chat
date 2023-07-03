@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState, useCallback } from 'react';
 
 export const usePostQuery = <BodyData, ResponseData>(
@@ -10,25 +11,18 @@ export const usePostQuery = <BodyData, ResponseData>(
   responseData: ResponseData | null;
 } => {
   const [responseData, setResponseData] = useState<ResponseData | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
   const post = useCallback(
     async (data: BodyData) => {
       try {
         setLoading(true);
-        console.log('data', data);
-        const response = await fetch(query, {
-          method: 'POST',
-          body: JSON.stringify(data),
-          headers,
-        });
-        const json = await response.json();
-
-        setResponseData(json);
-        setLoading(false);
+        const response = await axios.post(query, data);
+        setResponseData(response.data);
       } catch (error: any) {
         setError(error.message);
+      } finally {
         setLoading(false);
       }
     },

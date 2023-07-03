@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { AxiosConstants } from '@Constans/securityConstants';
 
-interface State {
-  data?: any;
+interface State<T> {
+  data?: T[];
   error: Error | string | null;
   isLoading: boolean;
 }
@@ -14,8 +14,8 @@ interface State {
  * @example Inside a functional component:
  * const { isLoading, data, error, cancel } = useFetch(URL);
  */
-const useFetch = (url: string): State => {
-  const [data, setData] = useState<null | any>(null);
+const useFetch = <T>(url: string): State<T> => {
+  const [data, setData] = useState<T | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<null | string>(null);
 

@@ -4,10 +4,12 @@
  * @author Antonio Salaices
  */
 
-const token = 'cookieMethod';
+import { Security } from '@Constans/securityConstants';
+
+const userData = localStorage.getItem(Security.USER_DATA);
 
 const isAuthenticated = () => {
-  return Boolean(token);
+  return Boolean(userData);
 };
 
 const auth = {

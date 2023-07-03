@@ -9,6 +9,7 @@ import { Events } from '@Constans/eventConstants';
 import { PURPLE } from '@Utils/colors';
 import { setTranslationsByUserPreferences } from './i18n';
 import i18n from './i18n/i18n';
+import { auth } from './auth/AuthProvider';
 
 const App = (): React.ReactElement => {
   const [isLoaded, setIsLoaded] = useState<boolean>(true);
