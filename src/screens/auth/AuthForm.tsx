@@ -4,14 +4,23 @@ import { AuthFormProps } from './AuthForm.props';
 import { Container, FormField } from '@Components/Core';
 import { useRef, useState } from 'react';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
+import { usePostQuery } from '@Hooks/usePost/usePost';
+
+const { VITE_BASE_API_URL, VITE_BASE_AUTH_URL } = import.meta.env;
 
 const AuthForm: React.FC<AuthFormProps> = () => {
+  const { responseData, loading, error, post } = usePostQuery(`${VITE_BASE_API_URL}${VITE_BASE_AUTH_URL}`);
   const [isShownPassword, setIsShownPassword] = useState<boolean>(false);
-  const email = useRef<React.RefObject<HTMLInputElement>>(null);
-  const password = useRef<React.RefObject<HTMLInputElement>>(null);
-
+  const email = useRef<HTMLInputElement>(null);
+  const password = useRef<HTMLInputElement>(null);
+  console.log('response', responseData, loading, error);
   const onSubmit = (e) => {
     e.preventDefault();
+    const body = {
+      email: email?.current?.value,
+      password: password?.current?.value,
+    };
+    post(body);
   };
 
   return (

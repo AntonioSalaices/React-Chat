@@ -3,7 +3,7 @@
 exports[`<Input /> should render correctly 1`] = `
 <div>
   <div
-    class="gap-2"
+    class="gap-2 input-content"
   >
     <label>
       <input
@@ -13,7 +13,7 @@ exports[`<Input /> should render correctly 1`] = `
       />
     </label>
     <h5
-      class="text-primary-light-7 mb-2"
+      class="text-primary-light-7 mb-1"
     />
   </div>
 </div>

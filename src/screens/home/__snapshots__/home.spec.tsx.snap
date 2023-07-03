@@ -13,7 +13,7 @@ exports[`<Home />:: Spec should render correctly 1`] = `
         class="col-11-xs col-11-sm col-5-md col-5-xl"
       >
         <div
-          class="gap-2"
+          class="gap-2 input-content"
         >
           <label>
             [missing "en-US.form.inputs.search" translation]
@@ -26,7 +26,7 @@ exports[`<Home />:: Spec should render correctly 1`] = `
             />
           </label>
           <h5
-            class="text-primary-light-7 mb-2"
+            class="text-primary-light-7 mb-1"
           >
             [missing "en-US.subPlaceholder.search" translation]
           </h5>
@@ -36,7 +36,7 @@ exports[`<Home />:: Spec should render correctly 1`] = `
         class="col-11-xs col-11-sm col-5-md col-5-xl"
       >
         <div
-          class="gap-2"
+          class="gap-2 input-content"
         >
           <label>
             [missing "en-US.form.inputs.fontSize" translation]
@@ -51,7 +51,7 @@ exports[`<Home />:: Spec should render correctly 1`] = `
             />
           </label>
           <h5
-            class="text-primary-light-7 mb-2"
+            class="text-primary-light-7 mb-1"
           />
         </div>
       </div>

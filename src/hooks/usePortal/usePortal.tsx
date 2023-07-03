@@ -30,10 +30,10 @@ function usePortal(element: HTMLElement) {
     const newPortal = createPortal(element);
     setPortal(newPortal as any);
 
-    return () => newPortal.remove(element);
+    return () => newPortal?.remove(element);
   }, [element]);
 
-  return portal.render;
+  return portal?.render;
 }
 
 export default usePortal;
