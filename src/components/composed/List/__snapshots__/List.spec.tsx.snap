@@ -2,21 +2,23 @@
 
 exports[`<List />:: Spec should render correctly 1`] = `
 <div>
-  <div
+  <ul
     class="row gap-2 justify-center"
   >
-    <div
-      class="col-12-xs col-5-sm col-3-xl"
-    >
+    <li>
       <div
-        class="card"
+        class="col-12-xs col-5-sm col-3-xl"
       >
-        <img
-          loading="lazy"
-          src="https://giphy.com/gifs/uefa-europa-league-final-2022-23-RRkpCa1JGN89cuT0PX"
-        />
+        <div
+          class="card"
+        >
+          <img
+            loading="lazy"
+            src="https://giphy.com/gifs/uefa-europa-league-final-2022-23-RRkpCa1JGN89cuT0PX"
+          />
+        </div>
       </div>
-    </div>
-  </div>
+    </li>
+  </ul>
 </div>
 `;

@@ -8,7 +8,11 @@ export interface InputProps {
   /**
    * Icon to display inside of the input
    */
-  icon?: string | JSX.Element;
+  left?: string | JSX.Element;
+  /**
+   * Icon to display inside of the input
+   */
+  right?: string | JSX.Element;
   /**
    * Name of the input
    */

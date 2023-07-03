@@ -6,13 +6,17 @@ import { Func } from '@Utils/types';
 
 export interface FormFieldProps {
   /**
+   * Ref of the input
+   */
+  ref?: React.RefObject<HTMLInputElement>;
+  /**
    * Current selected value depicted by pagination attribute
    */
   search?: string;
   /**
    * Handle fuction to listen every input change with delay
    */
-  handleChange: DebouncedFunc<({ target: { value } }: OnChangeType) => void> | Func;
+  handleChange?: DebouncedFunc<({ target: { value } }: OnChangeType) => void> | Func;
   /**
    * Optional options to pass to i18n, Useful for interpolation
    * as well as explicitly setting locale or translation
@@ -37,7 +41,11 @@ export interface FormFieldProps {
   /**
    * Icon to display inside of the input
    */
-  icon?: JSX.Element;
+  left?: string | JSX.Element;
+  /**
+   * Icon to display inside of the input
+   */
+  right?: string | JSX.Element;
   /**
    * Type of the input
    */

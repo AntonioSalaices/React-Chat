@@ -16,17 +16,17 @@ const Layout: React.FC = () => {
     localStorage.setItem(Theme.THEME, selectedTheme);
   };
 
-  const onClickLoginNavigation = () => {
-    setIsShownLoginModal((prev) => !prev);
-  };
-
   return (
     <div className={theme}>
-      <Header onClickLoginNavigation={onClickLoginNavigation} theme={theme} onChange={handleOnChange} />
+      <Header
+        onClickLoginNavigation={() => setIsShownLoginModal(!isShownLoginModal)}
+        theme={theme}
+        onChange={handleOnChange}
+      />
       <Outlet />
       <Section />
       <Footer tx="footer.message" />
-      <AuthModal isShown={isShownLoginModal} />
+      <AuthModal onClose={() => setIsShownLoginModal(!isShownLoginModal)} isShown={isShownLoginModal} />
     </div>
   );
 };

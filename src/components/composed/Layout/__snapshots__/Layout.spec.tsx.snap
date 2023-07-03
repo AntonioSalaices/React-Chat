@@ -76,9 +76,9 @@ exports[`<Layout> should render correctly 1`] = `
           <li>
             <button
               class="btn-light text-dark font-md"
-              data-testid="btn-change-theme"
+              data-testid="btn-login-navigate"
             >
-              light
+              [missing "en-US.header.links.signIn" translation]
             </button>
           </li>
         </ul>

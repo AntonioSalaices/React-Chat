@@ -12,6 +12,7 @@ export enum HTMLType {
   date = 'date',
   color = 'color',
   range = 'range',
+  password = 'password',
 }
 
 export type InputType = typeof HTMLType;

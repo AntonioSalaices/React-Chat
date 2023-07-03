@@ -14,10 +14,12 @@ function usePortal(element: HTMLElement) {
   });
 
   const createPortal = useCallback((elem: HTMLElement) => {
-    const Portal: React.FC<ReactPortal> = ({ children }: { children: ReactNode }) =>
-      ReactDOM.createPortal(children, elem);
+    if (!element) return null;
 
-    const remove = (elem: HTMLElement) => ReactDOM.unmountComponentAtNode(elem);
+    const Portal: React.FC<ReactPortal> = ({ children }: { children: ReactNode }) =>
+      ReactDOM?.createPortal(children, elem);
+
+    const remove = (elem: HTMLElement) => ReactDOM?.unmountComponentAtNode(elem);
 
     return { render: Portal, remove };
   }, []);

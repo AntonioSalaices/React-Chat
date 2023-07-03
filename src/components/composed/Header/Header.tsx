@@ -72,7 +72,7 @@ const Header: React.FC<HeaderProps> = ({ onChange, theme, onClickLoginNavigation
           ))}
           <li>
             <button
-              data-testid="btn-change-theme"
+              data-testid="btn-login-navigate"
               className="btn-light text-dark font-md"
               onClick={onClickLoginNavigation}
             >

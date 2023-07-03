@@ -45,9 +45,9 @@ describe('<Header />', () => {
   test('should click on theme button and change selected theme', () => {
     const { getByTestId } = component;
 
-    fireEvent.click(getByTestId('btn-change-theme'));
+    fireEvent.click(getByTestId('btn-login-navigate'));
 
-    expect(props.onChange).toHaveBeenCalled();
+    expect(props.onClickLoginNavigation).toHaveBeenCalled();
   });
 
   test('should call handleResize when resize event has been fired and display mobile icon', () => {

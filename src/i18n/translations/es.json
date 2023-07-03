@@ -16,17 +16,23 @@
     "noFound": {
       "message": "No se encontraron gifs"
     },
+    "buttons": {
+      "signIn": "Ingresar"
+    },
     "footer": {
       "message": "Copyright 2023 Antonio Salaices"
     },
     "form": {
       "inputs": {
         "search": "Búsqueda",
-        "fontSize": "Tamaño de fuente"
+        "fontSize": "Tamaño de fuente",
+        "email": "Correo electrónico",
+        "password": "Contraseña"
       }
     },
     "subPlaceholder": {
-      "search": "eg: google"
+      "search": "eg: google",
+      "email": "eg: email@example.com"
     },
     "notFound404": {
       "message": "404 No encontrada"

@@ -1,9 +1,19 @@
 @use 'sass:math';
 
+%base-icon {
+  position: absolute;
+  padding: 1.7rem $base-padding;
+}
+
+.input-content {
+  position: relative;
+}
+
 @each $key, $var in $colors {
   .input-#{$key} {
     text-align: center;
     display: block;
+
     padding: $base-padding;
     border-radius: $base-border-radius * 4;
     border: $base-border-thickness solid $dark;
@@ -22,7 +32,14 @@
   }
 }
 
-.input-icon {
-  position: absolute;
-  padding: $base-padding * 2.5;
+.input-icon-left {
+  @extend %base-icon;
+  top: 1px;
+  left: 0px;
+}
+
+.input-icon-right {
+  @extend %base-icon;
+  top: 1px;
+  right: 0px;
 }

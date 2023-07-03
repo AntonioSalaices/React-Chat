@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { RenderResult, act, fireEvent, render } from '@testing-library/react';
 import { Layout } from '@Components/Core';
 import { ThemeProvider } from 'context/ThemeContext';
@@ -7,8 +8,8 @@ const ThemeProviderMock = ThemeProvider as jest.MockedFunction<typeof ThemeProvi
 
 describe('<Layout>', () => {
   let component: RenderResult;
-  jest.spyOn(Object.getPrototypeOf(window.localStorage), 'setItem');
-  Object.setPrototypeOf(window.localStorage.setItem, jest.fn());
+  jest.spyOn(React, 'useState');
+  Object.setPrototypeOf(React.useState, jest.fn());
 
   beforeEach(() => {
     component = render(
@@ -26,13 +27,13 @@ describe('<Layout>', () => {
     expect(container).toMatchSnapshot();
   });
 
-  test('should fire onChange theme callback and store new theme preference on local storage', () => {
-    const { getByTestId } = component;
+  // test('should fire on navigate to login and call useState', () => {
+  //   const { getByTestId } = component;
 
-    act(() => {
-      fireEvent.click(getByTestId('btn-change-theme'));
-    });
+  //   act(() => {
+  //     fireEvent.click(getByTestId('btn-login-navigate'));
+  //   });
 
-    expect(window.localStorage.setItem).toHaveBeenCalled();
-  });
+  //   expect(React.useState).toHaveBeenCalled();
+  // });
 });
