@@ -1,6 +1,6 @@
 export enum Events {
-  LANGUAGE = 'languagechange',
-  RESIZE = 'resize',
+  Language = 'languagechange',
+  Resize = 'resize',
 }
 
 export enum MenuStatus {

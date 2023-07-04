@@ -1,4 +1,4 @@
-import AuthForm from './AuthForm';
+import AuthForm from './components/AuthForm';
 import { Modal } from '@Components/Core';
 import usePortal from '@Hooks/usePortal/usePortal';
 import { Func } from '@Utils/types';

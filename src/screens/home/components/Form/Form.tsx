@@ -9,13 +9,13 @@ const Form: React.FC<FormProps> = ({ handleSearch, handleFontResize }) => {
         type={HTMLType.text}
         subTx="subPlaceholder.search"
         tx="form.inputs.search"
-        handleChange={handleSearch}
+        onChange={handleSearch}
         testID="searchInput"
       />
       <FormField
         type={HTMLType.range}
         tx="form.inputs.fontSize"
-        handleChange={handleFontResize}
+        onChange={handleFontResize}
         max="100"
         min="50"
         testID="resizeInput"

@@ -1,15 +1,13 @@
 import React, { BaseSyntheticEvent, useEffect, useState } from 'react';
 
-import { renderContent } from '@Hocs/withLoadingLogic/withLoadingLogic';
-import { ErrorBoundary, Spinner } from '@Components/Core';
+import { ErrorBoundary } from '@Components/Core';
 import AppRoutes from 'AppRoutes';
 
 import { ThemeProvider } from 'context/ThemeContext.tsx';
 import { Events } from '@Constans/eventConstants';
-import { PURPLE } from '@Utils/colors';
 import { setTranslationsByUserPreferences } from './i18n';
 import i18n from './i18n/i18n';
-import { auth } from './auth/AuthProvider';
+import { AuthProvider } from 'auth/AuthContext';
 
 const App = (): React.ReactElement => {
   const [isLoaded, setIsLoaded] = useState<boolean>(true);
@@ -29,17 +27,21 @@ const App = (): React.ReactElement => {
   };
 
   useEffect(() => {
-    window.addEventListener(Events.LANGUAGE, handleLanguageChanges);
+    window.addEventListener(Events.Language, handleLanguageChanges);
 
     return () => {
-      window.removeEventListener(Events.LANGUAGE, handleLanguageChanges);
+      window.removeEventListener(Events.Language, handleLanguageChanges);
     };
   }, []);
 
   return (
-    <ThemeProvider>
-      <ErrorBoundary>{isLoaded ? <AppRoutes /> : renderContent(<Spinner singleColor={PURPLE} />)}</ErrorBoundary>
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider>
+        <ErrorBoundary>
+          <>{isLoaded && <AppRoutes />}</>
+        </ErrorBoundary>
+      </ThemeProvider>
+    </AuthProvider>
   );
 };
 

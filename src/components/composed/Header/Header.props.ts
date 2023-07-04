@@ -1,15 +1,14 @@
-import { Theme } from '@Constans/Theme';
 import { Func } from '@Utils/types';
 
 export interface HeaderProps {
   /**
-   * Selected theme (light, dark)
+   * Boolean to despite if the user is already logged
    */
-  theme: Theme;
+  logged: boolean;
   /**
-   * Callback that is called when the theme input's changes
+   * Callback that is called when the  user wants to logout
    */
-  onChange: (args: Theme) => void;
+  onClickLogout: Func;
   /**
    * Callback to display the login modal once the user press it
    */

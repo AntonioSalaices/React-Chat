@@ -5,7 +5,7 @@ export const usePostQuery = <BodyData, ResponseData>(
   query: string,
   headers?: HeadersInit
 ): {
-  post: (data: BodyData) => Promise<void>;
+  post: (data?: BodyData) => Promise<void>;
   loading: boolean;
   error: string | null;
   responseData: ResponseData | null;
@@ -15,7 +15,7 @@ export const usePostQuery = <BodyData, ResponseData>(
   const [error, setError] = useState<string | null>(null);
 
   const post = useCallback(
-    async (data: BodyData) => {
+    async (data?: BodyData) => {
       try {
         setLoading(true);
         const response = await axios.post(query, data);

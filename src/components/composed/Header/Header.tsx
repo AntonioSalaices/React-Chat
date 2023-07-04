@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
-import { Theme } from '@Constans/Theme';
 import { translate } from '../../../i18n';
 
 import useThrottle from '@Hooks/useThrottle/useThrottle';
@@ -24,8 +23,7 @@ const getLinks = (): LinkType[] => {
   ];
 };
 
-const Header: React.FC<HeaderProps> = ({ onChange, theme, onClickLoginNavigation }) => {
-  const selectedTheme: Theme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
+const Header: React.FC<HeaderProps> = ({ onClickLogout, logged, onClickLoginNavigation }) => {
   const [range, setRange] = useState<string>(sizeToRange(window.innerWidth));
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -34,10 +32,10 @@ const Header: React.FC<HeaderProps> = ({ onChange, theme, onClickLoginNavigation
   };
 
   useEffect(() => {
-    window.addEventListener(Events.RESIZE, handleWindowResize);
+    window.addEventListener(Events.Resize, handleWindowResize);
 
     return () => {
-      window.removeEventListener(Events.RESIZE, handleWindowResize);
+      window.removeEventListener(Events.Resize, handleWindowResize);
     };
   }, []);
 
@@ -53,6 +51,8 @@ const Header: React.FC<HeaderProps> = ({ onChange, theme, onClickLoginNavigation
     [MenuStatus.Open]: isOpen,
     [MenuStatus.Closed]: !isOpen,
   });
+
+  const buttonText = logged ? translate('header.links.logOut') : translate('header.links.signIn');
 
   return (
     <nav className="navbar-primary text-white mb-4 justify-between">
@@ -74,9 +74,15 @@ const Header: React.FC<HeaderProps> = ({ onChange, theme, onClickLoginNavigation
             <button
               data-testid="btn-login-navigate"
               className="btn-light text-dark font-md"
-              onClick={onClickLoginNavigation}
+              onClick={() => {
+                if (logged) {
+                  onClickLogout();
+                } else {
+                  onClickLoginNavigation();
+                }
+              }}
             >
-              {translate('header.links.signIn')}
+              {buttonText}
             </button>
           </li>
         </ul>

@@ -5,7 +5,7 @@ import { AxiosInterceptorProps, Headers } from './AxiosInterceptor.props';
 
 /* istanbul ignore next */
 const getHeaders = (token: string | null): Headers => ({
-  [Security.AUTHORIZATION]: token,
+  [Security.Authorization]: token,
 });
 
 const AxiosInterceptor = ({ children }: AxiosInterceptorProps) => {
@@ -13,7 +13,7 @@ const AxiosInterceptor = ({ children }: AxiosInterceptorProps) => {
     const interceptor = axios.interceptors.request.use(
       /* istanbul ignore next */
       function (config: InternalAxiosRequestConfig) {
-        const token: string | null = localStorage.getItem(Security.TOKEN);
+        const token: string | null = localStorage.getItem(Security.Token);
         config.headers = { ...getHeaders(token) } as AxiosRequestHeaders;
 
         return config;

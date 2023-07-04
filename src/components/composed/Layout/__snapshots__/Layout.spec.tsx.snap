@@ -2,9 +2,7 @@
 
 exports[`<Layout> should render correctly 1`] = `
 <div>
-  <div
-    class="light"
-  >
+  <div>
     <nav
       class="navbar-primary text-white mb-4 justify-between"
     >
@@ -78,7 +76,7 @@ exports[`<Layout> should render correctly 1`] = `
               class="btn-light text-dark font-md"
               data-testid="btn-login-navigate"
             >
-              [missing "en-US.header.links.signIn" translation]
+              [missing "en-US.header.links.logOut" translation]
             </button>
           </li>
         </ul>

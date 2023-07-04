@@ -10,7 +10,7 @@ const LazyComponent: React.FC<LazyComponentProps> = ({ children }) => {
       fallback={
         <div>
           {' '}
-          Loading... <Spinner color1={PURPLE} />{' '}
+          Loading... <Spinner singleColor={PURPLE} />{' '}
         </div>
       }
     >

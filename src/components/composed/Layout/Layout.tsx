@@ -1,27 +1,27 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { Section, Header, Footer } from '@Components/Core';
 
-import { ThemeContext } from 'context/ThemeContext';
-import { Theme } from '@Constans/Theme';
 import { Outlet } from 'react-router-dom';
 import { AuthModal } from 'screens/auth/auth';
+import { AuthContext } from 'auth/AuthContext';
 
 const Layout: React.FC = () => {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { user, logout } = useContext(AuthContext);
   const [isShownLoginModal, setIsShownLoginModal] = useState<boolean>(false);
 
-  const handleOnChange = (selectedTheme: Theme) => {
-    setTheme(selectedTheme);
-    localStorage.setItem(Theme.THEME, selectedTheme);
-  };
+  useEffect(() => {
+    if (user) {
+      setIsShownLoginModal(false);
+    }
+  }, [user]);
 
   return (
-    <div className={theme}>
+    <div>
       <Header
         onClickLoginNavigation={() => setIsShownLoginModal(!isShownLoginModal)}
-        theme={theme}
-        onChange={handleOnChange}
+        logged={!!user}
+        onClickLogout={logout}
       />
       <Outlet />
       <Section />

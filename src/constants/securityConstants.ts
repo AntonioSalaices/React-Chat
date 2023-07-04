@@ -1,7 +1,7 @@
 export enum Security {
-  AUTHORIZATION = 'Authorization',
-  TOKEN = 'token',
-  USER_DATA = 'userData',
+  Authorization = 'Authorization',
+  Token = 'token',
+  UserData = 'userData',
 }
 
 export enum AxiosConstants {

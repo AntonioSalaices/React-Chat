@@ -2,8 +2,8 @@ import { ChangeEvent, ComponentProps } from 'react';
 import Card from '../components/basics/Card/Card';
 
 export enum HTMLElements {
-  INPUT = 'input',
-  SPAN = 'span',
+  Input = 'input',
+  Span = 'span',
 }
 
 export enum HTMLType {

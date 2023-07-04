@@ -9,7 +9,7 @@ describe('<Header />', () => {
 
   const props = {
     onChange: jest.fn(),
-    theme: Theme.LIGHT,
+    theme: Theme.Light,
     onClickLoginNavigation: jest.fn(),
   };
 
@@ -29,7 +29,7 @@ describe('<Header />', () => {
   test('should render dark theme', () => {
     const newProps = {
       ...props,
-      theme: Theme.DARK,
+      theme: Theme.Dark,
     };
     const HeaderComponent = render(
       <BrowserRouter>
@@ -59,7 +59,7 @@ describe('<Header />', () => {
 
     const newProps = {
       ...props,
-      theme: Theme.DARK,
+      theme: Theme.Dark,
     };
     const HeaderComponent = render(
       <BrowserRouter>
@@ -69,7 +69,7 @@ describe('<Header />', () => {
 
     const { getByTestId } = HeaderComponent;
 
-    window.dispatchEvent(new Event(Events.RESIZE));
+    window.dispatchEvent(new Event(Events.Resize));
 
     expect(getByTestId('mobile')).toBeVisible();
   });

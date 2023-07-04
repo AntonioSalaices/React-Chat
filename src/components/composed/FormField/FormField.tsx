@@ -4,7 +4,7 @@ import { translate } from '@Translate/translate';
 import { ForwardRefExoticComponent, forwardRef } from 'react';
 
 const FormField: ForwardRefExoticComponent<Omit<FormFieldProps, 'ref'>> = forwardRef(
-  ({ type, right, left, search, handleChange, txOptions, text, tx, subTx, subText, testID, max, min }, ref) => {
+  ({ type, right, left, search, onChange, txOptions, text, tx, subTx, subText, testID, max, min }, ref) => {
     const i18Text = tx && translate(tx, txOptions);
     const content = i18Text || text;
     const i18SubText = subTx && translate(subTx, txOptions);
@@ -20,7 +20,7 @@ const FormField: ForwardRefExoticComponent<Omit<FormFieldProps, 'ref'>> = forwar
           type={type}
           placeholder={content}
           subText={subContent}
-          onChange={handleChange}
+          onChange={onChange}
           max={max}
           min={min}
           ref={ref}

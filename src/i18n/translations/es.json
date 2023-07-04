@@ -6,7 +6,8 @@
         "home": "Home",
         "chat": "Chat",
         "library": "Librería",
-        "signIn": "Ingresar"
+        "signIn": "Ingresar",
+        "logOut": "Salir"
       }
     },
     "error": {
