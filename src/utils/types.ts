@@ -22,7 +22,8 @@ export type CheckForBadArgs<Arg> = Arg extends any[] ? 'You cannot compare two a
 
 export type LinkType = {
   path: string;
-  name: string | null;
+  name: string;
+  sessionRequired: boolean;
 };
 
 export type PropsFrom<TComponent> = TComponent extends React.FC<infer Props>

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
 import { translate } from '../../../i18n';
@@ -9,18 +8,22 @@ import Formatter from '@Utils/formatter';
 
 import { Events, MenuStatus } from '@Constans/eventConstants';
 import { ScreenIcons, AppIcons, AppIcon } from '@Constans/icons';
-import { LinkType } from '@Utils/types';
 
 import { HeaderProps } from './Header.props';
+import { headerOptions } from './options';
+import { Link } from 'react-router-dom';
+import { LinkType } from '@Utils/types';
 
 const { sizeToRange } = Formatter;
 
-const getLinks = (): LinkType[] => {
-  return [
-    { path: '/', name: translate('header.links.home') },
-    { path: 'library', name: translate('header.links.library') },
-    { path: 'chat', name: translate('header.links.chat') },
-  ];
+const renderHeaderOptions = (options: LinkType[], logged: boolean) => {
+  return options
+    .filter((option: LinkType) => (logged ? option.sessionRequired : !option.sessionRequired))
+    .map(({ path, name, ...rest }: LinkType, index) => (
+      <li key={index.toString()}>
+        <Link to={path}>{translate(name)}</Link>
+      </li>
+    ));
 };
 
 const Header: React.FC<HeaderProps> = ({ onClickLogout, logged, onClickLoginNavigation }) => {
@@ -28,7 +31,7 @@ const Header: React.FC<HeaderProps> = ({ onClickLogout, logged, onClickLoginNavi
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleOpenMenu = () => {
-    setIsOpen((prev) => !prev);
+    setIsOpen((isOpened) => !isOpened);
   };
 
   useEffect(() => {
@@ -65,11 +68,7 @@ const Header: React.FC<HeaderProps> = ({ onClickLogout, logged, onClickLoginNavi
         </h2>
         <ul className={containerClasses}>
           <li>{ScreenIcons[range]}</li>
-          {getLinks().map(({ path, name }, index) => (
-            <li key={index.toString()}>
-              <Link to={path}>{name}</Link>
-            </li>
-          ))}
+          {renderHeaderOptions(headerOptions, logged)}
           <li>
             <button
               data-testid="btn-login-navigate"

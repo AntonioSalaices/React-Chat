@@ -7,6 +7,7 @@
         "chat": "Chat",
         "library": "Librería",
         "signIn": "Ingresar",
+        "dashboard": "Dashboard",
         "logOut": "Salir"
       }
     },

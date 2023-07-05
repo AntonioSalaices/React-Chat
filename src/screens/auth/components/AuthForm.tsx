@@ -14,8 +14,10 @@ import { AuthFormProps } from './AuthForm.props';
 import { translate } from '@Translate/translate';
 import styles from './AuthForm.module.scss';
 import { AuthContext } from 'auth/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const AuthForm: React.FC<AuthFormProps> = () => {
+  const navigate = useNavigate();
   const { loading, login } = useContext(AuthContext);
 
   const [isShownPassword, setIsShownPassword] = useState<boolean>(false);
@@ -28,6 +30,7 @@ const AuthForm: React.FC<AuthFormProps> = () => {
       password: password,
     } as User;
     login(body);
+    navigate('/dashboard');
   };
 
   const handlePassword = ({ target: { value } }: OnChangeType) => {

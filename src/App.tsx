@@ -1,7 +1,7 @@
 import React, { BaseSyntheticEvent, useEffect, useState } from 'react';
 
 import { ErrorBoundary } from '@Components/Core';
-import AppRoutes from 'AppRoutes';
+import AppRoutes from 'router/AppRoutes';
 
 import { ThemeProvider } from 'context/ThemeContext.tsx';
 import { Events } from '@Constans/eventConstants';

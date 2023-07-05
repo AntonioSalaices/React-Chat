@@ -40,6 +40,7 @@ export const AuthProvider: React.FC<AuthContextProviderProps> = ({ children }) =
     loading: isLoadingLogin,
     post: loginPost,
   } = usePostQuery<User, User>(`${VITE_BASE_API_URL}${VITE_AUTH_LOGIN_URL}`);
+
   const { post: logoutPost } = usePostQuery(`${VITE_BASE_API_URL}${VITE_AUTH_LOGOUT_URL}`);
 
   useEffect(() => {
