@@ -1,5 +1,5 @@
 import { gifsResponse } from 'mocks/gifs';
-import { MemoizedList } from '@Components/Core';
+import { List } from '@Components/Core';
 import { render } from '@testing-library/react';
 
 describe('<List />:: Spec', () => {
@@ -9,14 +9,14 @@ describe('<List />:: Spec', () => {
   };
 
   test('should render correctly', () => {
-    const component = render(<MemoizedList {...props} />);
+    const component = render(<List {...props} />);
     const { container } = component;
 
     expect(container).toMatchSnapshot();
   });
 
   test('should render correctly and execute memo HOC ', () => {
-    const component = render(<MemoizedList {...props} />);
+    const component = render(<List {...props} />);
     const { rerender } = component;
 
     const otherProps = {
@@ -24,6 +24,6 @@ describe('<List />:: Spec', () => {
       isLoading: true,
     };
 
-    rerender(<MemoizedList {...otherProps} />);
+    rerender(<List {...otherProps} />);
   });
 });
