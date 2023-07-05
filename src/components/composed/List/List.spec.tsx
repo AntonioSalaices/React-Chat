@@ -6,6 +6,7 @@ describe('<List />:: Spec', () => {
   const props = {
     isLoading: false,
     data: [gifsResponse],
+    renderItem: jest.fn(),
   };
 
   test('should render correctly', () => {
