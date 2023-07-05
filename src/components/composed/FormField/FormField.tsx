@@ -1,9 +1,10 @@
 import { Input } from '@Components/Core';
 import { FormFieldProps } from './FormField.props';
 import { translate } from '@Translate/translate';
-import { ForwardRefExoticComponent, forwardRef } from 'react';
+import { forwardRef } from 'react';
+import { InputRef } from '@Constans/htmlConstants';
 
-const FormField: ForwardRefExoticComponent<Omit<FormFieldProps, 'ref'>> = forwardRef(
+const FormField = forwardRef<InputRef, Omit<FormFieldProps, 'ref'>>(
   ({ type, right, left, search, onChange, txOptions, text, tx, subTx, subText, testID, max, min }, ref) => {
     const i18Text = tx && translate(tx, txOptions);
     const content = i18Text || text;

@@ -5,7 +5,6 @@
 
 import { ScreenSize } from '@Constans/screenConstants';
 import { GifData } from 'ApiData';
-import { GenericFunction } from './types';
 
 const Formatter = {
   /**
@@ -19,41 +18,6 @@ const Formatter = {
       url: item?.images?.fixed_height?.url,
       description: item?.user?.description,
     }));
-  },
-  /**
-   * @function debounce
-   * A function to implemente debounce tecnique
-   * @param {Function} callback
-   * @param {number} timer
-   */
-  debounce(callback: GenericFunction<any>, time: number) {
-    let timer;
-
-    return (args) => {
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        callback(args);
-      }, time);
-    };
-  },
-  /**
-   * @function throttle
-   * A function to implement throttle technique
-   * @param {Function} callback
-   * @param {number} timer
-   */
-  throttle(callback: GenericFunction<any>, delay: number) {
-    let timeout;
-
-    return (...args) => {
-      if (timeout) return;
-
-      timeout = setTimeout(() => {
-        timeout = undefined;
-      }, delay);
-
-      return callback(...args);
-    };
   },
   /**
    * @function sizeToRange

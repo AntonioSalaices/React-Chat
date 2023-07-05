@@ -1,4 +1,5 @@
 import { CheckForBadArgs } from './types';
+import { GenericFunction } from './types';
 
 const Helper = {
   deepEqualCompare<Arg>(a: CheckForBadArgs<Arg>, b: CheckForBadArgs<Arg>): boolean {
@@ -10,6 +11,41 @@ const Helper = {
   },
   getProperty<T, K extends keyof T>(object: T, key: K): T[K] {
     return object[key];
+  },
+  /**
+   * @function debounce
+   * A function to implemente debounce tecnique
+   * @param {Function} callback
+   * @param {number} timer
+   */
+  debounce(callback: GenericFunction<any>, time: number) {
+    let timer;
+
+    return (args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        callback(args);
+      }, time);
+    };
+  },
+  /**
+   * @function throttle
+   * A function to implement throttle technique
+   * @param {Function} callback
+   * @param {number} timer
+   */
+  throttle(callback: GenericFunction<any>, delay: number) {
+    let timeout;
+
+    return (...args) => {
+      if (timeout) return;
+
+      timeout = setTimeout(() => {
+        timeout = undefined;
+      }, delay);
+
+      return callback(...args);
+    };
   },
 };
 export default Helper;

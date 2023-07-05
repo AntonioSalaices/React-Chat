@@ -1,5 +1,5 @@
 import { ChangeEvent, ComponentProps } from 'react';
-import Card from '../components/basics/Card/Card';
+import { Card } from '@Components/Core';
 
 export enum HTMLElements {
   Input = 'input',
@@ -21,9 +21,11 @@ export type SingleInputType = {
   [K in keyof InputType]: {};
 }[keyof InputType];
 
-export type InputProps = ComponentProps<HTMLElements.INPUT>;
-export type SpanProps = ComponentProps<HTMLElements.SPAN>;
+export type InputProps = ComponentProps<HTMLElements.Input>;
+export type SpanProps = ComponentProps<HTMLElements.Span>;
 
 export type CardProps = ComponentProps<typeof Card>;
 
 export type OnChangeType = ChangeEvent<HTMLInputElement>;
+
+export type InputRef = HTMLInputElement;

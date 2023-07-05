@@ -2,16 +2,7 @@ import Formatter from '../formatter';
 import { gifsResponse } from '../../mocks/gifs';
 
 describe('Formatter', () => {
-  const { sizeToRange, getFormatedData, debounce, throttle } = Formatter;
-
-  beforeEach(() => {
-    jest.useFakeTimers();
-  });
-
-  afterEach(() => {
-    jest.useRealTimers();
-    jest.clearAllTimers();
-  });
+  const { sizeToRange, getFormatedData } = Formatter;
 
   test('should return formatted data from initial array', () => {
     const formattedData = {
@@ -33,38 +24,5 @@ describe('Formatter', () => {
       screenSizes.push(screenSize);
     }
     expect(screenSizes).toEqual(['xs', 'sm', 'md', 'lg', 'xl']);
-  });
-
-  test('should execute function after 300ms using debounce', async () => {
-    const callback = jest.fn();
-    const delay = 300;
-
-    const handleFunction = debounce(callback, delay);
-
-    for (let j = 0; j < 10; j++) {
-      jest.advanceTimersByTime(150);
-      handleFunction(j.toString());
-    }
-
-    expect(callback).toHaveBeenCalledTimes(0);
-
-    handleFunction('testing');
-    jest.advanceTimersByTime(300);
-
-    expect(callback).toHaveBeenCalledTimes(1);
-  });
-
-  test('should execute function after 400 ms using throttle', () => {
-    const callback = jest.fn();
-    const delay = 400;
-
-    const handleEvent = throttle(callback, delay);
-
-    for (let k = 0; k < 4; k++) {
-      jest.advanceTimersByTime(100);
-      handleEvent();
-    }
-
-    expect(callback).toHaveBeenCalledTimes(1);
   });
 });

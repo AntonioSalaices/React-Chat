@@ -1,7 +1,8 @@
-import { ForwardRefExoticComponent, forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { InputProps } from './Input.props';
+import { InputRef } from '@Constans/htmlConstants';
 
-const Input: ForwardRefExoticComponent<Omit<InputProps, 'ref'>> = forwardRef(
+const Input = forwardRef<InputRef, Omit<InputProps, 'ref'>>(
   ({ value, left, right, max, min, testID, name, placeholder, type, onChange, subText }, ref) => {
     return (
       <div className="gap-2 input-content">

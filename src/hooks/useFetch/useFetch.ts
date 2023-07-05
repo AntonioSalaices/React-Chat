@@ -29,10 +29,6 @@ const useFetch = <T>(url: string): State<T> => {
       try {
         const response = await axios.get(url, { cancelToken: cancelToken.token });
 
-        if (response.statusText !== AxiosConstants.Ok) {
-          throw new Error('Error HTTP: ', response.status as ErrorOptions);
-        }
-
         !isCompleted && setData(response.data.data);
       } catch (error) {
         setError('An error ocurred');
