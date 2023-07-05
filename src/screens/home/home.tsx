@@ -1,6 +1,6 @@
 import React, { useDeferredValue, useEffect, useMemo, useState } from 'react';
 
-import { MemoizedList, Container } from '@Components/Core';
+import { List, Container, Card } from '@Components/Core';
 import Form from './components/Form/Form';
 
 import useFetch from '@Hooks/useFetch/useFetch';
@@ -13,6 +13,10 @@ import { GifData } from 'ApiData';
 const { VITE_BASE_URL, VITE_API_SEARCH, VITE_API_KEY } = import.meta.env;
 
 const { getFormatedData, getFontSize } = Formatter;
+
+const renderGifImages = ({ id, ...rest }, index: number) => {
+  return <Card key={id} {...rest} />;
+};
 
 const Home = (): React.ReactElement => {
   const [search, setSearch] = useState<string>('');
@@ -50,7 +54,12 @@ const Home = (): React.ReactElement => {
   return (
     <Container>
       <Form handleSearch={debouncedSearch} handleFontResize={handleResize} />
-      <MemoizedList isShownNoFoundMessage={isShownNoFoundMessage} isLoading={isLoading} data={latestData} />
+      <List
+        renderItem={renderGifImages}
+        isShownNoFoundMessage={isShownNoFoundMessage}
+        isLoading={isLoading}
+        data={latestData}
+      />
     </Container>
   );
 };

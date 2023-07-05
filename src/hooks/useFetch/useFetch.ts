@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { AxiosConstants } from '@Constans/securityConstants';
 
 interface State<T> {
   data?: T[];
@@ -15,7 +14,7 @@ interface State<T> {
  * const { isLoading, data, error, cancel } = useFetch(URL);
  */
 const useFetch = <T>(url: string): State<T> => {
-  const [data, setData] = useState<T | null>(null);
+  const [data, setData] = useState<T[]>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<null | string>(null);
 

@@ -1,27 +1,18 @@
-import { memo } from 'react';
+import { MemoExoticComponent, memo } from 'react';
 import { isEqual } from 'lodash';
-import { Card } from '@Components/Core';
 import { ListProps } from './List.props';
 import withLoadingLogic from '../../../Hocs/withLoadingLogic/withLoadingLogic';
 
-export function List<TItem>(props: ListProps<TItem>) {
-  const { data } = props;
+function GenericList<T>(props: ListProps<T>) {
+  const { data, renderItem } = props;
 
-  return (
-    <ul className="row gap-2 justify-center">
-      {data?.map(({ id, ...rest }) => (
-        <li key={id}>
-          <Card {...rest} />
-        </li>
-      ))}
-    </ul>
-  );
+  return <div className="row gap-2 justify-center">{data?.map((d: T, k: number) => renderItem(d, k))}</div>;
 }
 
-const ListWithLoading = withLoadingLogic(List);
+const ListWithLoading = withLoadingLogic(GenericList);
 
-const MemoizedList = memo(ListWithLoading, (prevProps, nextProps) => {
+const List: MemoExoticComponent<T> = memo(ListWithLoading, (prevProps, nextProps) => {
   return isEqual(prevProps, nextProps);
 });
 
-export { MemoizedList };
+export { List };
