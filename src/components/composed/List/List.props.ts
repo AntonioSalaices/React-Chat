@@ -2,7 +2,7 @@ export interface ListProps<T> {
   /**
    * Function to render elements inside the accordion
    */
-  renderItem: (d: [], k: number) => JSX.Element;
+  renderItem: (d: T, k: number) => JSX.Element;
   /**
    * Data to be displayed
    */
