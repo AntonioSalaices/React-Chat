@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { RenderResult, act, fireEvent, render } from '@testing-library/react';
 import { Layout } from '@Components/Core';
 import { ThemeProvider } from 'context/ThemeContext';
@@ -8,8 +7,6 @@ const ThemeProviderMock = ThemeProvider as jest.MockedFunction<typeof ThemeProvi
 
 describe('<Layout>', () => {
   let component: RenderResult;
-  jest.spyOn(React, 'useState');
-  Object.setPrototypeOf(React.useState, jest.fn());
 
   beforeEach(() => {
     component = render(
@@ -21,19 +18,19 @@ describe('<Layout>', () => {
     );
   });
 
-  test('should render correctly', () => {
+  test('Should render correctly', () => {
     const { container } = component;
 
     expect(container).toMatchSnapshot();
   });
 
-  // test('should fire on navigate to login and call useState', () => {
-  //   const { getByTestId } = component;
+  test('Should trigger on navigate to login and display portal AuthModal', () => {
+    const { getByTestId } = component;
 
-  //   act(() => {
-  //     fireEvent.click(getByTestId('btn-login-navigate'));
-  //   });
+    act(() => {
+      fireEvent.click(getByTestId('btn-login-navigate'));
+    });
 
-  //   expect(React.useState).toHaveBeenCalled();
-  // });
+    expect(document.getElementById('portal-root')).toBeDefined();
+  });
 });

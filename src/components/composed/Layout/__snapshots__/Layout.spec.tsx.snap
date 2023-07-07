@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Layout> should render correctly 1`] = `
+exports[`<Layout> Should render correctly 1`] = `
 <div>
   <div>
     <nav
@@ -59,7 +59,7 @@ exports[`<Layout> should render correctly 1`] = `
           </li>
           <li>
             <a
-              href="/dashboard"
+              href="/"
             >
               [missing "en-US.header.links.dashboard" translation]
             </a>

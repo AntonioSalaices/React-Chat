@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LazyComponent /> Should render lazy component and children 1`] = `
+<div>
+  <span>
+    Hola
+  </span>
+</div>
+`;
