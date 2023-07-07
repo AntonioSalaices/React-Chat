@@ -52,23 +52,16 @@ exports[`<Layout> should render correctly 1`] = `
           </li>
           <li>
             <a
-              href="/"
-            >
-              [missing "en-US.header.links.home" translation]
-            </a>
-          </li>
-          <li>
-            <a
-              href="/library"
-            >
-              [missing "en-US.header.links.library" translation]
-            </a>
-          </li>
-          <li>
-            <a
               href="/chat"
             >
               [missing "en-US.header.links.chat" translation]
+            </a>
+          </li>
+          <li>
+            <a
+              href="/dashboard"
+            >
+              [missing "en-US.header.links.dashboard" translation]
             </a>
           </li>
           <li>

@@ -1,10 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { Layout, NotFound } from '@Components/Core';
 import Home from 'screens/home/home';
+import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/landing-page',
     element: <Layout />,
     children: [
       {
@@ -22,40 +23,34 @@ const router = createBrowserRouter([
         },
       },
       {
-        path: 'dashboard',
-        async lazy() {
-          const { DashboardLayout } = await import('../screens/dashboard/dashboardLayout');
-
-          return {
-            Component: DashboardLayout,
-          };
-        },
-        children: [
-          {
-            index: true,
-            async lazy() {
-              const { Dashboard } = await import('../screens/dashboard/dashboard');
-
-              return {
-                Component: Dashboard,
-              };
-            },
-          },
-          {
-            path: 'chat',
-            async lazy() {
-              const { Chat } = await import('../screens/chat/chat');
-
-              return {
-                Component: Chat,
-              };
-            },
-          },
-        ],
-      },
-      {
         path: '*',
         element: <NotFound tx="notFound404.message" />,
+      },
+    ],
+  },
+  {
+    path: 'dashboard',
+    element: <PrivateRoute />,
+    children: [
+      {
+        index: true,
+        async lazy() {
+          const { Dashboard } = await import('../screens/dashboard/dashboard');
+
+          return {
+            Component: Dashboard,
+          };
+        },
+      },
+      {
+        path: 'chat',
+        async lazy() {
+          const { Chat } = await import('../screens/chat/chat');
+
+          return {
+            Component: Chat,
+          };
+        },
       },
     ],
   },

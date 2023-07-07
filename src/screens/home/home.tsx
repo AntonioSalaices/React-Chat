@@ -14,7 +14,7 @@ const { VITE_BASE_URL, VITE_API_SEARCH, VITE_API_KEY } = import.meta.env;
 
 const { getFormatedData, getFontSize } = Formatter;
 
-const renderGifImages = ({ id, ...rest }, index: number) => {
+const renderGifImages = ({ id, ...rest }: Partial<GifData>) => {
   return <Card key={id} {...rest} />;
 };
 

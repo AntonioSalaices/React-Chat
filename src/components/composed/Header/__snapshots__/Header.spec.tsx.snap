@@ -64,13 +64,6 @@ exports[`<Header /> should render correctly 1`] = `
           </a>
         </li>
         <li>
-          <a
-            href="/chat"
-          >
-            [missing "en-US.header.links.chat" translation]
-          </a>
-        </li>
-        <li>
           <button
             class="btn-light text-dark font-md"
             data-testid="btn-login-navigate"
@@ -145,13 +138,6 @@ exports[`<Header /> should render dark theme 1`] = `
             href="/library"
           >
             [missing "en-US.header.links.library" translation]
-          </a>
-        </li>
-        <li>
-          <a
-            href="/chat"
-          >
-            [missing "en-US.header.links.chat" translation]
           </a>
         </li>
         <li>
