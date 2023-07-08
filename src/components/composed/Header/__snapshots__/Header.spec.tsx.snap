@@ -51,7 +51,7 @@ exports[`<Header /> should render correctly 1`] = `
         </li>
         <li>
           <a
-            href="/landing-page"
+            href="/"
           >
             [missing "en-US.header.links.home" translation]
           </a>
@@ -128,7 +128,7 @@ exports[`<Header /> should render dark theme 1`] = `
         </li>
         <li>
           <a
-            href="/landing-page"
+            href="/"
           >
             [missing "en-US.header.links.home" translation]
           </a>

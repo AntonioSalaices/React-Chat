@@ -6,80 +6,82 @@ exports[`<AuthForm /> Should render AuthForm 1`] = `
     class="container"
     id="main-container"
   >
-    <div
-      class="col justify-center align-center"
-    >
+    <form>
       <div
-        class="col-11-xs col-11-sm col-5-md col-5-xl"
+        class="col justify-center align-center"
       >
         <div
-          class="gap-2 input-content"
+          class="col-11-xs col-11-sm col-5-md col-5-xl"
         >
-          <label>
-            [missing "en-US.form.inputs.email" translation]
-            <input
-              class="input-primary"
-              data-testid="emailInput"
-              placeholder="[missing "en-US.form.inputs.email" translation]"
-              type="text"
-              value=""
-            />
-          </label>
-          <h5
-            class="text-primary-light-7 mb-1"
-          >
-            [missing "en-US.subPlaceholder.email" translation]
-          </h5>
-        </div>
-      </div>
-      <div
-        class="col-11-xs col-11-sm col-5-md col-5-xl"
-      >
-        <div
-          class="gap-2 input-content"
-        >
-          <label>
-            [missing "en-US.form.inputs.password" translation]
-            <input
-              class="input-primary"
-              data-testid="passwordInput"
-              placeholder="[missing "en-US.form.inputs.password" translation]"
-              type="password"
-              value=""
-            />
-          </label>
           <div
-            class="input-icon-right"
+            class="gap-2 input-content"
           >
-            <span>
-              <svg
-                class="pointer"
-                fill="currentColor"
-                height="1em"
-                stroke="currentColor"
-                stroke-width="0"
-                viewBox="0 0 576 512"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M288 144a110.94 110.94 0 0 0-31.24 5 55.4 55.4 0 0 1 7.24 27 56 56 0 0 1-56 56 55.4 55.4 0 0 1-27-7.24A111.71 111.71 0 1 0 288 144zm284.52 97.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400c-98.65 0-189.09-55-237.93-144C98.91 167 189.34 112 288 112s189.09 55 237.93 144C477.1 345 386.66 400 288 400z"
-                />
-              </svg>
-            </span>
+            <label>
+              [missing "en-US.form.inputs.email" translation]
+              <input
+                class="input-primary"
+                data-testid="emailInput"
+                placeholder="[missing "en-US.form.inputs.email" translation]"
+                type="text"
+                value=""
+              />
+            </label>
+            <h5
+              class="text-primary-light-7 mb-1"
+            >
+              [missing "en-US.subPlaceholder.email" translation]
+            </h5>
           </div>
-          <h5
-            class="text-primary-light-7 mb-1"
-          />
         </div>
+        <div
+          class="col-11-xs col-11-sm col-5-md col-5-xl"
+        >
+          <div
+            class="gap-2 input-content"
+          >
+            <label>
+              [missing "en-US.form.inputs.password" translation]
+              <input
+                class="input-primary"
+                data-testid="passwordInput"
+                placeholder="[missing "en-US.form.inputs.password" translation]"
+                type="password"
+                value=""
+              />
+            </label>
+            <div
+              class="input-icon-right"
+            >
+              <span>
+                <svg
+                  class="pointer"
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 576 512"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M288 144a110.94 110.94 0 0 0-31.24 5 55.4 55.4 0 0 1 7.24 27 56 56 0 0 1-56 56 55.4 55.4 0 0 1-27-7.24A111.71 111.71 0 1 0 288 144zm284.52 97.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400c-98.65 0-189.09-55-237.93-144C98.91 167 189.34 112 288 112s189.09 55 237.93 144C477.1 345 386.66 400 288 400z"
+                  />
+                </svg>
+              </span>
+            </div>
+            <h5
+              class="text-primary-light-7 mb-1"
+            />
+          </div>
+        </div>
+        <button
+          class="btn-primary text-white btnDisabled"
+          disabled=""
+        >
+          [missing "en-US.buttons.signIn" translation]
+        </button>
       </div>
-      <button
-        class="btn-primary text-white btnDisabled"
-        disabled=""
-      >
-        [missing "en-US.buttons.signIn" translation]
-      </button>
-    </div>
+    </form>
   </div>
 </div>
 `;

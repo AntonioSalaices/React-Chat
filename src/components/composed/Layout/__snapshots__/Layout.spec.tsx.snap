@@ -59,7 +59,7 @@ exports[`<Layout> Should render correctly 1`] = `
           </li>
           <li>
             <a
-              href="/"
+              href="/dashboard"
             >
               [missing "en-US.header.links.dashboard" translation]
             </a>

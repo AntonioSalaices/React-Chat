@@ -14,6 +14,7 @@ function usePortal(element: HTMLElement) {
   });
 
   const createPortal = useCallback((elem: HTMLElement) => {
+    if (!element) return null;
     const Portal: React.FC<ReactPortal> = ({ children }: { children: ReactNode }) =>
       ReactDOM?.createPortal(children, elem);
 
