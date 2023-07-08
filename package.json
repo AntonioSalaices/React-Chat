@@ -4,6 +4,7 @@
   "description": "React Chat Application",
   "version": "1.1.0",
   "type": "module",
+  "proxy": "http://localhost:3000",
   "contributors": [
     {
       "name": "Antonio",

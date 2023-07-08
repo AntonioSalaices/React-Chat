@@ -8,6 +8,8 @@ import { Events } from '@Constans/eventConstants';
 import { setTranslationsByUserPreferences } from './i18n';
 import i18n from './i18n/i18n';
 import { AuthProvider } from 'auth/AuthContext';
+import axios from 'axios';
+axios.defaults.withCredentials = true;
 
 const App = (): React.ReactElement => {
   const [isLoaded, setIsLoaded] = useState<boolean>(true);
