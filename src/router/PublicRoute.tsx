@@ -3,10 +3,10 @@ import { AuthContext } from 'auth/AuthContext';
 import { useContext } from 'react';
 import { Navigate } from 'react-router-dom';
 
-const PrivateRoute = () => {
+const PublicRoute = () => {
   const { user } = useContext(AuthContext);
 
-  return user ? <Layout /> : <Navigate to={'/'} replace />;
+  return !user ? <Layout /> : <Navigate to={'/dashboard'} replace />;
 };
 
-export default PrivateRoute;
+export default PublicRoute;

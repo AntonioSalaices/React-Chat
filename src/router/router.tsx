@@ -1,19 +1,21 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { Layout, NotFound } from '@Components/Core';
+import { NotFound } from '@Components/Core';
 import Home from 'screens/home/home';
 import PrivateRoute from './PrivateRoute';
+import { RoutesConstants } from '@Constans/routesConstants';
+import PublicRoute from './PublicRoute';
 
 const router = createBrowserRouter([
   {
-    path: '/landing-page',
-    element: <Layout />,
+    path: RoutesConstants.LandingPage,
+    element: <PublicRoute />,
     children: [
       {
         index: true,
         element: <Home />,
       },
       {
-        path: 'library',
+        path: RoutesConstants.Library,
         async lazy() {
           const { Library } = await import('../screens/library/library');
 
@@ -23,13 +25,13 @@ const router = createBrowserRouter([
         },
       },
       {
-        path: '*',
+        path: RoutesConstants.NotFound,
         element: <NotFound tx="notFound404.message" />,
       },
     ],
   },
   {
-    path: 'dashboard',
+    path: RoutesConstants.Dashboard,
     element: <PrivateRoute />,
     children: [
       {
@@ -43,7 +45,7 @@ const router = createBrowserRouter([
         },
       },
       {
-        path: 'chat',
+        path: RoutesConstants.Chat,
         async lazy() {
           const { Chat } = await import('../screens/chat/chat');
 

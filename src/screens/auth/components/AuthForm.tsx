@@ -24,7 +24,8 @@ const AuthForm: React.FC<AuthFormProps> = () => {
   const [password, setPassword] = useState<string>('');
   const email = useRef<HTMLInputElement>(null);
 
-  const onSubmit = () => {
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     const body = {
       email: email?.current?.value,
       password: password,
@@ -45,31 +46,33 @@ const AuthForm: React.FC<AuthFormProps> = () => {
 
   return (
     <Container>
-      <div className="col justify-center align-center">
-        <FormField
-          ref={email}
-          type={HTMLType.text}
-          subTx="subPlaceholder.email"
-          tx="form.inputs.email"
-          testID="emailInput"
-        />
-        <FormField
-          type={isShownPassword ? HTMLType.text : HTMLType.password}
-          tx="form.inputs.password"
-          testID="passwordInput"
-          onChange={handlePassword}
-          right={
-            isShownPassword ? (
-              <FaRegEyeSlash className="pointer" onClick={() => setIsShownPassword(false)} />
-            ) : (
-              <FaRegEye className="pointer" onClick={() => setIsShownPassword(true)} />
-            )
-          }
-        />
-        <button disabled={isSubmitButtonDisabled} className={buttonStyle} onClick={onSubmit}>
-          {loading ? <Spinner size={20} singleColor={WHITE} /> : translate('buttons.signIn')}
-        </button>
-      </div>
+      <form onSubmit={onSubmit}>
+        <div className="col justify-center align-center">
+          <FormField
+            ref={email}
+            type={HTMLType.text}
+            subTx="subPlaceholder.email"
+            tx="form.inputs.email"
+            testID="emailInput"
+          />
+          <FormField
+            type={isShownPassword ? HTMLType.text : HTMLType.password}
+            tx="form.inputs.password"
+            testID="passwordInput"
+            onChange={handlePassword}
+            right={
+              isShownPassword ? (
+                <FaRegEyeSlash className="pointer" onClick={() => setIsShownPassword(false)} />
+              ) : (
+                <FaRegEye className="pointer" onClick={() => setIsShownPassword(true)} />
+              )
+            }
+          />
+          <button disabled={isSubmitButtonDisabled} className={buttonStyle} onClick={onSubmit}>
+            {loading ? <Spinner size={20} singleColor={WHITE} /> : translate('buttons.signIn')}
+          </button>
+        </div>
+      </form>
     </Container>
   );
 };

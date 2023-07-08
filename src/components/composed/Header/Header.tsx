@@ -19,7 +19,7 @@ const { sizeToRange } = Formatter;
 const renderHeaderOptions = (options: LinkType[], logged: boolean) => {
   return options
     .filter((option: LinkType) => (logged ? option.sessionRequired : !option.sessionRequired))
-    .map(({ path, name, ...rest }: LinkType, index) => (
+    .map(({ path, name }: LinkType, index) => (
       <li key={index.toString()}>
         <Link to={path}>{translate(name)}</Link>
       </li>
