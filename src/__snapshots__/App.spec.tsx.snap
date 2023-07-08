@@ -1,18 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<App /> App component should render correctly 1`] = `
-<div>
-  <div
-    class="container"
-  >
-    <h1>
-      [missing "en-US.error.messageTitle" translation]
-    </h1>
-    <span
-      data-testid="error-message"
-    >
-      unmountComponentAtNode(...): Target container is not a DOM element.
-    </span>
-  </div>
-</div>
-`;
+exports[`<App /> App component should render correctly 1`] = `<div />`;
