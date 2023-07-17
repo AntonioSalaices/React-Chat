@@ -54,7 +54,7 @@ const Home = (): React.ReactElement => {
   return (
     <Container>
       <Form handleSearch={debouncedSearch} handleFontResize={handleResize} />
-      <List<GifData>
+      <List
         renderItem={renderGifImages}
         isShownNoFoundMessage={isShownNoFoundMessage}
         isLoading={isLoading}

@@ -5,7 +5,7 @@
 ### Prerequisites
 
 1. Install NodeJS
-   0
+
 2. Install Docker
 
 ### Quick Start

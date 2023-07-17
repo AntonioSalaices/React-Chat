@@ -2,7 +2,7 @@ import { useContext, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 
-import { WHITE } from '@Utils/colors';
+import { color } from '@Utils/colors';
 
 import { HTMLType, OnChangeType } from '@Constans/htmlConstants';
 
@@ -69,7 +69,7 @@ const AuthForm: React.FC<AuthFormProps> = () => {
             }
           />
           <button disabled={isSubmitButtonDisabled} className={buttonStyle} onClick={onSubmit}>
-            {loading ? <Spinner size={20} singleColor={WHITE} /> : translate('buttons.signIn')}
+            {loading ? <Spinner size={20} singleColor={color.background} /> : translate('buttons.signIn')}
           </button>
         </div>
       </form>

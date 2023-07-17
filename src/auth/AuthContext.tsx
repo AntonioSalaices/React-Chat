@@ -37,7 +37,7 @@ export const AuthProvider: React.FC<AuthContextProviderProps> = ({ children }) =
 
   const {
     responseData: responseLogin,
-    loading: isLoadingLogin,
+    loading,
     post: loginPost,
   } = usePostQuery<User, User>(`${VITE_BASE_API_URL}${VITE_AUTH_LOGIN_URL}`);
 
@@ -64,7 +64,5 @@ export const AuthProvider: React.FC<AuthContextProviderProps> = ({ children }) =
     localStorage.removeItem(Security.UserData);
   };
 
-  return (
-    <AuthContext.Provider value={{ user, login, logout, loading: isLoadingLogin }}>{children}</AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={{ user, login, logout, loading }}>{children}</AuthContext.Provider>;
 };

@@ -47,5 +47,15 @@ const Helper = {
       return callback(...args);
     };
   },
+  validateObject(object: any): unknown {
+    return new Proxy(object, {
+      set(target, key, value) {
+        if (key === 'name' && typeof value !== 'string') {
+          throw new Error('Should be string');
+        }
+        target[key] = value;
+      },
+    });
+  },
 };
 export default Helper;

@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { PURPLE } from '@Utils/colors';
+import { color } from '@Utils/colors';
 import { Spinner } from '@Components/Core';
 import { LazyComponentProps } from './LazyComponent.props';
 import { ErrorBoundary } from '../ErrorBoundary/ErrorBoundary';
@@ -10,7 +10,7 @@ const LazyComponent: React.FC<LazyComponentProps> = ({ children }) => {
       fallback={
         <div>
           {' '}
-          Loading... <Spinner singleColor={PURPLE} />{' '}
+          Loading... <Spinner singleColor={color.primary} />{' '}
         </div>
       }
     >

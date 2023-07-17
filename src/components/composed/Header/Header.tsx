@@ -11,8 +11,11 @@ import { ScreenIcons, AppIcons, AppIcon } from '@Constans/icons';
 
 import { HeaderProps } from './Header.props';
 import { headerOptions } from './options';
-import { Link } from 'react-router-dom';
+import { ReactComponent as Logo } from '../../../assets/images/home.svg';
+
+import { Link, useNavigate } from 'react-router-dom';
 import { LinkType } from '@Utils/types';
+import { RoutesConstants } from '@Constans/routesConstants';
 
 const { sizeToRange } = Formatter;
 
@@ -27,6 +30,7 @@ const renderHeaderOptions = (options: LinkType[], logged: boolean) => {
 };
 
 const Header: React.FC<HeaderProps> = ({ onClickLogout, logged, onClickLoginNavigation }) => {
+  const navigate = useNavigate();
   const [range, setRange] = useState<string>(sizeToRange(window.innerWidth));
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -61,7 +65,15 @@ const Header: React.FC<HeaderProps> = ({ onClickLogout, logged, onClickLoginNavi
     <nav className="navbar-primary text-white mb-4 justify-between">
       <div className="container">
         <h2 className="site-title">
-          {translate('header.title')}
+          <Logo
+            onClick={() => {
+              const pageToNavigate = logged ? RoutesConstants.Dashboard : RoutesConstants.LandingPage;
+              console.log('page', pageToNavigate);
+              navigate(pageToNavigate);
+            }}
+            width={50}
+            height={50}
+          />
           <li onClick={handleOpenMenu} className="nav-icon">
             {AppIcons[AppIcon.Menu]}
           </li>
