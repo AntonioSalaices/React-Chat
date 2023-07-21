@@ -14,4 +14,8 @@ export interface MessageProps {
    * Text which is looked up via i18n
    */
   tx?: TxKeyPath;
+  /**
+   * Text which is looked up via i18n
+   */
+  isError?: boolean;
 }

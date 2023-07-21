@@ -11,7 +11,10 @@ exports[`<Header /> should render correctly 1`] = `
       <h2
         class="site-title"
       >
-        [missing "en-US.header.title" translation]
+        <reactcomponent
+          height="50"
+          width="50"
+        />
         <li
           class="nav-icon"
         >
@@ -88,7 +91,10 @@ exports[`<Header /> should render dark theme 1`] = `
       <h2
         class="site-title"
       >
-        [missing "en-US.header.title" translation]
+        <reactcomponent
+          height="50"
+          width="50"
+        />
         <li
           class="nav-icon"
         >

@@ -13,13 +13,15 @@ describe('<App />', () => {
   });
 
   test('should call handleLanguageChanges when the user change language preferences', () => {
+    //Arrange
     const languageChangeSpy = jest.spyOn(window.navigator, 'language', 'get');
 
+    //Act
     render(<App />);
     languageChangeSpy.mockReturnValue('es');
+    window.dispatchEvent(new Event(Events.Language));
 
-    window.dispatchEvent(new Event(Events.LANGUAGE));
-
+    //Assert
     expect(languageChangeSpy).toHaveBeenCalled();
   });
 });

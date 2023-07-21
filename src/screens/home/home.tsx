@@ -1,6 +1,6 @@
 import React, { useDeferredValue, useEffect, useMemo, useState } from 'react';
 
-import { List, Container, Card } from '@Components/Core';
+import { List, Container, Card, Section } from '@Components/Core';
 import Form from './components/Form/Form';
 
 import useFetch from '@Hooks/useFetch/useFetch';
@@ -60,6 +60,7 @@ const Home = (): React.ReactElement => {
         isLoading={isLoading}
         data={latestData}
       />
+      <Section />
     </Container>
   );
 };
