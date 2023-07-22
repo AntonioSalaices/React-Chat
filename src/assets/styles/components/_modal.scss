@@ -22,7 +22,6 @@
   .modal-#{$key} {
     z-index: 10;
     width: 50vw;
-    height: 50vh;
     background-color: $val;
     border-radius: $base-border-radius;
     padding: $base-padding * 5 $base-padding;

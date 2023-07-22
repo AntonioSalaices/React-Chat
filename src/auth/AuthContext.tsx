@@ -1,21 +1,14 @@
 import { createContext, useEffect, useState } from 'react';
 import { isEmpty } from 'lodash';
-
-import { Func } from '@Utils/types';
 import { Security } from '@Constans/securityConstants';
 import { User, UserKeys } from 'models/User';
 import { AuthContextProviderProps } from './AuthProvider.props';
 
 import { usePostQuery } from '@Hooks/usePost/usePost';
+import { AuthContextProps, AuthError } from './AuthContext.props';
+import { AuthCredentials } from '@Constans/authConstants';
 
 const { VITE_BASE_API_URL, VITE_AUTH_LOGIN_URL, VITE_AUTH_LOGOUT_URL } = import.meta.env;
-
-interface AuthContextProps {
-  user: User | null;
-  login: Func;
-  logout: Func;
-  loading: boolean;
-}
 
 export const AuthContext = createContext<AuthContextProps>({
   user: {} as User,
@@ -24,6 +17,7 @@ export const AuthContext = createContext<AuthContextProps>({
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   logout: () => {},
   loading: false,
+  error: {} as AuthError,
 });
 
 export const AuthProvider: React.FC<AuthContextProviderProps> = ({ children }) => {
@@ -39,9 +33,10 @@ export const AuthProvider: React.FC<AuthContextProviderProps> = ({ children }) =
     responseData: responseLogin,
     loading,
     post: loginPost,
-  } = usePostQuery<User, User>(`${VITE_BASE_API_URL}${VITE_AUTH_LOGIN_URL}`);
+    error,
+  } = usePostQuery<User, User>(`${VITE_BASE_API_URL}${VITE_AUTH_LOGIN_URL}`, AuthCredentials);
 
-  const { post: logoutPost } = usePostQuery(`${VITE_BASE_API_URL}${VITE_AUTH_LOGOUT_URL}`);
+  const { post: logoutPost } = usePostQuery(`${VITE_BASE_API_URL}${VITE_AUTH_LOGOUT_URL}`, AuthCredentials);
 
   useEffect(() => {
     const saveResponse = () => {
@@ -64,5 +59,5 @@ export const AuthProvider: React.FC<AuthContextProviderProps> = ({ children }) =
     localStorage.removeItem(Security.UserData);
   };
 
-  return <AuthContext.Provider value={{ user, login, logout, loading }}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={{ user, login, logout, loading, error }}>{children}</AuthContext.Provider>;
 };

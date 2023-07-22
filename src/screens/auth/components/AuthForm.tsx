@@ -6,7 +6,7 @@ import { color } from '@Utils/colors';
 
 import { HTMLType, OnChangeType } from '@Constans/htmlConstants';
 
-import { Container, FormField, Spinner } from '@Components/Core';
+import { Container, FormField, Message, Spinner } from '@Components/Core';
 
 import { User } from 'models/User';
 import { AuthFormProps } from './AuthForm.props';
@@ -16,7 +16,7 @@ import styles from './AuthForm.module.scss';
 import { AuthContext } from 'auth/AuthContext';
 
 const AuthForm: React.FC<AuthFormProps> = () => {
-  const { loading, login } = useContext(AuthContext);
+  const { loading, login, user, error } = useContext(AuthContext);
 
   const [isShownPassword, setIsShownPassword] = useState<boolean>(false);
   const [password, setPassword] = useState<string>('');
@@ -65,6 +65,7 @@ const AuthForm: React.FC<AuthFormProps> = () => {
               )
             }
           />
+          {Boolean(error) && !user && <Message isError text={error.message} />}
           <button disabled={isSubmitButtonDisabled} className={buttonStyle} onClick={onSubmit}>
             {loading ? <Spinner size={20} singleColor={color.background} /> : translate('buttons.signIn')}
           </button>

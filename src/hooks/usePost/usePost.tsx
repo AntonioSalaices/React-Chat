@@ -21,7 +21,7 @@ export const usePostQuery = <BodyData, ResponseData>(
         const response = await axios.post(query, data);
         setResponseData(response.data);
       } catch (error: any) {
-        setError(error.message);
+        setError(error.response.data);
       } finally {
         setLoading(false);
       }

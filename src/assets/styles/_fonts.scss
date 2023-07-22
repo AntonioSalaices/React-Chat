@@ -25,7 +25,18 @@ $fonts-weight: normal, bold, italic;
   }
 }
 
+//FONT ALIGN
+
+$font-align: left, center, right;
+
+@each $val in $font-align {
+  .font-#{$val} {
+    text-align: $val;
+  }
+}
+
 $font-sizes: (
+  'md': $font-size-base,
   'sm': $font-size-sm,
   'lg': $font-size-lg,
   'xl': $font-size-xl,
