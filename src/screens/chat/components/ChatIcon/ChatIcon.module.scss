@@ -1,0 +1,22 @@
+@import '../../../../assets/styles/palette';
+
+.chatContainer {
+  display: flex;
+  background-color: mix($white, $primary, 2 * 10%);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 10;
+  color: $white;
+  outline: 3px solid $white;
+  outline-offset: -5px;
+
+  &:hover {
+    background-color: $primary;
+  }
+}

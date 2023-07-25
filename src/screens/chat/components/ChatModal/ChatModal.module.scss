@@ -1,0 +1,21 @@
+@import '../../../../assets/styles/fonts';
+@import '../../../../assets/styles/utilities';
+@import '../../../../assets/styles/palette';
+@import '../../../../assets/styles/responsive';
+
+.chatModalContainer {
+  height: 400px;
+  width: 300px;
+  background-color: $primary;
+  z-index: 100;
+  border: $base-border-thickness;
+  border-radius: 8px;
+
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+
+  outline: 3px solid $white;
+  outline-offset: -5px;
+  margin-left: 40px;
+}

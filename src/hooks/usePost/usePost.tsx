@@ -3,7 +3,7 @@ import { useState, useCallback } from 'react';
 
 export const usePostQuery = <BodyData, ResponseData>(
   query: string,
-  headers?: HeadersInit
+  headers?: unknown
 ): {
   post: (data?: BodyData) => Promise<void>;
   loading: boolean;

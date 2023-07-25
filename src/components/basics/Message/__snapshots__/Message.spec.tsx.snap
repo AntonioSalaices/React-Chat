@@ -2,9 +2,11 @@
 
 exports[`<Message /> should render correctly 1`] = `
 <div>
-  <div>
+  <div
+    class="bg-primary-light-7 p-2 justify-center br mb-1"
+  >
     <h1
-      class="text-primary font-bold font-size-lg"
+      class="text-primary font-bold font-size-md font-center"
       data-testid="messageTestId"
     >
       simple test message

@@ -12,6 +12,8 @@ const Layout: React.FC = () => {
   const { user, logout } = useContext(AuthContext);
   const [isShownLoginModal, setIsShownLoginModal] = useState<boolean>(false);
 
+  const logged = !!user;
+
   useEffect(() => {
     if (user) {
       setIsShownLoginModal(false);
@@ -23,11 +25,11 @@ const Layout: React.FC = () => {
     <div>
       <Header
         onClickLoginNavigation={() => setIsShownLoginModal(!isShownLoginModal)}
-        logged={!!user}
+        logged={logged}
         onClickLogout={logout}
       />
       <Outlet />
-      <Footer tx="footer.message" />
+      {!logged && <Footer tx="footer.message" />}
       <AuthModal onClose={() => setIsShownLoginModal(!isShownLoginModal)} isShown={isShownLoginModal} />
     </div>
   );

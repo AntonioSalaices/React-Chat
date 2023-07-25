@@ -6,6 +6,7 @@ import {
   FaRegWindowClose,
   FaRegEye,
   FaRegEyeSlash,
+  FaRocketchat,
 } from 'react-icons/fa';
 import { ScreenSize } from './screenConstants';
 
@@ -15,6 +16,7 @@ export enum AppIcon {
   Close = 'close',
   CloseEye = 'close-eye',
   Eye = 'eye',
+  Chat = 'chat',
 }
 
 type IconType = Record<string, JSX.Element>;
@@ -33,4 +35,5 @@ export const AppIcons: IconType = {
   [AppIcon.Close]: <FaRegWindowClose />,
   [AppIcon.CloseEye]: <FaRegEyeSlash />,
   [AppIcon.Eye]: <FaRegEye />,
+  [AppIcon.Chat]: <FaRocketchat />,
 };

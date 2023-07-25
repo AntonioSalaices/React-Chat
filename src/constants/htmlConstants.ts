@@ -1,4 +1,4 @@
-import { ChangeEvent, ComponentProps } from 'react';
+import { ChangeEvent, ComponentProps, MouseEventHandler } from 'react';
 import { Card } from '@Components/Core';
 
 export enum HTMLElements {
@@ -27,5 +27,6 @@ export type SpanProps = ComponentProps<HTMLElements.Span>;
 export type CardProps = ComponentProps<typeof Card>;
 
 export type OnChangeType = ChangeEvent<HTMLInputElement>;
+export type OnClickType<T> = MouseEventHandler<T>;
 
 export type InputRef = HTMLInputElement;
