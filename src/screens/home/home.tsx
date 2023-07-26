@@ -57,6 +57,7 @@ const Home = (): React.ReactElement => {
       <List
         renderItem={renderGifImages}
         isShownNoFoundMessage={isShownNoFoundMessage}
+        isRow
         isLoading={isLoading}
         data={latestData}
       />

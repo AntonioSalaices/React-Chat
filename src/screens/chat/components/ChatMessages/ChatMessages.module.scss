@@ -1,0 +1,13 @@
+@import '../../../../assets/styles/fonts';
+@import '../../../../assets/styles/palette';
+@import '../../../../assets/styles/utilities';
+
+.chatMessagesContainer {
+  display: flex;
+  height: 280px;
+  margin: 10px;
+  background-color: $white;
+  border-radius: $base-border-radius;
+  overflow: scroll;
+  overflow-x: hidden;
+}

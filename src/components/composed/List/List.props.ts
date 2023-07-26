@@ -15,4 +15,8 @@ export interface ListProps<T> {
    * Boolean prop to know if is shown no found message
    */
   isShownNoFoundMessage?: boolean;
+  /**
+   * Boolean prop to specify if is row
+   */
+  isRow?: boolean;
 }

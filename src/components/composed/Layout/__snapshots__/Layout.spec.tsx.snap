@@ -78,15 +78,6 @@ exports[`<Layout> Should render correctly 1`] = `
         </ul>
       </div>
     </nav>
-    <footer
-      class="bg-secondary-light-7 pt-3 pb-3 mt-5"
-    >
-      <div
-        class="container"
-      >
-        [missing "en-US.footer.message" translation]
-      </div>
-    </footer>
   </div>
 </div>
 `;

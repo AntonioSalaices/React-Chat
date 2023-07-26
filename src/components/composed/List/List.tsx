@@ -2,11 +2,16 @@ import { MemoExoticComponent, memo } from 'react';
 import { isEqual } from 'lodash';
 import { ListProps } from './List.props';
 import withLoadingLogic from '../../../Hocs/withLoadingLogic/withLoadingLogic';
+import classNames from 'classnames';
 
 function GenericList<T>(props: ListProps<T>) {
-  const { data, renderItem } = props;
+  const { data, renderItem, isRow } = props;
 
-  return <div className="row gap-2 justify-center">{data?.map((d: T, k: number) => renderItem(d, k))}</div>;
+  const listContainerStyle = classNames('gap-2 justify-center', {
+    ['row']: isRow,
+  });
+
+  return <div className={listContainerStyle}>{data?.map((d: T, k: number) => renderItem(d, k))}</div>;
 }
 
 const ListWithLoading = withLoadingLogic(GenericList);

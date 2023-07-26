@@ -12,13 +12,15 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSubmitMessage }) => {
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    onSubmitMessage(message?.current?.value);
-    event.target.reset();
+    if (message?.current?.value) {
+      onSubmitMessage(message?.current?.value);
+      event.target.reset();
+    }
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <div className="col justify-center align-center">
+    <form className="col" onSubmit={onSubmit}>
+      <div className="col justify-center align-center mr-2 ml-2">
         <FormField ref={message} type={HTMLType.text} testID="chatMessageInput" />
       </div>
     </form>
