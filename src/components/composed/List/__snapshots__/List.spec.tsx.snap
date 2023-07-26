@@ -3,7 +3,7 @@
 exports[`<List />:: Spec should render correctly 1`] = `
 <div>
   <div
-    class="row gap-2 justify-center"
+    class="gap-2 justify-center"
   />
 </div>
 `;

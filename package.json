@@ -105,7 +105,7 @@
       "<rootDir>/node_modules/(?!i18n-js)"
     ],
     "moduleNameMapper": {
-      "^.+\\.(css|less|styl|scss|sass|svg)$": "identity-obj-proxy",
+      "^.+\\.(css|less|styl|scss|sass|svg|mp3)$": "identity-obj-proxy",
       "@Components/(.*)": "<rootDir>/src/components/$1",
       "@Constans/(.*)": "<rootDir>/src/constants/$1",
       "@Utils/(.*)": "<rootDir>/src/utils/$1",

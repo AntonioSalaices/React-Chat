@@ -1,4 +1,3 @@
-import { List } from '@Components/Core';
 import classNames from 'classnames';
 import style from './ChatMessages.module.scss';
 interface ChatMessagesProps {
