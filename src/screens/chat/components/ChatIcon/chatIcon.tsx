@@ -11,9 +11,9 @@ const ChatIcon: React.FC<ChatIconProps> = ({ onClickChatIcon }) => {
   const chatContainerStyle = classNames(style.chatContainer);
 
   return (
-    <div onClick={onClickChatIcon} className={chatContainerStyle}>
+    <button onClick={onClickChatIcon} className={chatContainerStyle}>
       {AppIcons[AppIcon.Chat]}
-    </div>
+    </button>
   );
 };
 

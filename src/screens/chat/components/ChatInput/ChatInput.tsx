@@ -20,7 +20,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSubmitMessage }) => {
 
   return (
     <form className="col" onSubmit={onSubmit}>
-      <div className="col justify-center align-center mr-2 ml-2">
+      <div className="col justify-center align-center mr-1 ml-1">
         <FormField ref={message} type={HTMLType.text} testID="chatMessageInput" />
       </div>
     </form>
