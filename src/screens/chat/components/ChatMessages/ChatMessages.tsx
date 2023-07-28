@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import style from './ChatMessages.module.scss';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 interface ChatMessagesProps {
   data: string[];
 }
@@ -14,11 +14,17 @@ const renderMessages = (message: string, index: number) => {
 };
 
 const ChatMessages: React.FC<ChatMessagesProps> = ({ data }) => {
-  const messagesEndRef = useRef(null);
   const chatContainerStyle = classNames('mr-1 ml-1', style.chatMessagesContainer);
 
   const scrollToBottom = () => {
-    messagesEndRef?.current?.scrollIntoView({ behavior: 'smooth' });
+    const ref = document.getElementById('ref');
+
+    setTimeout(() => {
+      ref.scrollIntoView({
+        behavior: 'smooth',
+        block: 'end',
+      });
+    }, 100);
   };
 
   useEffect(() => {
@@ -26,9 +32,9 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({ data }) => {
   }, [data]);
 
   return (
-    <div className={chatContainerStyle}>
+    <div onClick={() => scrollToBottom()} className={chatContainerStyle}>
       <div className="col">{data.map((item, index) => renderMessages(item, index))}</div>
-      <div ref={messagesEndRef} />
+      <div id="ref" />
     </div>
   );
 };

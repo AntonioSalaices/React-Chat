@@ -4,9 +4,13 @@ import ChatInput from '../ChatInput/ChatInput';
 import { useState } from 'react';
 import ChatMessages from '../ChatMessages/ChatMessages';
 
-interface ChatModalProps {}
+interface ChatModalProps {
+  /* 
+  properties
+  **/
+}
 
-const ChatModal: React.FC<ChatModalProps> = () => {
+const ChatModal: React.FC = () => {
   const [messages, setMessages] = useState<string[]>([]);
 
   const chatModalContainer = classNames(style.chatModalContainer);
