@@ -14,3 +14,4 @@ export * from './composed/NotFound/NotFound';
 export * from './composed/Section/Section';
 export * from './composed/Modal/Modal';
 export * from './composed/LazyComponent/LazyComponent';
+export * from './composed/Loader/Loader';

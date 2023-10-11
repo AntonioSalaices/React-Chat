@@ -1,15 +1,17 @@
 import axios from 'axios';
 import { useState, useCallback } from 'react';
 
-export const usePostQuery = <BodyData, ResponseData>(
-  query: string,
-  headers?: unknown
-): {
+interface PostQueryResponse<BodyData, ResponseData> {
   post: (data?: BodyData) => Promise<void>;
   loading: boolean;
   error: string | null;
   responseData: ResponseData | null;
-} => {
+}
+
+export const usePostQuery = <BodyData, ResponseData>(
+  query: string,
+  headers?: unknown
+): PostQueryResponse<BodyData, ResponseData> => {
   const [responseData, setResponseData] = useState<ResponseData | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);

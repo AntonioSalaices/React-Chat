@@ -29,3 +29,9 @@
 ### `docker compose up`
 
 > This command will execute the container and start a local development server
+
+##Component naming convention
+
+- Folder in small caps and use camelCase ('./componentFolder')
+- Each folder have `component.tsx`. Use smalls caps to name components.
+- Component should be defined in file itself with large caps (`export default Component`)

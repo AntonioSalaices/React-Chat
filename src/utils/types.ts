@@ -41,3 +41,7 @@ export type RemoveProperty<TType> = TType extends 'color' ? never : TType;
 
 // //This is going to extract every key in person
 // type PersonKeys = keyof Person;
+
+export type Prettify<U> = {
+  [K in keyof U]: U[K];
+} & {};
