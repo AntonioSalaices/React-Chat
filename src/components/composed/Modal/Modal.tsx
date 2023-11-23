@@ -1,4 +1,4 @@
-import { AppIcon, AppIcons } from '@Constans/icons';
+import { AppIcon, AppIcons } from '@Constants/Core';
 import { ModalProps } from './Modal.props';
 
 const Modal: React.FC<ModalProps> = ({ children, onClose }) => {

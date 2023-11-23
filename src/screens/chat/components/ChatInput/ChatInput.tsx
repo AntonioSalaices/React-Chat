@@ -1,5 +1,5 @@
 import { FormField } from '@Components/Core';
-import { HTMLType } from '@Constans/htmlConstants';
+import { HTMLType } from '@Constants/Core';
 import { Func } from '@Utils/types';
 import { useRef } from 'react';
 

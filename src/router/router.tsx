@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { NotFound } from '@Components/Core';
 import Home from 'screens/home/home';
 import PrivateRoute from './PrivateRoute';
-import { RoutesConstants } from '@Constans/routesConstants';
+import { RoutesConstants } from '@Constants/Core';
 import PublicRoute from './PublicRoute';
 
 const router = createBrowserRouter([

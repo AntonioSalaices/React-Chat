@@ -1,4 +1,4 @@
-import { RoutesConstants } from '@Constans/routesConstants';
+import { RoutesConstants } from '@Constants/Core';
 import { LinkType } from '@Utils/types';
 
 export const headerOptions: LinkType[] = [

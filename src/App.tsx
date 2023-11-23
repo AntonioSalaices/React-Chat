@@ -4,7 +4,7 @@ import { ErrorBoundary } from '@Components/Core';
 import AppRoutes from 'router/AppRoutes';
 
 import { ThemeProvider } from 'context/ThemeContext.tsx';
-import { Events } from '@Constans/eventConstants';
+import { Events } from '@Constants/Core';
 import { setTranslationsByUserPreferences } from './i18n';
 import i18n from './i18n/i18n';
 import { AuthProvider } from 'auth/AuthContext';

@@ -3,7 +3,7 @@
  * @author Antonio Salaices M
  */
 
-import { ScreenSize } from '@Constans/screenConstants';
+import { ScreenSize } from '@Constants/Core';
 import { GifData } from 'ApiData';
 
 const Formatter = {

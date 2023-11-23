@@ -38,6 +38,11 @@
     },
     "notFound404": {
       "message": "404 Not Found"
+    },
+    "screens": {
+      "pokemonList": {
+        "header": "Pokemon"
+      }
     }
   }
 }

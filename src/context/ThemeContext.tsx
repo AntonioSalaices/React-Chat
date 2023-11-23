@@ -1,4 +1,4 @@
-import { Theme } from '@Constans/Theme';
+import { Theme } from '@Constants/Core';
 import React, { createContext, useEffect, useState } from 'react';
 import { ThemeProviderProps } from './ThemeProvider.props';
 

@@ -1,5 +1,5 @@
 import { Func } from '@Utils/types';
-import { User } from 'models/User';
+import { User } from '@Models/Core';
 
 export interface AuthError {
   statusCode: number;

@@ -1,8 +1,6 @@
-import { AppIcon, AppIcons } from '@Constans/icons';
+import { AppIcon, AppIcons, OnClickType } from '@Constants/Core';
 import classNames from 'classnames';
 import style from './ChatIcon.module.scss';
-import { OnClickType } from '@Constans/htmlConstants';
-
 interface ChatIconProps {
   onClickChatIcon: OnClickType<HTMLDivElement>;
 }

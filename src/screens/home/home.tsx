@@ -6,7 +6,7 @@ import Form from './components/Form/Form';
 import useFetch from '@Hooks/useFetch/useFetch';
 import useDebounce from '@Hooks/useDebounce/useDebounce';
 
-import { OnChangeType } from '@Constans/htmlConstants';
+import { OnChangeType } from '@Constants/Core';
 import Formatter from '@Utils/formatter';
 import { GifData } from 'ApiData';
 

@@ -6,16 +6,13 @@ import { translate } from '../../../i18n';
 import useThrottle from '@Hooks/useThrottle/useThrottle';
 import Formatter from '@Utils/formatter';
 
-import { Events, MenuStatus } from '@Constans/eventConstants';
-import { ScreenIcons, AppIcons, AppIcon } from '@Constans/icons';
-
 import { HeaderProps } from './Header.props';
 import { headerOptions } from './options';
 import { ReactComponent as Logo } from '../../../assets/images/home.svg';
 
 import { Link, useNavigate } from 'react-router-dom';
 import { LinkType } from '@Utils/types';
-import { RoutesConstants } from '@Constans/routesConstants';
+import { RoutesConstants, Events, MenuStatus, ScreenIcons, AppIcons, AppIcon } from '@Constants/Core';
 
 const { sizeToRange } = Formatter;
 
@@ -68,7 +65,6 @@ const Header: React.FC<HeaderProps> = ({ onClickLogout, logged, onClickLoginNavi
           <Logo
             onClick={() => {
               const pageToNavigate = logged ? RoutesConstants.Dashboard : RoutesConstants.LandingPage;
-              console.log('page', pageToNavigate);
               navigate(pageToNavigate);
             }}
             width={50}

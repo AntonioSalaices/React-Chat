@@ -1,12 +1,11 @@
 import { createContext, useEffect, useState } from 'react';
 import { isEmpty } from 'lodash';
-import { Security } from '@Constans/securityConstants';
+import { Security, AuthCredentials } from '@Constants/Core';
 import { User, UserKeys } from 'models/User';
 import { AuthContextProviderProps } from './AuthProvider.props';
 
 import { usePostQuery } from '@Hooks/usePost/usePost';
 import { AuthContextProps, AuthError } from './AuthContext.props';
-import { AuthCredentials } from '@Constans/authConstants';
 
 const { VITE_BASE_API_URL, VITE_AUTH_LOGIN_URL, VITE_AUTH_LOGOUT_URL } = import.meta.env;
 

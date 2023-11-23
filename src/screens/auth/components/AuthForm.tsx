@@ -4,7 +4,7 @@ import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 
 import { color } from '@Utils/colors';
 
-import { HTMLType, OnChangeType } from '@Constans/htmlConstants';
+import { HTMLType, OnChangeType } from '@Constants/Core';
 
 import { Container, FormField, Message, Spinner } from '@Components/Core';
 

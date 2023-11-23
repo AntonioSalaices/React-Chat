@@ -1,6 +1,6 @@
 import { FormField } from '@Components/Core';
 import { FormProps } from './Form.props';
-import { HTMLType } from '@Constans/htmlConstants';
+import { HTMLType } from '@Constants/Core';
 
 const Form: React.FC<FormProps> = ({ handleSearch, handleFontResize }) => {
   return (

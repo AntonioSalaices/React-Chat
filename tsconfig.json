@@ -5,10 +5,14 @@
       "@Components/*": ["components/*"],
       "@Hooks/*": ["hooks/*"],
       "@Utils/*": ["utils/*"],
-      "@Constans/*": ["constants/*"],
+      "@Constants/*": ["constants/*"],
+      "@Models/*": ["models/*"],
       "@Translate/*": ["i18n/*"],
       "@Hocs/*": ["Hocs/*"],
-      "@Mocks/*": ["mocks/*"]
+      "@Mocks/*": ["mocks/*"],
+      "@Api/*": ["api/*"],
+      "@Store": ["Store.ts"],
+      "@Assets/*": ["assets/*"]
     },
     "target": "es5",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
